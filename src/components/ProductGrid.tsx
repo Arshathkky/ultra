@@ -22,7 +22,7 @@ export default function ProductGrid() {
       id: 2,
       title: "Aluminum 2x2 Net",
       image: sampleImages.aluminumNet,
-      description: "High-grade aluminum mesh solutions for security and ventilation needs",
+      description: "High-grade aluminum mesh nwt solutions for security and ventilation needs",
       link: "/net"
     },
     {
@@ -49,7 +49,7 @@ export default function ProductGrid() {
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-64 object-cover object-center"
+                  className="w-full h-64  object-center"
                 />
               </div>
               <div className="p-6">
