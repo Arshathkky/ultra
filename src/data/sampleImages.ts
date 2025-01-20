@@ -7,9 +7,9 @@ export const sampleImages = {
   anodizing: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920",
   
   // Product images
-  extrusionProfiles: "../../../public/images/extrusion.jpg",
-  aluminumNet: "../../../public/images/Net.webp",
-  solarAccessories: "../../../public/images/solar.jpg",
+  extrusionProfiles: "/images/extrusion.jpg",
+  aluminumNet: "/images/Net.webp",
+  solarAccessories: "/images/solar.jpg",
   
   // Additional industrial images
   factory: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=1920",
@@ -23,6 +23,6 @@ export const sampleImages = {
   brightAnodized: "https://images.unsplash.com/photo-1581092334247-ddef2a41a858?auto=format&fit=crop&q=80&w=1920",
 
   // Contact and about
-  aboutHero: "../../../public/images/company.jpg",
+  aboutHero: "/images/company.jpg",
   contactHero: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=1920"
 };

@@ -25,15 +25,15 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <Phone size={18} />
-                <span>+1 (555) 123-4567</span>
+                <span>+94 65 2051 155</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={18} />
-                <span>info@aluminumpro.com</span>
+                <span>Ultra.aluminium2019@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin size={18} />
-                <span>123 Business Ave, City, State</span>
+                <span>No. 413/10, Main Street, Kovil Kulam, Palamunai, Arayampathi,</span>
               </li>
             </ul>
           </div>
@@ -55,7 +55,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 AluminumPro. All rights reserved.</p>
+          <p>&copy; 2024 ULTRA Aluminium. All rights reserved.</p>
         </div>
       </div>
     </footer>
