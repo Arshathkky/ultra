@@ -27,7 +27,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
 
         <div className="grid md:grid-cols-2 gap-6">
           <div>
-            <img src={product.image} alt={product.name} className="w-full h-64 object-cover rounded-lg mb-4" />
+            <img src={product.image} alt={product.name} className="w-full h-full object-contain rounded-lg mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h3>
             <p className="text-gray-600 mb-4">{product.description}</p>
           </div>
@@ -93,7 +93,7 @@ function ProductCard({ category }: { category: Category }) {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-cover transform transition-transform group-hover:scale-105"
+                  className="w-full h-48 object-contain transform transition-transform group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -144,7 +144,7 @@ function ProfilePage() {
         {
           name: 'Angles',
           description: 'L-shaped profiles for corner joints and structural support',
-          image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800',
+          image: 'images/logo1.png',
           specs: [
             'Material: Premium aluminum alloy',
             'Finish Options: Natural, anodized',
@@ -197,7 +197,7 @@ function ProfilePage() {
         {
           name: 'Shop Front Partitions',
           description: '100mm premium partition system for commercial spaces',
-          image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800',
+          image: 'images/logo1.png',
           specs: [
             'Profile Width: 100mm',
             'Material: Heavy-duty aluminum',
@@ -220,7 +220,7 @@ function ProfilePage() {
         {
           name: 'Sliding Systems',
           description: 'Advanced sliding door and window solutions',
-          image: 'https://images.unsplash.com/photo-1534778356534-d3d45b6df1da?auto=format&fit=crop&q=80&w=800',
+          image: 'images/logo1.png',
           specs: [
             'Track Options: Single, double, triple',
             'Profile Thickness: 1.3mm to 1.6mm',
@@ -250,7 +250,7 @@ function ProfilePage() {
         {
           name: '60mm Casement Windows',
           description: 'Standard casement window system with excellent performance',
-          image: 'https://images.unsplash.com/photo-1565109033-75b1c2e1d53c?auto=format&fit=crop&q=80&w=800',
+          image: 'images/logo1.png',
           specs: [
             'Frame Depth: 60mm',
             'Material: High-strength aluminum',

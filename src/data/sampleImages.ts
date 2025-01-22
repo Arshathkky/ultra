@@ -1,10 +1,10 @@
 export const sampleImages = {
   // Factory and industrial images
-  casting: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1920",
-  extrusion: "https://images.unsplash.com/photo-1565439371467-60d68bb805f0?auto=format&fit=crop&q=80&w=1920",
-  airPollution: "https://images.unsplash.com/photo-1581093458791-9d42e3c2fd21?auto=format&fit=crop&q=80&w=1920",
-  powderCoating: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1920",
-  anodizing: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920",
+  casting: "images/logo.png",
+  extrusion: "images/logo.png",
+  airPollution: "images/logo.png",
+  powderCoating: "images/logo.png",
+  anodizing: "images/logo.png",
   
   // Product images
   extrusionProfiles: "/images/extrusion.jpg",

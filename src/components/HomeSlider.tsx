@@ -35,14 +35,16 @@ export default function HomeSlider() {
       navigation
       pagination={{ clickable: true }}
       autoplay={{ delay: 5000 }}
-      className="h-[600px]"
+      className="h-full"
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div 
-            className="relative w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          >
+          <div className="relative w-full h-full">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-full object-fit"
+            />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <h2 className="text-white text-5xl font-bold">{slide.title}</h2>
             </div>

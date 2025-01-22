@@ -27,11 +27,11 @@ export default function SolarPage() {
           <p className="text-xl text-gray-600">Complete range of aluminum accessories for solar installations</p>
         </div>
         
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden justify-items-center">
           <img
             src={sampleImages.solarAccessories}
             alt="Solar Mounting Solutions"
-            className="w-full h-96 object-cover"
+            className="w-max h-max object-fit"
           />
           
           <div className="p-8">

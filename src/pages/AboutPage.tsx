@@ -1,5 +1,5 @@
 import { sampleImages } from '../data/sampleImages';
-import AluminiumPage from './AluminiumPage';
+
 import ProfileTypePage from './ProfileTypePage';
 
 export default function AboutPage() {

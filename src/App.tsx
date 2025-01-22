@@ -17,7 +17,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/profiles" element={<ProfilesPage />} />
-            <Route path="/profiles/:id" element={<ProfilesPage />} />
+            <Route path="/profiles/:id" element={<AboutPage />} />
             <Route path="/net" element={<NetPage />} />
             <Route path="/solar" element={<SolarPage />} />
             <Route path="/about" element={<AboutPage />} />

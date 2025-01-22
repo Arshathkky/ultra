@@ -32,7 +32,7 @@ export default function NetPage() {
           <img
             src={sampleImages.aluminumNet}
             alt="Aluminum Net"
-            className="w-full h-96 object-cover"
+            className="w-full h-96 object-contain"
           />
           
           <div className="p-8">
