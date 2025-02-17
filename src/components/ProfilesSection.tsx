@@ -4,25 +4,25 @@ const profiles = [
   {
     id: 'mill-finish',
     title: 'Mill Finish',
-    image: 'https://images.unsplash.com/photo-1589792923962-537704632910?auto=format&fit=crop&q=80&w=1920',
+    image: 'images/logo1.png',
     description: 'Natural aluminum finish straight from the extrusion process'
   },
   {
     id: 'powder-coat',
     title: 'Powder Coat',
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1920',
+    image: 'images/logo1.png',
     description: 'Durable and decorative coating available in various colors'
   },
   {
     id: 'natural-anodized',
     title: 'Natural Anodized',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1920',
+    image: 'images/logo1.png',
     description: 'Protective oxide layer with natural metallic appearance'
   },
   {
     id: 'bright-anodized',
     title: 'Bright Anodized',
-    image: 'https://images.unsplash.com/photo-1581092334247-ddef2a41a858?auto=format&fit=crop&q=80&w=1920',
+    image: 'images/logo1.png',
     description: 'Highly reflective finish with enhanced corrosion resistance'
   }
 ];

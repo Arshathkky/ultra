@@ -100,6 +100,9 @@ export default function ProfileTypePage() {
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-4">
+      <h1 className="text-4xl font-bold text-gray-900 text-center mb-8">
+      Our Aluminium
+    </h1>
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="relative h-96">
             <img

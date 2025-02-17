@@ -273,7 +273,7 @@ function ProfilePage() {
         {
           name: '70mm Premium Windows',
           description: 'Enhanced thermal performance window system',
-          image: 'https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?auto=format&fit=crop&q=80&w=800',
+          image: 'images/logo1.png',
           specs: [
             'Frame Depth: 70mm',
             'Thermal Break: 34mm polyamide',

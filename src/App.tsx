@@ -7,6 +7,8 @@ import NetPage from './pages/NetPage';
 import SolarPage from './pages/SolarPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import ProfileTypePage from './pages/ProfileTypePage';
+import BranchCard from './components/BranchCard';
 
 export default function App() {
   return (
@@ -17,11 +19,12 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/profiles" element={<ProfilesPage />} />
-            <Route path="/profiles/:id" element={<AboutPage />} />
+            <Route path="/profiles/:id" element={<ProfileTypePage />} />
             <Route path="/net" element={<NetPage />} />
             <Route path="/solar" element={<SolarPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/dealers" element={<BranchCard />} />
           </Routes>
         </main>
         <Footer />

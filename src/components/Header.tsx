@@ -19,6 +19,7 @@ export default function Header() {
               No. 413/10, Main Street, Kovil Kulam, Palamunai, Arayampathi, Batticaloa, Sri Lanka
             </span>
           </div>
+          
         </div>
       </div>
 
@@ -41,6 +42,7 @@ export default function Header() {
               <Link to="/profiles" className="hover:text-blue-600 font-medium">Profiles</Link>
               <Link to="/net" className="hover:text-blue-600 font-medium">Net</Link>
               <Link to="/solar" className="hover:text-blue-600 font-medium">Solar Accessories</Link>
+              <Link to="/dealers" className="hover:text-blue-600 font-medium">Dealers</Link>
               <Link to="/about" className="hover:text-blue-600 font-medium">About Us</Link>
               <Link to="/contact" className="hover:text-blue-600 font-medium">Contact</Link>
             </div>

@@ -123,7 +123,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
-      <ProfileTypePage/>
+      
     </div>
   );
 }
