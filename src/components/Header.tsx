@@ -11,11 +11,11 @@ export default function Header() {
   return (
     <header>
       {/* Top Bar */}
-      <div className="bg-gray-100 py-2 hidden md:block">
+      <div className=" py-2 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center">
           {/* Phone Number */}
           <div className="flex items-center space-x-6">
-            <span className="text-gray-700 font-medium">+94 65 2051 155</span>
+            <span className="text-gray-700 font-medium">+94 65 2051 144</span>
           </div>
           {/* Address */}
           <div className="flex items-center space-x-6">
@@ -27,7 +27,7 @@ export default function Header() {
       </div>
 
       {/* Navbar */}
-      <nav className="bg-white shadow-md">
+      <nav className=" shadow-md">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center">
@@ -69,7 +69,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-gray-100">
+          <div className="md:hidden ">
             <div className="container mx-auto px-4 py-4 space-y-2">
               <Link to="/" className="block text-gray-800 hover:text-blue-600" onClick={handleLinkClick}>
                 Home

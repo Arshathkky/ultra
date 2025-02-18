@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">AluminumPro</h3>
+            <h3 className="text-xl font-bold mb-4">ULTRA ALUMINIUM</h3>
             <p className="text-gray-400">
               Leading manufacturer of premium aluminum solutions for modern architecture.
             </p>
@@ -16,7 +16,8 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a href="/products" className="text-gray-400 hover:text-white">Products</a></li>
               <li><a href="/profile" className="text-gray-400 hover:text-white">Profile</a></li>
-              <li><a href="/news" className="text-gray-400 hover:text-white">News</a></li>
+              <li><a href="/dealers" className="text-gray-400 hover:text-white">Dealers</a></li>
+              {/* <li><a href="/news" className="text-gray-400 hover:text-white">News</a></li> */}
               <li><a href="/about" className="text-gray-400 hover:text-white">About Us</a></li>
             </ul>
           </div>
@@ -25,7 +26,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li className="flex items-center space-x-2">
                 <Phone size={18} />
-                <span>+94 65 2051 155</span>
+                <span>+94 65 2051 144</span>
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={18} />
@@ -33,11 +34,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin size={18} />
-                <span>No. 413/10, Main Street, Kovil Kulam, Palamunai, Arayampathi,</span>
+                <span>No. 413/10, Main Street, Kovil Kulam, Palamunai, Arayampathi, Batticaloa, Sri Lanka</span>
               </li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-xl font-bold mb-4">Newsletter</h3>
             <form className="space-y-4">
               <input
@@ -52,10 +53,10 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 ULTRA Aluminium. All rights reserved.</p>
+          <p>&copy; 2025 ULTRA Aluminium. All rights reserved.</p>
         </div>
       </div>
     </footer>

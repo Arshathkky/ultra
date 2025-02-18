@@ -8,7 +8,7 @@ export const sampleImages = {
   
   // Product images
   extrusionProfiles: "/images/extrusion.jpg",
-  aluminumNet: "/images/Net.webp",
+  aluminumNet: "/images/net01.png",
   solarAccessories: "/images/solar.jpg",
   
   // Additional industrial images

@@ -47,9 +47,9 @@ export default function NewsSection() {
   };
 
   return (
-    <div className="bg-gray-50 py-16">
+    <div className=" py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Latest News</h2>
+        <h2 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide uppercase">Latest News</h2>
 
         <div className="space-y-8">
           {news.map((item) => (
@@ -68,7 +68,7 @@ export default function NewsSection() {
                 <div className="mt-4">
                   <button
                     onClick={() => openModal(item)}
-                    className="inline-block px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="inline-block px-6 py-2 bg-[#1a0179] text-white rounded-lg hover:bg-blue-700 transition-colors"
                   >
                     Read More
                   </button>

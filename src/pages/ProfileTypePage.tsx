@@ -53,9 +53,9 @@ export default function ProfileTypePage() {
   
   if (!id) {
     return (
-      <div className="min-h-screen bg-gray-50 py-16">
+      <div className="min-h-screen py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl font-bold text-center mb-12">Our Profiles</h1>
+          <h1 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide uppercase">Our Profiles</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {Object.entries(profiles).map(([key, profile]) => (
               <a
@@ -98,9 +98,9 @@ export default function ProfileTypePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16">
+    <div className="min-h-screen py-16">
       <div className="max-w-7xl mx-auto px-4">
-      <h1 className="text-4xl font-bold text-gray-900 text-center mb-8">
+      <h1 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide uppercase">
       Our Aluminium
     </h1>
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">

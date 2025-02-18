@@ -23,7 +23,7 @@ export default function Certification() {
   return (
     <div className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Certificate</h2>
+        <h2 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide uppercase">Our Certificates</h2>
 
         {/* Certificate Grid */}
         <div className="flex flex-wrap justify-center gap-8">

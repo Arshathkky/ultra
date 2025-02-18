@@ -1,3 +1,4 @@
+import Certification from '../components/Certification';
 import { sampleImages } from '../data/sampleImages';
 
 import ProfileTypePage from './ProfileTypePage';
@@ -83,7 +84,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-
+        <Certification/>
         {/* Timeline Section */}
         <div className="mt-16">
           <h2 className="text-3xl font-semibold text-gray-800 text-center mb-12">Our Journey</h2>
