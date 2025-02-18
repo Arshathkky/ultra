@@ -10,6 +10,7 @@ import ContactPage from './pages/ContactPage';
 import ProfileTypePage from './pages/ProfileTypePage';
 import BranchCard from './components/BranchCard';
 
+
 export default function App() {
   return (
     <Router>

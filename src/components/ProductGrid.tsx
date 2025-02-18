@@ -20,7 +20,7 @@ export default function ProductGrid() {
     },
     {
       id: 2,
-      title: "Aluminum 2x2 Net",
+      title: "Aluminum  Net",
       image: sampleImages.aluminumNet,
       description: "High-grade aluminum mesh nwt solutions for security and ventilation needs",
       link: "/net"

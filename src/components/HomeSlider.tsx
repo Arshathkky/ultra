@@ -39,14 +39,14 @@ export default function HomeSlider() {
     >
       {slides.map((slide, index) => (
         <SwiperSlide key={index}>
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-full min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
             <img
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-fit"
+              className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-              <h2 className="text-white text-5xl font-bold">{slide.title}</h2>
+              <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold">{slide.title}</h2>
             </div>
           </div>
         </SwiperSlide>

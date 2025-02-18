@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Layout, SlidersHorizontal, X, ArrowRight, ChevronRight, Grid } from 'lucide-react';
+import { Box, Layout, X, ChevronRight, ArrowRight, Grid } from 'lucide-react';
 
 interface Product {
   name: string;
@@ -56,18 +56,6 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
                 ))}
               </ul>
             </div>
-
-            <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">Available Types</h4>
-              <ul className="space-y-2">
-                {product.examples.map((example, index) => (
-                  <li key={index} className="flex items-start gap-2">
-                    <Grid className="w-4 h-4 mt-1 text-blue-500 flex-shrink-0" />
-                    <span className="text-gray-600">{example}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -88,21 +76,22 @@ function ProductCard({ category }: { category: Category }) {
         <p className="text-gray-600 mb-6">{category.description}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {category.products.map((product, index) => (
-            <div key={index} className="group cursor-pointer" onClick={() => setSelectedProduct(product)}>
-              <div className="relative overflow-hidden rounded-lg">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-48 object-contain transform transition-transform group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-white font-semibold text-lg">{product.name}</h3>
-                    <p className="text-white/80 text-sm">{product.description}</p>
-                  </div>
+            <div key={index} className="group cursor-pointer relative" onClick={() => setSelectedProduct(product)}>
+            <div className="relative overflow-hidden rounded-lg">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-48 object-contain transform transition-transform group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-start p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="text-white font-semibold text-lg">
+                  <span>{product.name}</span>
+                  <p className="text-sm">{product.description}</p>
                 </div>
               </div>
             </div>
+          </div>
+          
           ))}
         </div>
       </div>
@@ -114,214 +103,113 @@ function ProductCard({ category }: { category: Category }) {
 function ProfilePage() {
   const categories: Category[] = [
     {
-      title: 'Structural Profiles',
+      title: 'Hardware Profiles',
       icon: Box,
-      description: 'Premium aluminum profiles for construction and industrial applications',
+      description: 'Durable and high-quality aluminum profiles for various hardware applications.',
       products: [
         {
-          name: 'Box Bars',
-          description: 'Versatile box-section aluminum profiles for structural applications',
+          name: 'Box Bar',
+          description: 'Aluminum box bars for multiple applications.',
           image: '/images/box 02.jpg',
-          specs: [
-            'Material: High-grade aluminum alloy',
-            'Surface Finish: Mill finish, anodized',
-            'Length: 3.65m, 6.10m standard',
-            'Wall Thickness: 0.9mm to 1.2mm',
-          ],
-          applications: [
-            'Structural frameworks',
-            'Display systems',
-            'Furniture manufacturing',
-            'Industrial applications',
-          ],
-          examples: [
-            '3/4" x 3/4" Box Bar',
-            '2" x 1" Box Bar',
-            '1" x 1" Box Bar',
-            '1.5" x 1.5" Box Bar',
-          ],
+          specs: ['Material: Aluminum', 'Finish: Anodized, powder-coated', 'Sizes: Various options available'],
+          applications: ['Construction', 'Industrial use', 'Furniture'],
+          examples: ['Standard Box Bar', 'Heavy Duty Box Bar', 'Slim Profile Box Bar']
         },
         {
-          name: 'Angles',
-          description: 'L-shaped profiles for corner joints and structural support',
-          image: 'images/logo1.png',
-          specs: [
-            'Material: Premium aluminum alloy',
-            'Finish Options: Natural, anodized',
-            'Standard Lengths: 3.65m, 6.10m',
-            'Thickness Range: 1.0mm to 3.0mm',
-          ],
-          applications: [
-            'Corner reinforcement',
-            'Frame construction',
-            'Support structures',
-            'Decorative trim',
-          ],
-          examples: [
-            '1" x 1" Thick Angle',
-            '1/2" x 1/2" Angle Channel',
-            '3/4" x 3/4" Angle',
-            '1.5" x 1.5" Heavy Duty Angle',
-          ],
-        },
-        {
-          name: 'Round Pipes',
-          description: 'Circular aluminum profiles for various applications',
+          name: 'Round Pipe',
+          description: 'Aluminum round pipes for various uses.',
           image: '/images/roundpipe.jpg',
-          specs: [
-            'Material: Aluminum alloy',
-            'Surface: Smooth finish',
-            'Length Options: 3.65m, 6.10m',
-            'Wall Thickness: 0.9mm to 1.2mm',
-          ],
-          applications: [
-            'Handrails',
-            'Support posts',
-            'Furniture making',
-            'Decorative elements',
-          ],
-          examples: [
-            '5/8" Round Pipe',
-            '1" Round Pipe',
-            '1.5" Round Pipe',
-            '2" Round Pipe',
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Commercial Systems',
-      icon: Layout,
-      description: 'Complete solutions for commercial and retail spaces',
-      products: [
-        {
-          name: 'Shop Front Partitions',
-          description: '100mm premium partition system for commercial spaces',
-          image: 'images/logo1.png',
-          specs: [
-            'Profile Width: 100mm',
-            'Material: Heavy-duty aluminum',
-            'Thickness: 1.2mm to 2.0mm',
-            'Glass Compatibility: 6mm to 12mm',
-          ],
-          applications: [
-            'Retail storefronts',
-            'Office partitions',
-            'Shopping malls',
-            'Commercial buildings',
-          ],
-          examples: [
-            '100mm Single Glazed System',
-            '100mm Double Glazed System',
-            'Corner Posts',
-            'Door Frames',
-          ],
+          specs: ['Material: High-grade aluminum', 'Thickness: 1mm - 3mm', 'Length: 6m'],
+          applications: ['Plumbing', 'Structural support', 'Decorative applications'],
+          examples: ['1" Round Pipe', '2" Round Pipe', 'Heavy Duty Round Pipe']
         },
         {
-          name: 'Sliding Systems',
-          description: 'Advanced sliding door and window solutions',
-          image: 'images/logo1.png',
-          specs: [
-            'Track Options: Single, double, triple',
-            'Profile Thickness: 1.3mm to 1.6mm',
-            'Wheel System: Heavy-duty rollers',
-            'Security: Multi-point locking',
-          ],
-          applications: [
-            'Patio doors',
-            'Room dividers',
-            'Closet systems',
-            'Commercial entrances',
-          ],
-          examples: [
-            '2-Track Sliding Door',
-            '3-Track Sliding Window',
-            'Heavy Duty Sliding System',
-            'Slim Profile Slider',
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Window Systems',
-      icon: SlidersHorizontal,
-      description: 'Energy-efficient window solutions for modern architecture',
-      products: [
-        {
-          name: '60mm Casement Windows',
-          description: 'Standard casement window system with excellent performance',
-          image: 'images/logo1.png',
-          specs: [
-            'Frame Depth: 60mm',
-            'Material: High-strength aluminum',
-            'Weather Seal: Rubber gasket',
-            'Glass: Single or double-glazed',
-          ],
-          applications: [
-            'Residential windows',
-            'Commercial buildings',
-            'Facades',
-            'Skylights',
-          ],
-          examples: [
-            'Single Hinged Casement',
-            'Double Hinged Casement',
-            'Fixed Casement',
-            'Sliding Casement',
-          ],
+          name: 'Angle Bar',
+          description: 'L-shaped aluminum angle bars.',
+          image: '/images/logo.png',
+          specs: ['Material: Aluminum alloy', 'Surface: Smooth, anodized', 'Thickness: 1mm - 5mm'],
+          applications: ['Reinforcement', 'Edge protection', 'Structural supports'],
+          examples: ['1"x1" Angle Bar', '2"x1" Angle Bar', 'Heavy Duty Angle Bar']
         },
         {
-          name: '70mm Premium Windows',
-          description: 'Enhanced thermal performance window system',
-          image: 'images/logo1.png',
-          specs: [
-            'Frame Depth: 70mm',
-            'Thermal Break: 34mm polyamide',
-            'Glass Thickness: Up to 32mm',
-            'Air Tightness: Class 4'
-          ],
-          applications: [
-            'High-end residential',
-            'Commercial buildings',
-            'Green buildings',
-            'Sound-sensitive areas'
-          ],
-          examples: [
-            'Tilt-Turn Window',
-            'Push-Out Casement',
-            'Awning Window',
-            'Picture Window'
-          ]
+          name: 'Curtain Rail Bar',
+          description: 'High-quality aluminum curtain rails.',
+          image: '/images/logo.png',
+          specs: ['Material: Aluminum', 'Finish: Powder-coated', 'Length: Customizable'],
+          applications: ['Homes', 'Offices', 'Hotels'],
+          examples: ['Standard Curtain Rail', 'Heavy Duty Curtain Rail', 'Decorative Curtain Rail']
+        },
+        {
+          name: 'Box Bar with Channel',
+          description: 'Special aluminum box bars with channels.',
+          image: '/images/logo.png',
+          specs: ['Material: Aluminum', 'Customizable slots', 'Different sizes available'],
+          applications: ['Sliding systems', 'Industrial frameworks', 'Architectural applications'],
+          examples: ['Channel Box Bar Small', 'Channel Box Bar Medium', 'Channel Box Bar Large']
         }
-      ],
+      ]
     },
-  ];
+    {
+      title: 'Section Profiles',
+      icon: Layout,
+      description: 'Structural aluminum profiles designed for a wide range of applications.',
+      products: [
+        {
+          name: 'Shop Front',
+          description: 'Aluminum profiles for modern shop fronts.',
+          image: '/images/logo.png',
+          specs: ['Material: High-strength aluminum', 'Customizable sizes', 'Elegant finish'],
+          applications: ['Retail stores', 'Commercial buildings', 'Shopping malls'],
+          examples: ['Standard Shop Front', 'Glass Support Shop Front', 'Heavy Duty Shop Front']
+        },
+        {
+          name: 'Sliding Door',
+          description: 'Aluminum profiles for sliding doors.',
+          image: '/images/logo.png',
+          specs: ['Material: Durable aluminum', 'Track included', 'Various thicknesses'],
+          applications: ['Homes', 'Offices', 'Retail stores'],
+          examples: ['Single Sliding Door', 'Double Sliding Door', 'Heavy Duty Sliding Door']
+        },
+        {
+          name: 'Door Section',
+          description: 'High-quality aluminum door profiles.',
+          image: '/images/logo.png',
+          specs: ['Material: High-grade aluminum', 'Surface: Anodized or powder-coated', 'Customizable dimensions'],
+          applications: ['Homes', 'Offices', 'Hotels'],
+          examples: ['Standard Door Profile', 'Decorative Door Profile', 'Heavy Duty Door Profile']
+        },
+        {
+          name: 'Sliding Window',
+          description: 'Aluminum profiles for sliding windows.',
+          image: '/images/logo.png',
+          specs: ['Material: Lightweight aluminum', 'Smooth sliding mechanism', 'Various colors available'],
+          applications: ['Residential buildings', 'Commercial buildings', 'Hotels'],
+          examples: ['Single Sliding Window', 'Double Sliding Window', 'Heavy Duty Sliding Window']
+        },
+        {
+          name: 'Casement Window',
+          description: 'Casement window aluminum profiles.',
+          image: '/images/logo.png',
+          specs: ['Material: Aluminum alloy', 'Various frame thicknesses', 'Weather-resistant'],
+          applications: ['Homes', 'Offices', 'Architectural projects'],
+          examples: ['Standard Casement Window', 'Decorative Casement Window', 'Heavy Duty Casement Window']
+        }
+      ]
+    }
+];
+
 
   return (
- 
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-6 md:p-8">
+    <div className="min-h-screen bg-gray-100 p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Premium Aluminum Solutions
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Discover our comprehensive range of high-quality aluminum profiles
-            engineered for durability and performance
-          </p>
+        <h1 className="text-4xl font-bold text-gray-900 text-center mb-12">Aluminum Profile Categories</h1>
+        <div className="space-y-8">
+          {categories.map((category, index) => (
+            <ProductCard key={index} category={category} />
+          ))}
         </div>
-     </div>   
-    <div className="p-6">
-      <div className="space-y-8">
-        {categories.map((category, index) => (
-          <ProductCard key={index} category={category} />
-        ))}
       </div>
     </div>
-</div>
-
- 
-    
   );
 }
 

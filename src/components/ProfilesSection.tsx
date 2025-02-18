@@ -1,43 +1,50 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const profiles = [
   {
     id: 'mill-finish',
     title: 'Mill Finish',
     image: 'images/logo1.png',
-    description: 'Natural aluminum finish straight from the extrusion process'
+    description: 'Natural aluminum finish straight from the extrusion process',
   },
   {
     id: 'powder-coat',
     title: 'Powder Coat',
     image: 'images/logo1.png',
-    description: 'Durable and decorative coating available in various colors'
+    description: 'Durable and decorative coating available in various colors',
   },
   {
     id: 'natural-anodized',
     title: 'Natural Anodized',
     image: 'images/logo1.png',
-    description: 'Protective oxide layer with natural metallic appearance'
+    description: 'Protective oxide layer with natural metallic appearance',
   },
   {
     id: 'bright-anodized',
     title: 'Bright Anodized',
     image: 'images/logo1.png',
-    description: 'Highly reflective finish with enhanced corrosion resistance'
-  }
+    description: 'Highly reflective finish with enhanced corrosion resistance',
+  },
 ];
 
 export default function ProfilesSection() {
+  const navigate = useNavigate();
+
+  const handleNavigation = (id: string) => {
+    navigate(`/profiles/${id}`);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Our Aluminium</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {profiles.map((profile) => (
-            <Link
+            <div
               key={profile.id}
-              to={`/profiles/${profile.id}`}
-              className="group"
+              className="group cursor-pointer"
+              onClick={() => handleNavigation(profile.id)}
             >
               <div className="relative overflow-hidden rounded-lg shadow-lg">
                 <img
@@ -50,13 +57,11 @@ export default function ProfilesSection() {
                     <h3 className="text-xl font-semibold text-white mb-2">
                       {profile.title}
                     </h3>
-                    <p className="text-gray-200 text-sm">
-                      {profile.description}
-                    </p>
+                    <p className="text-gray-200 text-sm">{profile.description}</p>
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>
