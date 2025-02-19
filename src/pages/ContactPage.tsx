@@ -52,25 +52,25 @@ export default function ContactPage() {
             <div className="space-y-4">
               <div>
                 <h3 className="text-lg font-medium mb-2">Address</h3>
-                <p className="text-gray-600">123 Business Avenue<br />Industrial District<br />City, State 12345</p>
+                <p className="text-gray-600">No. 413/10, Main Street, Kovil Kulam,<br />Palamunai, Arayampathi,<br />Batticaloa, Sri Lanka</p>
               </div>
               
               <div>
                 <h3 className="text-lg font-medium mb-2">Phone</h3>
-                <p className="text-gray-600">+1 (555) 123-4567</p>
+                <p className="text-gray-600">+94 65 2051 144</p>
               </div>
               
               <div>
                 <h3 className="text-lg font-medium mb-2">Email</h3>
-                <p className="text-gray-600">info@ultraaluminium.com</p>
+                <p className="text-gray-600">Ultra.aluminium2019@gmail.com</p>
               </div>
               
               <div>
                 <h3 className="text-lg font-medium mb-2">Business Hours</h3>
                 <p className="text-gray-600">
-                  Monday - Friday: 9:00 AM - 6:00 PM<br />
-                  Saturday: 9:00 AM - 1:00 PM<br />
-                  Sunday: Closed
+                  Satureday- Thursday: 9:00 AM - 7:00 PM<br />
+                  
+                  Friday: Closed
                 </p>
               </div>
             </div>
