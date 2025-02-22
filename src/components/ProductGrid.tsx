@@ -38,7 +38,7 @@ export default function ProductGrid() {
     <div className="py-24">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide">
-          WHAT WE CREATE, FOR YOUR PREFERENCE
+          OUR SOLUTION , FOR YOUR NEED
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
@@ -51,7 +51,7 @@ export default function ProductGrid() {
                 <img
                   src={product.image}
                   alt={product.title}
-                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-64 object-fill transform group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <div className="p-6">

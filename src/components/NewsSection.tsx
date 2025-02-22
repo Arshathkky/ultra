@@ -20,7 +20,7 @@ export default function NewsSection() {
         "This milestone reflects our unwavering commitment to delivering high-quality products and consistently exceeding customer expectations."
       ],
       image: "/images/banner.jpg",
-      date: "2024-03-15"
+      date: "2025-01-15"
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ export default function NewsSection() {
         "Ultra Aluminium Private Limited is the first company in the Batticaloa District to receive ISO 9001 certification and the second company in the Eastern Province to do so."
       ],
       image: "/images/opening.jpg",
-      date: "2024-03-10"
+      date: "2024-12-17"
     }
   ];
   

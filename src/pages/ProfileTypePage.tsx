@@ -102,6 +102,7 @@ export default function ProfileTypePage() {
       <div className="max-w-7xl mx-auto px-4">
       <h1 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide uppercase">
       Our Aluminium
+      
     </h1>
         <div className="bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="relative h-96">
