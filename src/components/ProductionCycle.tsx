@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "tailwindcss/tailwind.css";
 
 gsap.registerPlugin(ScrollTrigger);
-
 const steps = [
     {
       title: "Baling Aluminium Waste",
@@ -80,70 +79,71 @@ const ProductionCycle = () => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       const sections = gsap.utils.toArray<HTMLElement>(".step");
-
+  
       sections.forEach((section, index) => {
-        const animationType = steps[index].animation;
-        const image = section.querySelector(".image") as HTMLElement;
-        const title = section.querySelector(".title") as HTMLElement;
-
-        const animationTypes: Record<string, gsap.TweenVars> = {
-            "fade-in": { opacity: 0, y: 50 },
-            "slide-in-left": { opacity: 0, x: -100 },
-            "slide-in-right": { opacity: 0, x: 100 },
-            "parallax": { opacity: 0, y: 100, scale: 0.95 },
-            "pulse": { opacity: 0, scale: 1.2, ease: "power1.inOut" }
-          };
-          
-          const animationProps = animationTypes[animationType] || { opacity: 0, y: 50 };
-          
+        const animationType = steps[index].animation as keyof typeof animationTypes; // 👈 Ensuring valid key type
+        const animationTypes = {
+          "fade-in": { opacity: 0, y: 50 },
+          "slide-in-left": { opacity: 0, x: -100 },
+          "slide-in-right": { opacity: 0, x: 100 },
+          "parallax": { opacity: 0, y: 100, scale: 0.95 },
+          "pulse": { opacity: 0, scale: 1.2, ease: "power1.inOut" },
+        };
+  
+        // Ensure `animationType` exists in animationTypes, fallback if not found
+        const animationProps = animationTypes[animationType] ?? { opacity: 0, y: 50 };
+  
         gsap.fromTo(
           section,
-          animationProps,
+          animationProps, // ✅ Type-safe lookup
           {
             opacity: 1,
             x: 0,
             y: 0,
             scale: 1,
-            duration: 3,
+            duration: 2.5,
             ease: "power2.out",
             scrollTrigger: {
               trigger: section,
               start: "top 90%",
               end: "center center",
-              scrub: 2.5,
+              scrub: 2,
             },
           }
         );
       });
     }, containerRef);
-
+  
     return () => ctx.revert();
   }, []);
-
+  
   return (
     <div ref={containerRef} className="bg-white text-black w-full max-w-full mx-auto">
       {steps.map((step, index) => (
         <section
           key={index}
-          className="step min-h-screen flex flex-col justify-center items-center w-full opacity-0 relative overflow-hidden"
+          className="step min-h-screen flex flex-col justify-center items-center w-full opacity-0 relative overflow-hidden px-4 sm:px-8 lg:px-16"
         >
-          <h2 className="title text-5xl font-extrabold mb-6 text-gray-900">{step.title}</h2>
+          {/* Title */}
+          <h2 className="title text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-gray-900 text-center">
+            {step.title}
+          </h2>
 
-          {/* Larger Image Wrapper */}
-          <div className="w-full max-w-5xl h-72 overflow-hidden rounded-lg shadow-lg">
+          {/* Image Wrapper (Full width on mobile, fixed on desktop) */}
+          <div className="w-full max-w-4xl h-52 sm:h-64 md:h-80 overflow-hidden rounded-lg shadow-lg">
             <img
               src={step.image}
               alt={step.title}
-              className="image w-full h-full object-cover"
+              className="image w-full h-full object-contain"
             />
           </div>
 
-          {/* Wider Text Content */}
-          <div className="text w-full max-w-5xl mt-4">
+          {/* Description (Wider on desktop, stacked on mobile) */}
+          <div className="text w-full max-w-4xl mt-4 text-center sm:text-left">
             {step.description.map((para, pIndex) => (
               <p 
                 key={pIndex} 
-                className="mb-4 text-lg leading-relaxed text-gray-700 font-medium text-justify"
+                className="mb-3 text-sm sm:text-base md:text-lg leading-relaxed text-gray-700 font-medium text-justify"
               >
                 {para}
               </p>
