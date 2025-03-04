@@ -36,16 +36,16 @@ export default function ProductGrid() {
 
   return (
     <div className="py-24">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="w-full px-4">
         <h2 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide">
-          OUR SOLUTION , FOR YOUR NEED
+          OUR SOLUTION, FOR YOUR NEED
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
             <Link
               key={product.id}
               to={product.link}
-              className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden 2"
+              className="group bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden"
             >
               <div className="aspect-w-16 aspect-h-9">
                 <img
@@ -55,7 +55,7 @@ export default function ProductGrid() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-3 text-[#1a0179] dark:text-white group-hover:text-blue-600 transition-colors font-extrabold">
+                <h3 className="text-xl font-semibold  mb-3 text-[#1a0179] dark:text-white group-hover:text-blue-600 transition-colors font-extrabold">
                   {product.title}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">{product.description}</p>

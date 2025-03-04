@@ -37,9 +37,9 @@ export default function ProfilesSection() {
 
   return (
     <div className="py-24">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide">PERFECT PICKS, JUST FOR YOU
-          
+      <div className="w-full px-4">
+        <h2 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide">
+          PERFECT PICKS, JUST FOR YOU
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {profiles.map((profile) => (
@@ -52,14 +52,15 @@ export default function ProfilesSection() {
                 <img
                   src={profile.image}
                   alt={profile.title}
-                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
+                {/* Reduced gradient opacity */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent">
                   <div className="absolute bottom-0 p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                    <h3 className="text-xl font-semibold text-[#1a0179] dark:text-white mb-2">
                       {profile.title}
                     </h3>
-                    <p className="text-gray-200 text-sm">{profile.description}</p>
+                    <p className="text-gray-500 text-base">{profile.description}</p>
                   </div>
                 </div>
               </div>

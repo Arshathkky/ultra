@@ -1,9 +1,13 @@
+import { useEffect } from 'react';
 import Certification from '../components/Certification';
 import { sampleImages } from '../data/sampleImages';
 
-import ProfileTypePage from './ProfileTypePage';
 
 export default function AboutPage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page on component mount
+  }, []);
   return (
     <div className="min-h-screen bg-gray-50 py-16">
       <div className="max-w-7xl mx-auto px-4">
@@ -11,7 +15,8 @@ export default function AboutPage() {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-800 mb-6">About Us</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Redefining aluminum manufacturing with quality, innovation, and sustainability.
+          We are ULTRA ALUMINIUM. We manufacture aluminium products and provide aluminium
+          solutions while ensuring the quality expectations of our valued customers.
           </p>
         </div>
         

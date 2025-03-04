@@ -24,5 +24,8 @@ export const sampleImages = {
 
   // Contact and about
   aboutHero: "/images/company.jpg",
-  contactHero: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=1920"
+  contactHero: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=1920",
+
+  // ask order form
+  OrderImages:"/images/logo1.png"
 };
