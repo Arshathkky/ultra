@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MapPin, Phone, ChevronDown, Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  const handleDropdownOpen = (menu: string) => setOpenDropdown(menu);
-  const handleDropdownClose = () => setOpenDropdown(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest(".dropdown")) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const handleLinkClick = () => {
     setIsMobileMenuOpen(false);
@@ -37,12 +47,15 @@ export default function Header() {
             <img src="/images/logo.png" alt="Ultra Aluminium" className="h-12" />
           </Link>
 
+          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8 items-center">
             <Link to="/" className="text-gray-800 font-medium hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition">Home</Link>
-            
-            <div className="relative dropdown"
-              onMouseEnter={() => handleDropdownOpen("aluminium")}
-              onMouseLeave={handleDropdownClose}
+
+            {/* Aluminium Dropdown */}
+            <div
+              className="relative dropdown"
+              onMouseEnter={() => setOpenDropdown("aluminium")}
+              onMouseLeave={() => setOpenDropdown(null)}
             >
               <button className="text-gray-800 font-medium flex items-center space-x-1 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition">
                 <span>Aluminium</span>
@@ -55,9 +68,11 @@ export default function Header() {
               )}
             </div>
 
-            <div className="relative dropdown"
-              onMouseEnter={() => handleDropdownOpen("products")}
-              onMouseLeave={handleDropdownClose}
+            {/* Products Dropdown */}
+            <div
+              className="relative dropdown"
+              onMouseEnter={() => setOpenDropdown("products")}
+              onMouseLeave={() => setOpenDropdown(null)}
             >
               <button className="text-gray-800 font-medium flex items-center space-x-1 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition">
                 <span>Products</span>
@@ -77,6 +92,7 @@ export default function Header() {
             <Link to="/contact" className="text-gray-800 font-medium hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600 transition">Contact</Link>
           </div>
 
+          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden flex items-center text-gray-800 focus:outline-none"
@@ -85,6 +101,47 @@ export default function Header() {
           </button>
         </div>
       </nav>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-white shadow-md">
+          <div className="container mx-auto px-4 py-4 space-y-2">
+            <Link to="/" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Home</Link>
+
+            {/* Mobile Aluminium Dropdown */}
+            <div className="relative dropdown">
+              <button onClick={() => setOpenDropdown(openDropdown === "aluminium" ? null : "aluminium")} className="block w-full text-left text-gray-800 font-medium hover:text-blue-600 py-2 flex justify-between">
+                <span>Aluminium</span>
+                <ChevronDown size={16} />
+              </button>
+              {openDropdown === "aluminium" && (
+                <div className="mt-1 space-y-2 pl-4">
+                  <Link to="/production" className="block text-gray-800 pl-4 hover:text-blue-600 py-1" onClick={handleLinkClick}>Aluminium Products</Link>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Products Dropdown */}
+            <div className="relative dropdown">
+              <button onClick={() => setOpenDropdown(openDropdown === "products" ? null : "products")} className="block w-full text-left text-gray-800 font-medium hover:text-blue-600 py-2 flex justify-between">
+                <span>Products</span>
+                <ChevronDown size={16} />
+              </button>
+              {openDropdown === "products" && (
+                <div className="mt-1 space-y-2 pl-4">
+                  <Link to="/profiles" className="block text-gray-800 pl-4 hover:text-blue-600 py-1" onClick={handleLinkClick}>Profiles</Link>
+                  <Link to="/net" className="block text-gray-800 pl-4 hover:text-blue-600 py-1" onClick={handleLinkClick}>Net</Link>
+                  <Link to="/solar" className="block text-gray-800 pl-4 hover:text-blue-600 py-1" onClick={handleLinkClick}>Solar Accessories</Link>
+                </div>
+              )}
+            </div>
+
+            <Link to="/dealers" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Dealers</Link>
+            <Link to="/about" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>About Us</Link>
+            <Link to="/contact" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Contact</Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
