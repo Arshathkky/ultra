@@ -1,51 +1,92 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { FaAngleDoubleRight } from "react-icons/fa"; // Importing React Icon
+import { MoveRight, Factory, Award, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection: React.FC = () => {
+  const sectionRef = useRef(null);
+  const timelineRef = useRef<gsap.core.Timeline | null>(null);
+
   useEffect(() => {
-    gsap.fromTo(
-      ".animated-heading",
-      { opacity: 0, scale: 0.8 },
-      { opacity: 1, scale: 1, duration: 1, ease: "power3.out" }
-    );
+    timelineRef.current = gsap.timeline({
+      defaults: { ease: "power3.out" }
+    });
+
+    timelineRef.current
+      .fromTo(".hero-title", 
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1 }
+      )
+      .fromTo(".hero-subtitle",
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8 },
+        "-=0.5"
+      )
+      .fromTo(".feature-card",
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.2, duration: 0.6 },
+        "-=0.3"
+      )
+      .fromTo(".cta-button",
+        { scale: 0.9, opacity: 0 },
+        { scale: 1, opacity: 1, duration: 0.5 },
+        "-=0.2"
+      );
+
+    return () => {
+      timelineRef.current?.kill();
+    };
   }, []);
 
   return (
-    <section className="w-full h-screen flex flex-col justify-center items-center bg-gray-50">
-      <div className="flex items-center justify-center w-full">
-        {/* Left Image */}
-        <div className="w-1/5 h-full py-4 hidden sm:block">
-          <img src="/images/logo1.png" alt="Left Side" className="w-full h-full object-contain" />
-        </div>
+    <section ref={sectionRef} className="relative min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      
+      <div className="container mx-auto px-4 py-16 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Main Content */}
+          <div className="text-center mb-16">
+            <h1 className="hero-title text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-indigo-600">
+              Manufacturing Excellence in
+              <span className="block mt-2">Aluminium Extrusion</span>
+            </h1>
+            <p className="hero-subtitle text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
+              ULTRA ALUMINIUM delivers premium quality aluminium solutions, setting new standards
+              in Sri Lanka's manufacturing industry through innovation and precision.
+            </p>
+          </div>
 
-        {/* Centered Text Content */}
-        <div className="w-full sm:w-3/5 text-center px-6 md:px-12">
-          <h2 className="text-2xl sm:text-5xl md:text-4xl font-bold leading-tight ">
-            Manufacturing Aluminium Extrusion Profiles in&nbsp;
-            <span className="animated-heading" style={{ color: "#1a0179" }}>
-              Sri Lanka
-            </span>
-          </h2>
-          <p className="mt-6 text-lg md:text-xl text-stone-900 text-justify">
-            We are ULTRA ALUMINIUM. We manufacture aluminium products and provide aluminium
-            solutions while ensuring the quality expectations of our valued customers.
-          </p>
-          
-        </div>
+          {/* Feature Cards */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <Factory className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">State-of-the-Art Facility</h3>
+              <p className="text-gray-600">Advanced manufacturing capabilities ensuring precise specifications and superior finish.</p>
+            </div>
+            <div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <Award className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Quality Assured</h3>
+              <p className="text-gray-600">Rigorous quality control processes meeting international standards.</p>
+            </div>
+            <div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+              <Shield className="w-12 h-12 text-blue-600 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Customer Trust</h3>
+              <p className="text-gray-600">Building lasting relationships through reliability and excellence.</p>
+            </div>
+          </div>
 
-        {/* Right Image */}
-        <div className="w-1/5 h-full py-4 hidden sm:block">
-          <img src="/images/logo1.png" alt="Right Side" className="w-full h-full object-contain" />
+          {/* CTA Button */}
+          <div className="text-center">
+            <Link to="/about" className="cta-button inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-900 to-indigo-600 text-white text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+              Discover More <MoveRight className="w-5 h-5 animate-pulse" />
+            </Link>
+          </div>
         </div>
       </div>
 
-      <button className="mt-8 flex items-center justify-center gap-3 px-6 py-3 text-white text-lg sm:text-xl font-semibold bg-[#1a0179] rounded-full shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
-            <FaAngleDoubleRight className="text-xl animate-spin-slow" /> <Link to={'/about'}> Read More </Link>
-           
-          </button>
-      
+      {/* Decorative Elements */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-gray-100 to-transparent"></div>
     </section>
   );
 };
