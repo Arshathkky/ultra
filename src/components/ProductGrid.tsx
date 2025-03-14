@@ -107,7 +107,7 @@ export default function ProductGrid() {
 
   return (
     <section ref={sectionRef} className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="product-heading text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-indigo-600 mb-6">
             Our Solutions, Your Success
@@ -135,7 +135,7 @@ export default function ProductGrid() {
                     <img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-64 object-fit transform group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
