@@ -109,7 +109,7 @@ export default function ProductGrid() {
     <section ref={sectionRef} className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
       <div className=" px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="product-heading text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-indigo-600 mb-6">
+          <h2 className="product-heading text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-customBlue to-indigo-600 mb-6">
             Our Solutions, Your Success
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">

@@ -159,7 +159,7 @@ const ProfilesSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-customBlue to-indigo-600">
           Aluminum Finishing Solutions
         </h1>
         <p className="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto">

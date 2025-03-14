@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { sampleImages } from '../data/sampleImages';
+import { useEffect } from 'react';
 
 const profiles = {
   'mill-finish': {
@@ -49,6 +50,9 @@ const profiles = {
 };
 
 export default function ProfileTypePage() {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    },);
   const { id } = useParams();
   
   if (!id) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Layout, X, ChevronRight, ArrowRight, Grid } from 'lucide-react';
 
 interface Product {
@@ -115,6 +115,9 @@ function ProductCard({ category }: { category: Category }) {
 }
 
 function ProfilePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },);
   const categories: Category[] = [
     {
       title: 'Hardware Profiles',

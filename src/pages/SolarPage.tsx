@@ -1,6 +1,10 @@
+import { useEffect } from 'react';
 import { sampleImages } from '../data/sampleImages';
 
 export default function SolarPage() {
+   useEffect(() => {
+      window.scrollTo(0, 0);
+    },);
   const products = [
     {
       title: "Mounting Rails",

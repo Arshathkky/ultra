@@ -1,6 +1,10 @@
+import { useEffect } from 'react';
 import { sampleImages } from '../data/sampleImages';
 
 export default function NetPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },);
   const features = [
     {
       title: "Security",

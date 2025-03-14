@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
   <div className="relative z-10 w-full">
     {/* Main Content */}
     <div className="text-center mb-16 w-full">
-      <h1 className="hero-title text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-indigo-600">
+      <h1 className="hero-title text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-customBlue to-indigo-600">
         Manufacturing Excellence in
         <span className="block mt-2">Aluminium Extrusion</span>
       </h1>
