@@ -8,7 +8,7 @@ import SolarPage from './pages/SolarPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ProfileTypePage from './pages/ProfileTypePage';
-import BranchCard from './components/BranchCard';
+import BranchCard from './components/Dealers';
 import ProductionCycle from './components/ProductionCycle';
 
 

@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { sampleImages } from "../data/sampleImages"; // Replace with your image path
 
-const AskOrOrderForm: React.FC = () => {
+const AskForm: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [subject, setSubject] = useState("Ask a Question");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission (send to API, email, etc.)
-    console.log({ name, email, message, subject });
+    console.log({ name, email, message });
     alert("Your request has been submitted!");
+    
+    // Clear input fields after submission
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -20,7 +23,7 @@ const AskOrOrderForm: React.FC = () => {
       <div className="w-full h-64 md:h-full">
         <img
           src={sampleImages.OrderImages} // Replace with your desired image
-          alt="Order or Ask"
+          alt="Ask"
           className="w-full h-full object-contain"
         />
       </div>
@@ -29,7 +32,7 @@ const AskOrOrderForm: React.FC = () => {
       <div className="w-full h-auto md:h-full bg-white p-4 md:p-0 flex items-center justify-center">
         <div className="w-full max-w-lg p-6">
           <h2 className="text-3xl font-semibold text-[#1a0179] text-center mb-6">
-            Ask a Question or Place an Order
+            Ask a Question
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -63,22 +66,6 @@ const AskOrOrderForm: React.FC = () => {
               />
             </div>
 
-            {/* Subject Selector */}
-            <div>
-              <label htmlFor="subject" className="block text-lg font-semibold text-gray-700 mb-2">
-                Subject
-              </label>
-              <select
-                id="subject"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a0179]"
-              >
-                <option value="Ask a Question">Ask a Question</option>
-                <option value="Place an Order">Place an Order</option>
-              </select>
-            </div>
-
             {/* Message Input */}
             <div>
               <label htmlFor="message" className="block text-lg font-semibold text-gray-700 mb-2">
@@ -110,4 +97,4 @@ const AskOrOrderForm: React.FC = () => {
   );
 };
 
-export default AskOrOrderForm;
+export default AskForm;
