@@ -180,7 +180,6 @@ export default function BranchCard() {
         ))}
       </div>
 
-<<<<<<< HEAD
       {/* Dealer Details Modal */}
       {selectedDealer && (
         <div
@@ -213,31 +212,6 @@ export default function BranchCard() {
             <p className="text-gray-600">
               <strong>Phone:</strong> {selectedDealer.phone}
             </p>
-=======
-      {/* Modal for Dealer Details */}
-      {selectedDealer && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-4">
-          <div
-            ref={modalRef}
-            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 relative"
-          >
-            <button
-              className="absolute top-4 right-4 text-gray-500 hover:text-red-500"
-              onClick={() => setSelectedDealer(null)}
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <div className="flex flex-col items-center">
-              <img src={selectedDealer.image} alt={selectedDealer.name} className="h-32 object-contain mb-4" />
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">{selectedDealer.name}</h2>
-              <p className="text-gray-600 mb-4 text-center">{selectedDealer.description}</p>
-              <div className="w-full text-left space-y-2">
-                <p className="flex items-center text-gray-700"><MapPin className="w-5 h-5 mr-2" /> {selectedDealer.location}</p>
-                <p className="flex items-center text-gray-700"><Mail className="w-5 h-5 mr-2" /> {selectedDealer.contact}</p>
-                <p className="flex items-center text-gray-700"><Phone className="w-5 h-5 mr-2" /> {selectedDealer.phone}</p>
-              </div>
-            </div>
->>>>>>> 6578d63e620d8b9c15abbfd6411325f2e9d47c74
           </div>
         </div>
       )}
