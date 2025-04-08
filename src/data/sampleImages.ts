@@ -1,10 +1,9 @@
 export const sampleImages = {
   // Factory and industrial images
-  casting: "images/logo.png",
-  extrusion: "images/logo.png",
+  casting: "images/home-slider.webp",
+  extrusion: "images/hero-banner1.jpg",
   airPollution: "images/logo.png",
-  powderCoating: "images/logo.png",
-  anodizing: "images/logo.png",
+ 
   
   // Product images
   extrusionProfiles: "/images/extrusion.jpg",

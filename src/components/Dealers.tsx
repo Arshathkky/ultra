@@ -111,9 +111,15 @@ export default function BranchCard() {
     return acc;
   }, {} as Record<string, Dealer[]>);
 
+  const closeModal = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setSelectedDealer(null);
+    }
+  };
+
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16">
-      <div className=" px-4 sm:px-6 lg:px-8">
+      <div className="px-4 sm:px-6 lg:px-8">
         {/* Search Bar */}
         <div className="max-w-2xl mx-auto mb-12">
           <div className="relative">
@@ -153,6 +159,42 @@ export default function BranchCard() {
           </div>
         ))}
       </div>
+
+      {/* Dealer Details Modal */}
+      {selectedDealer && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
+          onClick={closeModal}
+        >
+          <div className="bg-white rounded-lg p-8 w-96 max-w-full">
+            <button
+              onClick={() => setSelectedDealer(null)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <img
+              src={selectedDealer.image}
+              alt={selectedDealer.name}
+              className="w-full h-48 object-contain mb-6"
+            />
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{selectedDealer.name}</h3>
+            <p className="text-gray-600 mb-4">{selectedDealer.description}</p>
+            <p className="text-gray-600 mb-2">
+              <strong>Location:</strong> {selectedDealer.location}
+            </p>
+            <p className="text-gray-600 mb-2">
+              <strong>District:</strong> {selectedDealer.district}
+            </p>
+            <p className="text-gray-600 mb-2">
+              <strong>Contact:</strong> {selectedDealer.contact}
+            </p>
+            <p className="text-gray-600">
+              <strong>Phone:</strong> {selectedDealer.phone}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

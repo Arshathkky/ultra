@@ -45,6 +45,13 @@ export default function NewsSection() {
     setSelectedNews(null);
   };
 
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    // Close the modal only if the backdrop (the semi-transparent overlay) is clicked
+    if ((e.target as HTMLElement).classList.contains("modal-backdrop")) {
+      closeModal();
+    }
+  };
+
   return (
     <div className="py-16">
       <div className="w-full px-4">
@@ -82,7 +89,10 @@ export default function NewsSection() {
 
       {/* Popup Modal */}
       {selectedNews && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+        <div
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 modal-backdrop"
+          onClick={handleBackdropClick}
+        >
           <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 relative max-h-[80vh] overflow-y-auto">
             {/* Close Button */}
             <button

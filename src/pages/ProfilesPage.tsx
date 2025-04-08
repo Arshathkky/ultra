@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Layout, X, ChevronRight, ArrowRight, Grid } from 'lucide-react';
+import React, { useEffect, useState, useRef } from 'react';
+import { Box, Layout, X, ChevronRight, ArrowRight } from 'lucide-react';
 
 interface Product {
   name: string;
@@ -18,9 +18,29 @@ interface Category {
 }
 
 function ProductModal({ product, onClose }: { product: Product; onClose: () => void }) {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  // Close the modal if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [onClose]);
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg max-w-4xl w-full p-6 relative max-h-[90vh] overflow-y-auto">
+      <div
+        ref={modalRef}
+        className="bg-white rounded-lg max-w-4xl w-full p-6 relative max-h-[90vh] overflow-y-auto"
+      >
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
@@ -82,32 +102,31 @@ function ProductCard({ category }: { category: Category }) {
         </div>
         <p className="text-gray-600 mb-6">{category.description}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  {category.products.map((product, index) => (
-    <div
-      key={index}
-      className="group cursor-pointer relative"
-      onClick={() => setSelectedProduct(product)}
-    >
-      <div className="relative overflow-hidden rounded-lg">
-        {/* Image with hover effect */}
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-48 object-contain transform transition-transform duration-300 group-hover:scale-105"
-        />
+          {category.products.map((product, index) => (
+            <div
+              key={index}
+              className="group cursor-pointer relative"
+              onClick={() => setSelectedProduct(product)}
+            >
+              <div className="relative overflow-hidden rounded-lg">
+                {/* Image with hover effect */}
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-48 object-contain transform transition-transform duration-300 group-hover:scale-105"
+                />
 
-        {/* Description overlay with fade-in effect */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-start p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="text-white font-semibold text-lg">
-            <span>{product.name}</span>
-            <p className="text-sm">{product.description}</p>
-          </div>
+                {/* Description overlay with fade-in effect */}
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-start p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-white font-semibold text-lg">
+                    <span>{product.name}</span>
+                    <p className="text-sm">{product.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </div>
-  ))}
-</div>
-
       </div>
       {selectedProduct && <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />}
     </div>
@@ -117,7 +136,8 @@ function ProductCard({ category }: { category: Category }) {
 function ProfilePage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  },);
+  }, []);
+
   const categories: Category[] = [
     {
       title: 'Hardware Profiles',
@@ -213,13 +233,14 @@ function ProfilePage() {
         }
       ]
     }
-];
-
+  ];
 
   return (
     <div className="min-h-screen bg-gray-100 p-6 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide uppercase">Aluminum Profile Categories</h1>
+        <h1 className="text-4xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide uppercase">
+          Aluminum Profile Categories
+        </h1>
         <div className="space-y-8">
           {categories.map((category, index) => (
             <ProductCard key={index} category={category} />
