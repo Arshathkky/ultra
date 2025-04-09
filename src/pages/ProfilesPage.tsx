@@ -113,7 +113,7 @@ function ProductCard({ category }: { category: Category }) {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-48 object-contain transform transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-48 object-cover transform transition-transform duration-300 group-hover:scale-105"
                 />
 
                 {/* Description overlay with fade-in effect */}
@@ -163,7 +163,7 @@ function ProfilePage() {
         {
           name: 'Angle Bar',
           description: 'L-shaped aluminum angle bars.',
-          image: '/images/logo.png',
+          image: '/images/aluminium-angle1.webp',
           specs: ['Material: Aluminum alloy', 'Surface: Smooth, anodized', 'Thickness: 1mm - 5mm'],
           applications: ['Reinforcement', 'Edge protection', 'Structural supports'],
           examples: ['1"x1" Angle Bar', '2"x1" Angle Bar', 'Heavy Duty Angle Bar']
@@ -171,7 +171,7 @@ function ProfilePage() {
         {
           name: 'Curtain Rail Bar',
           description: 'High-quality aluminum curtain rails.',
-          image: '/images/logo.png',
+          image: '/images/curtain.jpg',
           specs: ['Material: Aluminum', 'Finish: Powder-coated', 'Length: Customizable'],
           applications: ['Homes', 'Offices', 'Hotels'],
           examples: ['Standard Curtain Rail', 'Heavy Duty Curtain Rail', 'Decorative Curtain Rail']
