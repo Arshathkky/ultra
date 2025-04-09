@@ -53,7 +53,7 @@ function ProductModal({ product, onClose }: { product: Product; onClose: () => v
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-auto object-contain rounded-lg mb-4"
+              className="w-full h-auto object-cover rounded-lg mb-4"
             />
             <h3 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h3>
             <p className="text-gray-600 mb-4">{product.description}</p>
@@ -194,7 +194,7 @@ function ProfilePage() {
         {
           name: 'Shop Front',
           description: 'Aluminum profiles for modern shop fronts.',
-          image: '/images/logo.png',
+          image: '/images/shopfront.jpg',
           specs: ['Material: High-strength aluminum', 'Customizable sizes', 'Elegant finish'],
           applications: ['Retail stores', 'Commercial buildings', 'Shopping malls'],
           examples: ['Standard Shop Front', 'Glass Support Shop Front', 'Heavy Duty Shop Front']
@@ -202,7 +202,7 @@ function ProfilePage() {
         {
           name: 'Sliding Door',
           description: 'Aluminum profiles for sliding doors.',
-          image: '/images/logo.png',
+          image: '/images/slidingdoor.jpg',
           specs: ['Material: Durable aluminum', 'Track included', 'Various thicknesses'],
           applications: ['Homes', 'Offices', 'Retail stores'],
           examples: ['Single Sliding Door', 'Double Sliding Door', 'Heavy Duty Sliding Door']
@@ -218,7 +218,7 @@ function ProfilePage() {
         {
           name: 'Sliding Window',
           description: 'Aluminum profiles for sliding windows.',
-          image: '/images/logo.png',
+          image: '/images/slidingwindow.jpg',
           specs: ['Material: Lightweight aluminum', 'Smooth sliding mechanism', 'Various colors available'],
           applications: ['Residential buildings', 'Commercial buildings', 'Hotels'],
           examples: ['Single Sliding Window', 'Double Sliding Window', 'Heavy Duty Sliding Window']
@@ -226,7 +226,7 @@ function ProfilePage() {
         {
           name: 'Casement Window',
           description: 'Casement window aluminum profiles.',
-          image: '/images/logo.png',
+          image: '/images/casement.jpg',
           specs: ['Material: Aluminum alloy', 'Various frame thicknesses', 'Weather-resistant'],
           applications: ['Homes', 'Offices', 'Architectural projects'],
           examples: ['Standard Casement Window', 'Decorative Casement Window', 'Heavy Duty Casement Window']

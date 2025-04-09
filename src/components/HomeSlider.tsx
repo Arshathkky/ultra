@@ -36,7 +36,7 @@ export default function CustomFramedSlider() {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [isMobile]);

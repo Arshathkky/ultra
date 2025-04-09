@@ -64,7 +64,7 @@ export default function NewsSection() {
             <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md w-full">
               {/* Image Container with Fixed Size */}
               <div className="w-full h-64 overflow-hidden flex justify-center items-center bg-gray-200">
-                <img src={item.image} alt={item.title} className="w-full h-96 object-cover" />
+                <img src={item.image} alt={item.title} className="w-full h-96object-cover" />
               </div>
 
               <div className="p-6">
