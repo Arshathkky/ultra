@@ -1,0 +1,92 @@
+import React, { useState } from "react";
+
+const AskForms: React.FC = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log({ name, email, message });
+    alert("Your request has been submitted!");
+    
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Form Container */}
+      <div className="w-full h-full bg-white p-4 flex items-center justify-center">
+        <div className="w-full max-w-lg p-6">
+          <h2 className="text-3xl font-semibold text-[#1a0179] text-center mb-6">
+            Ask a Question
+          </h2>
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Name Input */}
+            <div>
+              <label htmlFor="name" className="block text-lg font-semibold text-gray-700 mb-2">
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a0179]"
+                placeholder="Enter your name"
+              />
+            </div>
+
+            {/* Email Input */}
+            <div>
+              <label htmlFor="email" className="block text-lg font-semibold text-gray-700 mb-2">
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a0179]"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            {/* Message Input */}
+            <div>
+              <label htmlFor="message" className="block text-lg font-semibold text-gray-700 mb-2">
+                Your Message
+              </label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+                rows={5}
+                className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#1a0179]"
+                placeholder="Type your message here..."
+              />
+            </div>
+
+            {/* Submit Button */}
+            <div className="text-center">
+              <button
+                type="submit"
+                className="px-6 py-3 text-lg font-semibold text-white bg-[#1a0179] rounded-full hover:bg-opacity-90 transition duration-300"
+              >
+                Submit Request
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AskForms;
