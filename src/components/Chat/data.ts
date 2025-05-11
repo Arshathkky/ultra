@@ -4,19 +4,12 @@ export const users: User[] = [
   {
     id: 1,
     name: 'Azeem',
-    avatar: 'https://wa.me/message/RIEION6G45GFM1',
+    avatar: 'https://i.pravatar.cc/150?img=2',
     status: 'Let’s connect!',
     lastSeen: 'online',
     phone: '+94 777904783' // 👈 WhatsApp phone number
   },
-  {
-    id: 2,
-    name: 'Bob',
-    avatar: 'https://i.pravatar.cc/150?img=2',
-    status: 'Busy right now',
-    lastSeen: 'yesterday at 5:45 PM',
-    phone: '919812345678'
-  },
+  
   {
     id: 3,
     name: 'Charlie',
