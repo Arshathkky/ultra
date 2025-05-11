@@ -3,11 +3,11 @@ import { User } from './chat';
 export const users: User[] = [
   {
     id: 1,
-    name: 'Alice',
-    avatar: 'https://i.pravatar.cc/150?img=1',
+    name: 'Azeem',
+    avatar: 'https://wa.me/message/RIEION6G45GFM1',
     status: 'Let’s connect!',
     lastSeen: 'online',
-    phone: '919876543210' // 👈 WhatsApp phone number
+    phone: '+94 777904783' // 👈 WhatsApp phone number
   },
   {
     id: 2,
