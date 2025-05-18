@@ -46,7 +46,7 @@ export default function Header() {
 
       {/* Navigation bar fixed BELOW phone/address bar */}
       <nav
-        className="bg-white fixed left-0 right-0 z-50 shadow-md"
+        className="bg-white fixed left-0 right-0 z-50 shadow-md "
         style={{ top: "30px" }} // adjust if your phone/address bar height changes
       >
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">

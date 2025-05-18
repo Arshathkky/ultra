@@ -18,7 +18,7 @@ export default function App() {
       <div className="flex flex-col min-h-screen bg-main">
 
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow ">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/profiles" element={<ProfilesPage />} />

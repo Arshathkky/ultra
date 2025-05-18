@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
+    <section ref={sectionRef} className="relative w-full min-h-full pb  bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
   {/* Background Pattern */}
   <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
