@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { MoveRight, Factory, Award, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-import iso from "/images/ISO_9001-20151.png"
+import iso from "/images/ISO.png"
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef(null);

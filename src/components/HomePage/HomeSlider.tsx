@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { sampleImages } from '../data/sampleImages';
+import { sampleImages } from '../../data/sampleImages';
 
 const slides = [
   {
@@ -19,6 +19,7 @@ const slides = [
 export default function CustomFramedSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [autoplayPaused, setAutoplayPaused] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -32,25 +33,47 @@ export default function CustomFramedSlider() {
   }, []);
 
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile || autoplayPaused) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 7000);
+    }, 6000);
 
     return () => clearInterval(interval);
-  }, [isMobile]);
+  }, [isMobile, autoplayPaused]);
+
+  // Resume autoplay after 5 seconds of inactivity
+  useEffect(() => {
+    if (!autoplayPaused) return;
+    
+    const timeout = setTimeout(() => {
+      setAutoplayPaused(false);
+    }, 5000);
+    
+    return () => clearTimeout(timeout);
+  }, [autoplayPaused]);
 
   const getImage = (offset: number) => {
     const index = (currentIndex + offset + slides.length) % slides.length;
     return slides[index];
   };
 
+  const handleImageClick = (offset: number) => {
+    if (isMobile) return;
+    
+    setCurrentIndex((prev) => (prev + offset + slides.length) % slides.length);
+    setAutoplayPaused(true);
+  };
+
   return (
     <div className="w-full flex justify-center items-center gap-4 py-10 px-4 transition-all duration-500">
       {/* Left Frame - hidden on mobile */}
       {!isMobile && (
-        <div className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500">
+        <div 
+          className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500 cursor-pointer hover:opacity-90 hover:shadow-lg"
+          onClick={() => handleImageClick(-1)}
+          title={`View ${getImage(-1).title}`}
+        >
           <img
             src={getImage(-1).image}
             alt={getImage(-1).title}
@@ -66,11 +89,18 @@ export default function CustomFramedSlider() {
           alt={getImage(0).title}
           className="w-full h-full object-fill transition-all duration-500"
         />
+        <div className="text-center mt-2 font-medium text-gray-700">
+          {getImage(0).title}
+        </div>
       </div>
 
       {/* Right Frame - hidden on mobile */}
       {!isMobile && (
-        <div className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500">
+        <div 
+          className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500 cursor-pointer hover:opacity-90 hover:shadow-lg"
+          onClick={() => handleImageClick(1)}
+          title={`View ${getImage(1).title}`}
+        >
           <img
             src={getImage(1).image}
             alt={getImage(1).title}
