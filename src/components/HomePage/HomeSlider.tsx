@@ -19,6 +19,7 @@ const slides = [
 export default function CustomFramedSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [autoplayPaused, setAutoplayPaused] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -32,14 +33,25 @@ export default function CustomFramedSlider() {
   }, []);
 
   useEffect(() => {
-    if (isMobile) return;
+    if (isMobile || autoplayPaused) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 7000);
+    }, 6000);
 
     return () => clearInterval(interval);
-  }, [isMobile]);
+  }, [isMobile, autoplayPaused]);
+
+  // Resume autoplay after 5 seconds of inactivity
+  useEffect(() => {
+    if (!autoplayPaused) return;
+    
+    const timeout = setTimeout(() => {
+      setAutoplayPaused(false);
+    }, 5000);
+    
+    return () => clearTimeout(timeout);
+  }, [autoplayPaused]);
 
   const getImage = (offset: number) => {
     const index = (currentIndex + offset + slides.length) % slides.length;
@@ -84,15 +96,11 @@ export default function CustomFramedSlider() {
 
       {/* Right Frame - hidden on mobile */}
       {!isMobile && (
-<<<<<<< HEAD
-        <div className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500">
-=======
         <div 
           className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500 cursor-pointer hover:opacity-90 hover:shadow-lg"
           onClick={() => handleImageClick(1)}
           title={`View ${getImage(1).title}`}
         >
->>>>>>> 61944a50593258ab91bca8c584932022c7b8ec41
           <img
             src={getImage(1).image}
             alt={getImage(1).title}
@@ -102,8 +110,4 @@ export default function CustomFramedSlider() {
       )}
     </div>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 61944a50593258ab91bca8c584932022c7b8ec41
