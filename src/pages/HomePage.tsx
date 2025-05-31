@@ -1,4 +1,4 @@
-import HomeSlider from '../components//HomePage/HomeSlider';
+import HomeSlider from '../components/HomePage/HomeSlider';
 import ProductGrid from '../components/ProductGrid';
 import ProfilesSection from '../components/ProfilesSection';
 import NewsSection from '../components/NewsSection';

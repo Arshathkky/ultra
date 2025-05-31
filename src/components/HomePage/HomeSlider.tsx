@@ -46,11 +46,22 @@ export default function CustomFramedSlider() {
     return slides[index];
   };
 
+  const handleImageClick = (offset: number) => {
+    if (isMobile) return;
+    
+    setCurrentIndex((prev) => (prev + offset + slides.length) % slides.length);
+    setAutoplayPaused(true);
+  };
+
   return (
     <div className="w-full flex justify-center items-center gap-4 py-10 px-4 transition-all duration-500">
       {/* Left Frame - hidden on mobile */}
       {!isMobile && (
-        <div className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500">
+        <div 
+          className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500 cursor-pointer hover:opacity-90 hover:shadow-lg"
+          onClick={() => handleImageClick(-1)}
+          title={`View ${getImage(-1).title}`}
+        >
           <img
             src={getImage(-1).image}
             alt={getImage(-1).title}
@@ -66,11 +77,22 @@ export default function CustomFramedSlider() {
           alt={getImage(0).title}
           className="w-full h-full object-fill transition-all duration-500"
         />
+        <div className="text-center mt-2 font-medium text-gray-700">
+          {getImage(0).title}
+        </div>
       </div>
 
       {/* Right Frame - hidden on mobile */}
       {!isMobile && (
+<<<<<<< HEAD
         <div className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500">
+=======
+        <div 
+          className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md transition-all duration-500 cursor-pointer hover:opacity-90 hover:shadow-lg"
+          onClick={() => handleImageClick(1)}
+          title={`View ${getImage(1).title}`}
+        >
+>>>>>>> 61944a50593258ab91bca8c584932022c7b8ec41
           <img
             src={getImage(1).image}
             alt={getImage(1).title}
@@ -80,4 +102,8 @@ export default function CustomFramedSlider() {
       )}
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 61944a50593258ab91bca8c584932022c7b8ec41
