@@ -1,8 +1,8 @@
 export const sampleImages = {
   // Factory and industrial images
-  casting: "images/home-slider.webp",
-  extrusion: "images/hero-banner1.jpg",
-  airPollution: "images/logo.png",
+  casting: "images/Home/Home1.jpg",
+  extrusion: "images/Home/Home2.jpg",
+  airPollution: "images/Home/Home3.jpg",
  
   
   // Product images
