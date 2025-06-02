@@ -56,10 +56,11 @@ export default function Header() {
 
       {/* Main Nav */}
       <nav
-        className={`bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'shadow-md' : ''}`}
+         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 shadow-md backdrop-blur-md' : 'bg-transparent'}`}
+
         style={{ transform: scrolled ? 'translateY(0)' : 'translateY(40px)' }}
       >
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-2 py-2 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <div className="h-10 w-10  rounded-md flex items-center justify-center">
               <img src="/images/logo1.png" className="h-14 w-16" />
