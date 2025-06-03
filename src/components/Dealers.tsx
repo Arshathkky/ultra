@@ -18,46 +18,167 @@ type Dealer = {
 
 const dealers: Dealer[] = [
   {
-    id: 1,
-    name: "H2 FABRICATE",
-    image: "images/logo1.png",
-    description: "Premier authorized dealer specializing in custom aluminum solutions.",
-    location: "42 Main Street, Colombo 03",
-    district: "Colombo",
-    contact: "colombo.aluminum@example.com",
-    phone: "+94 11 234 5678"
+    "id": 1,
+    "name": "A.G.C.N.Jayasooriya",
+    "location": "A.G.C.N.Jayasooriya",
+    "district": "",
+    "phone": "",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
   },
   {
-    id: 2,
-    name: "Kandy Metal Works",
-    image: "images/logo1.png",
-    description: "Expert aluminum fabrication and installation services.",
-    location: "15 Temple Road, Kandy",
-    district: "Kandy",
-    contact: "kandy.metalworks@example.com",
-    phone: "+94 81 234 5678"
+    "id": 2,
+    "name": "Amex Trading",
+    "location": "Amex Trading, Kandy",
+    "district": "Kandy",
+    "phone": "0775212320",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
   },
   {
-    id: 3,
-    name: "Galle Aluminum Solutions",
-    image: "images/logo1.png",
-    description: "Specialized in architectural aluminum applications.",
-    location: "78 Fort Road, Galle",
-    district: "Galle",
-    contact: "galle.aluminum@example.com",
-    phone: "+94 91 234 5678"
+    "id": 3,
+    "name": "Asian Picture Palace",
+    "location": "Asian Picture Palace, Kurunegala",
+    "district": "Kurunegala",
+    "phone": "",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
   },
   {
-    id: 4,
-    name: "Jaffna Metal Craft",
-    image: "images/logo1.png",
-    description: "Quality aluminum products and expert consultation.",
-    location: "25 Hospital Road, Jaffna",
-    district: "Jaffna",
-    contact: "jaffna.metalcraft@example.com",
-    phone: "+94 21 234 5678"
+    "id": 4,
+    "name": "Buhari Construction",
+    "location": "Buhari Construction, Kaduruwela",
+    "district": "Polonnaruwa",
+    "phone": "",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 5,
+    "name": "City Picture Palace",
+    "location": "City Picture Palace, Kaduruwela",
+    "district": "Polonnaruwa",
+    "phone": "777327094",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 6,
+    "name": "DD Marketing Service (PVT) Ltd",
+    "location": "DD Marketing Service (PVT) Ltd, Hedeniya",
+    "district": "Kandy",
+    "phone": "",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 7,
+    "name": "Globe Glass House",
+    "location": "Globe Glass House, Gampola",
+    "district": "Kandy",
+    "phone": "0812352728",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 8,
+    "name": "Hazeem Hardware",
+    "location": "Hazeem Hardware, Dippitiya",
+    "district": "Kegalle",
+    "phone": "",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 9,
+    "name": "Kandurata Glass",
+    "location": "Kandurata Glass, Matale",
+    "district": "Matale",
+    "phone": "773846858",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 10,
+    "name": "Kandy Hw",
+    "location": "Kandy Hw, Kandy",
+    "district": "Kandy",
+    "phone": "0773707977",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 11,
+    "name": "M.P.P TRADING PVT LTD",
+    "location": "M.P.P TRADING PVT LTD, Matara",
+    "district": "Matara",
+    "phone": "",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 12,
+    "name": "Menik Wine Store",
+    "location": "Menik Wine Store, Kadugannawa",
+    "district": "Kandy",
+    "phone": "",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 13,
+    "name": "Shaf Lanka (Pvt) Ltd",
+    "location": "Shaf Lanka (Pvt) Ltd",
+    "district": "",
+    "phone": "0775822723",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 14,
+    "name": "Siyam Aluminium",
+    "location": "Siyam Aluminium, Melsiripura",
+    "district": "Kurunegala",
+    "phone": "787215955",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 15,
+    "name": "T C L Aluminium",
+    "location": "T C L Aluminium, Pilimathalawa",
+    "district": "Kandy",
+    "phone": "771764903",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
+  },
+  {
+    "id": 16,
+    "name": "Thoshiba Steel & Ent",
+    "location": "Thoshiba Steel & Ent, Balagolla",
+    "district": "Kandy",
+    "phone": "812424388",
+    "description": "",
+    "contact": "",
+    "image": "images/logo1.png"
   }
-];
+]
+
 
 export default function BranchCard() {
   const [selectedDealer, setSelectedDealer] = useState<Dealer | null>(null);
