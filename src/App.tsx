@@ -9,7 +9,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import ProfileTypePage from './pages/ProfileTypePage';
 import BranchCard from './components/Dealers';
-import ProductionCycle from './components/ProductionCycle';
+import ManagementSystems from './components/OurProduction/ManagementSystems';
 
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/profiles" element={<ProfilesPage />} />
-            <Route path="/production" element={<ProductionCycle />} />
+            <Route path="/production" element={<ManagementSystems/>} />
             <Route path="/profiles/:id" element={<ProfileTypePage />} />
             <Route path="/net" element={<NetPage />} />
             <Route path="/solar" element={<SolarPage />} />
