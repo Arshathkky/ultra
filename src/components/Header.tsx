@@ -1,31 +1,10 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { MapPin, Phone, ChevronDown, Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (!(event.target as HTMLElement).closest(".dropdown")) {
-        setOpenDropdown(null);
-      }
-    };
-
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const handleDropdownToggle = (menu: string) => {
     setOpenDropdown((prev) => (prev === menu ? null : menu));
@@ -39,7 +18,7 @@ export default function Header() {
   return (
     <header className="w-full">
       {/* Top Contact Bar */}
-      <div className={`bg-[#1e048b] text-white transition-all duration-300 ${scrolled ? 'py-1' : 'py-2'} hidden md:block`}>
+      <div className="bg-[#1e048b] text-white py-2 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Phone size={18} />
@@ -55,14 +34,10 @@ export default function Header() {
       </div>
 
       {/* Main Nav */}
-      <nav
-         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 shadow-md backdrop-blur-md' : 'bg-transparent'}`}
-
-        style={{ transform: scrolled ? 'translateY(0)' : 'translateY(40px)' }}
-      >
+      <nav className="w-full bg-white shadow-md">
         <div className="container mx-auto px-2 py-2 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="h-10 w-10  rounded-md flex items-center justify-center">
+            <div className="h-10 w-10 rounded-md flex items-center justify-center">
               <img src="/images/logo1.png" className="h-14 w-16" />
             </div>
             <span className="font-bold text-xl text-[#1e048b]">Ultra Aluminium</span>
@@ -121,10 +96,10 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-md mt-[80px]">
+        <div className="md:hidden bg-white shadow-md">
           <div className="container mx-auto px-4 py-4 space-y-2">
             <Link to="/" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Home</Link>
-            
+
             <div className="relative dropdown">
               <button onClick={() => handleDropdownToggle("aluminium")} className="block w-full text-left text-gray-800 font-medium hover:text-blue-600 py-2 flex justify-between">
                 <span>Aluminium</span>
