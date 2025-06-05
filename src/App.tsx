@@ -22,7 +22,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/profiles" element={<ProfilesPage />} />
-            <Route path="/production" element={<ManagementSystems/>} />
+            <Route path="/system" element={<ManagementSystems/>} />
+            <Route path="/systems/:system" element={<ManagementSystems />} />
             <Route path="/profiles/:id" element={<ProfileTypePage />} />
             <Route path="/net" element={<NetPage />} />
             <Route path="/solar" element={<SolarPage />} />

@@ -4,6 +4,7 @@ import ProfilesSection from '../components/ProfilesSection';
 import NewsSection from '../components/NewsSection';
 import Quality from '../components/Quality';
 import AskOrOrderForm from '../components/AskOrderForm';
+import ProductionHome from '../components/OurProduction/ProductionHome';
 
 
 export default function HomePage() {
@@ -12,7 +13,7 @@ export default function HomePage() {
       <HomeSlider />
       <Quality/>
       <ProductGrid />
-      <ProfilesSection />
+      <ProductionHome/>
       <AskOrOrderForm/>
       <NewsSection />
     </div>
