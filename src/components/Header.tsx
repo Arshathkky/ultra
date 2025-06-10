@@ -57,7 +57,7 @@ export default function Header() {
               </button>
               {openDropdown === "aluminium" && (
                 <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg border border-gray-200 z-50">
-                  <Link to="/production" className="block px-4 py-2 text-gray-800 hover:bg-blue-100" onClick={handleLinkClick}>Aluminium Products</Link>
+                  <Link to="/system" className="block px-4 py-2 text-gray-800 hover:bg-blue-100" onClick={handleLinkClick}>Aluminium Products</Link>
                 </div>
               )}
             </div>
@@ -107,7 +107,7 @@ export default function Header() {
               </button>
               {openDropdown === "aluminium" && (
                 <div className="mt-1 space-y-2 pl-4">
-                  <Link to="/production" className="block text-gray-800 hover:text-blue-600 py-1" onClick={handleLinkClick}>Aluminium Products</Link>
+                  <Link to="/system" className="block text-gray-800 hover:text-blue-600 py-1" onClick={handleLinkClick}>Aluminium Products</Link>
                 </div>
               )}
             </div>

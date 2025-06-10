@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 
-import HardwareProfilesSection from '../components/Profilepage/HardwareProfilesSection';
+
+import UnifiedProductDisplay from '../components/Profilepage/UnifiedProductDisplay';
+import { sections } from '../data/profilesData';
 
 function ProfilePage() {
   useEffect(() => {
@@ -12,7 +14,14 @@ function ProfilePage() {
       <div className="max-w-7xl mx-auto">
         
       <main>
-        <HardwareProfilesSection />
+       {sections.map((section, index) => (
+          <div
+            key={section.id}
+            className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}
+          >
+            <UnifiedProductDisplay section={section} />
+          </div>
+        ))}
       </main>
       </div>
     </div>
