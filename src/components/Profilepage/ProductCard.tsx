@@ -14,6 +14,29 @@ function ProductCard({ category }: ProductCardProps) {
   const hasVariants = category.products.length > 1;
   const activeProduct = category.products[selectedIndex];
 
+  const getProductImage = (product: Product) => {
+    // For products with configurations, use the first configuration's first finish
+    if (product.configurations && product.configurations.length > 0) {
+      return product.configurations[0].finishOptions[0]?.image;
+    }
+    // For regular products, use the first finish option
+    return product.finishOptions?.[0]?.image;
+  };
+
+  const getProductVariantCount = (product: Product) => {
+    if (product.configurations && product.configurations.length > 0) {
+      return product.configurations.reduce((total, config) => total + config.productSpecs.length, 0);
+    }
+    return product.productSpecs?.length || 0;
+  };
+
+  const getProductFinishCount = (product: Product) => {
+    if (product.configurations && product.configurations.length > 0) {
+      return product.configurations.reduce((total, config) => total + config.finishOptions.length, 0);
+    }
+    return product.finishOptions?.length || 0;
+  };
+
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 transition-all duration-300 hover:shadow-xl border border-gray-100">
       <div className="p-8">
@@ -54,12 +77,21 @@ function ProductCard({ category }: ProductCardProps) {
           >
             <div className="relative overflow-hidden rounded-xl shadow-md group-hover:shadow-xl transition-shadow duration-300">
               <img
-                src={activeProduct.finishOptions[0].image}
+                src={getProductImage(activeProduct)}
                 alt={activeProduct.name}
                 className={`w-full h-56 object-cover transition-transform duration-500 ${
                   hoveredIndex === selectedIndex ? 'scale-110' : 'scale-100'
                 }`}
               />
+
+              {/* Configuration Badge for multi-config products */}
+              {activeProduct.configurations && activeProduct.configurations.length > 1 && (
+                <div className="absolute top-4 right-4">
+                  <div className="bg-orange-500/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-white">
+                    {activeProduct.configurations.length} Configurations
+                  </div>
+                </div>
+              )}
 
               {/* Gradient Overlay */}
               <div
@@ -71,16 +103,16 @@ function ProductCard({ category }: ProductCardProps) {
                 <p className="text-sm text-gray-200 leading-relaxed">{activeProduct.description}</p>
                 <div className="mt-3 flex items-center gap-2">
                   <span className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                    {activeProduct.productSpecs.length} Variants
+                    {getProductVariantCount(activeProduct)} Variants
                   </span>
                   <span className="text-xs bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                    {activeProduct.finishOptions.length} Finishes
+                    {getProductFinishCount(activeProduct)} Finishes
                   </span>
                 </div>
               </div>
 
               {/* Click indicator */}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 text-[#1a0179]">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -92,14 +124,21 @@ function ProductCard({ category }: ProductCardProps) {
 
             {/* Mobile Details */}
             <div className="mt-4 block md:hidden">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">{activeProduct.name}</h3>
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-lg font-bold text-gray-800">{activeProduct.name}</h3>
+                {activeProduct.configurations && activeProduct.configurations.length > 1 && (
+                  <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full">
+                    {activeProduct.configurations.length} Configs
+                  </span>
+                )}
+              </div>
               <p className="text-sm text-gray-600 leading-relaxed">{activeProduct.description}</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
-                  {activeProduct.productSpecs.length} Variants
+                  {getProductVariantCount(activeProduct)} Variants
                 </span>
                 <span className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
-                  {activeProduct.finishOptions.length} Finishes
+                  {getProductFinishCount(activeProduct)} Finishes
                 </span>
               </div>
             </div>

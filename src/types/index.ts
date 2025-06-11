@@ -1,3 +1,4 @@
+// types.ts
 export interface ProductSpec {
   code: string;
   size: string;
@@ -10,14 +11,23 @@ export interface FinishOption {
   image: string;
 }
 
-export interface Product {
+export interface Configuration {
   id: string;
   name: string;
   description: string;
   finishOptions: FinishOption[];
+  productSpecs: ProductSpec[];
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  description: string;
+  finishOptions?: FinishOption[];
+  configurations?: Configuration[];
   specs: string[];
   applications: string[];
-  productSpecs: ProductSpec[];
+  productSpecs?: ProductSpec[];
 }
 
 export interface Category {
