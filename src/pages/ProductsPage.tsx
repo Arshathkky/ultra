@@ -1,4 +1,4 @@
-import ProductGrid from '../components/ProductGrid';
+import ProductGrid from '../components/HomePage/ProductGrid';
 import ProfileSlider from '../components/ProfileSlider';
 
 export default function ProductsPage() {

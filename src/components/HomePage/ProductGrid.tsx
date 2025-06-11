@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight, Package2, Shield, Award, MoveRight } from 'lucide-react';
-import { sampleImages } from '../data/sampleImages';
+import { sampleImages } from '../../data/sampleImages';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -135,7 +135,7 @@ export default function ProductGrid() {
                     <img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-64 object-fit transform group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-fit transform group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />

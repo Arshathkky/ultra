@@ -1,6 +1,5 @@
 import HomeSlider from '../components/HomePage/HomeSlider';
-import ProductGrid from '../components/ProductGrid';
-import ProfilesSection from '../components/ProfilesSection';
+import ProductGrid from '../components/HomePage/ProductGrid';
 import NewsSection from '../components/NewsSection';
 import Quality from '../components/Quality';
 import AskOrOrderForm from '../components/AskOrderForm';
