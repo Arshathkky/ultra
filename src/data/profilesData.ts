@@ -28,25 +28,51 @@ export const sections: Section[] = [
         icon: Store,
         products: [
           {
-            id: 'sf-76mm',
-            name: '76mm Shop Front (1.2mm Thick)',
-            description: 'Durable 76mm shop front profiles with 1.2mm thickness, perfect for commercial buildings.',
-            finishOptions: [
+            id: 'shop-front-system',
+            name: 'Shop Front System',
+            description: 'Durable shop front profiles available in multiple configurations, perfect for commercial buildings.',
+            configurations: [
               {
-                type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                id: '76SF',
+                name: '76SF Series',
+                description: '76mm shop front profiles with 1.2mm thickness',
+                finishOptions: [
+                  { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
+                  { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
+                  { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
+                  { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+                ],
+                productSpecs: [
+                  { code: '76SF01', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF02', size: '76mm × 50mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF03', size: '76mm × 55mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF04', size: '76mm × 60mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF05', size: '76mm × 62mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF06', size: '76mm × 65mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF08', size: '76mm × 68mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF09', size: '76mm × 70mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF10', size: '76mm × 72mm', thickness: '1.2mm', length: '6.1m' },
+                  { code: '76SF11', size: '76mm × 75mm', thickness: '1.2mm', length: '6.1m' }
+                ]
               },
               {
-                type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Powder Coat',
-                image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                id: '10SF',
+                name: '10SF Series', 
+                description: '100mm shop front profiles with 1.5mm thickness for enhanced performance',
+                finishOptions: [
+                  { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
+                  { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
+                  { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
+                  { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+                ],
+                productSpecs: [
+                  { code: '10SF01', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
+                  { code: '10SF02', size: '100mm × 55mm', thickness: '1.5mm', length: '6.1m' },
+                  { code: '10SF03', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' },
+                  { code: '10SF04', size: '100mm × 65mm', thickness: '1.5mm', length: '6.1m' },
+                  { code: '10SF05', size: '100mm × 70mm', thickness: '1.5mm', length: '6.1m' },
+                  { code: '10SF06', size: '100mm × 75mm', thickness: '1.5mm', length: '6.1m' }
+                ]
               }
             ],
             specs: [
@@ -55,267 +81,269 @@ export const sections: Section[] = [
               'Designed for high traffic commercial environments',
               'Weather-resistant seals included'
             ],
-            applications: [
-              'Commercial storefronts',
-              'Retail outlets',
-              'Office building entrances',
-              'Showrooms'
-            ],
-            productSpecs: [
-              { code: '76SF01', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76SF02', size: '76mm × 50mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76SF03', size: '76mm × 55mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76SF04', size: '76mm × 60mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76SF05', size: '76mm × 62mm', thickness: '1.2mm', length: '6.1m' }
-            ]
+            applications: ['Commercial storefronts', 'Retail outlets', 'Office building entrances', 'Showrooms']
           }
         ]
       },
       {
-        id: 'partition',
-        title: 'Partition',
-        description: 'Versatile partition profiles for interior space division, available in 76mm and 100mm sizes.',
-        icon: Layers,
-        products: [
-          {
-            id: 'pa-76mm',
-            name: '76mm Partition (1.2mm Thick)',
-            description: 'Lightweight 76mm partition profiles with 1.2mm thickness, ideal for office spaces.',
-            finishOptions: [
-              {
-                type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Powder Coat',
-                image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              }
-            ],
-            specs: [
-              'Sound insulation rating of up to 40dB',
-              'Compatible with various glass thicknesses',
-              'Easy installation system',
-              'Optional blind integration'
-            ],
-            applications: [
-              'Office dividers',
-              'Meeting room partitions',
-              'Classroom dividers',
-              'Retail space divisions'
-            ],
-            productSpecs: [
-              { code: '76PA01', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76PA02', size: '76mm × 42mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76PA03', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76PA04', size: '76mm × 48mm', thickness: '1.2mm', length: '6.1m' }
-            ]
+  id: 'partition',
+  title: 'Partition',
+  description: 'Versatile aluminum partition profiles available in 76mm and 100mm variants, ideal for modern interior divisions.',
+  icon: Layers,
+  products: [
+    {
+      id: 'partition-system',
+      name: 'Partition System',
+      description: 'Durable partition systems designed for indoor space separation, offering both 76mm and 100mm profile options.',
+      configurations: [
+        {
+          id: '76PA',
+          name: '76PA Series',
+          description: '76mm partition profiles with 1.2mm thickness, suitable for office interiors.',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
+            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+          ],
+          productSpecs: [
+            { code: '76PA01', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76PA02', size: '76mm × 42mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76PA03', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76PA04', size: '76mm × 48mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76PA05', size: '76mm × 50mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76PA06', size: '76mm × 55mm', thickness: '1.2mm', length: '6.1m' }
+          ]
+        },
+        {
+          id: '10PA',
+          name: '10PA Series',
+          description: '100mm partition profiles with 1.5mm thickness, providing greater strength and acoustic separation.',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
+            { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+          ],
+          productSpecs: [
+            { code: '10PA01', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10PA02', size: '100mm × 55mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10PA03', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' }
+          ]
+        }
+      ],
+      specs: [
+        'Sound insulation rating up to 40dB',
+        'Compatible with a variety of glass thicknesses',
+        'Quick installation with modular design',
+        'Optional integrated blinds for privacy'
+      ],
+      applications: ['Office partitions', 'Meeting rooms', 'Retail space dividers', 'Classroom sections']
           }
         ]
       },
+
       {
-        id: 'sliding-door',
-        title: 'Sliding Door',
-        description: 'Space-saving sliding door profiles in 70mm and 100mm 3-track variants for smooth operation.',
-        icon: SlidersHorizontal,
-        products: [
-          {
-            id: 'sd-70mm',
-            name: '70mm Sliding Door (1.3mm Thick)',
-            description: 'Standard 70mm sliding door profiles with 1.3mm thickness for residential and light commercial use.',
-            finishOptions: [
-              {
-                type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Powder Coat',
-                image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              }
-            ],
-            specs: [
-              'Ball-bearing rollers for smooth operation',
-              'Double brush seals for improved weather resistance',
-              'Integrated drainage system',
-              'Multi-point locking options'
-            ],
-            applications: [
-              'Balcony doors',
-              'Interior room dividers',
-              'Closet doors',
-              'Patio doors'
-            ],
-            productSpecs: [
-              { code: '70SD41', size: '70mm × 44mm', thickness: '1.3mm', length: '6.1m' },
-              { code: '70SD42', size: '70mm × 46mm', thickness: '1.3mm', length: '6.1m' },
-              { code: '70SD43', size: '70mm × 48mm', thickness: '1.3mm', length: '6.1m' },
-              { code: '70SD44', size: '70mm × 50mm', thickness: '1.3mm', length: '6.1m' }
-            ]
-          }
-        ]
-      },
-      {
-        id: 'door',
-        title: 'Door',
-        description: 'Robust door profiles in 76mm and 100mm sizes for various applications with enhanced security features.',
-        icon: DoorOpen,
-        products: [
-          {
-            id: 'do-76mm',
-            name: '76mm Door',
-            description: 'Standard 76mm door profiles suitable for interior and light-duty exterior applications.',
-            finishOptions: [
-              {
-                type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Powder Coat',
-                image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              }
-            ],
-            specs: [
-              'European standard hinges and hardware',
-              'Supports glazing up to 24mm',
-              'Optional thermal break system',
-              'Available with threshold options'
-            ],
-            applications: [
-              'Office entrances',
-              'Interior room doors',
-              'Light commercial entrances',
-              'Residential front doors'
-            ],
-            productSpecs: [
-              { code: '76DO03', size: '76mm × 50mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76DO04', size: '76mm × 52mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76DO05', size: '76mm × 55mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '76DO06', size: '76mm × 60mm', thickness: '1.2mm', length: '6.1m' }
-            ]
-          }
-        ]
-      },
-      {
-        id: 'sliding-window',
-        title: 'Sliding Window',
-        description: 'Efficient sliding window profiles in 70mm, 80mm, and 100mm variants for various applications.',
-        icon: WindowIcon,
-        products: [
-          {
-            id: 'sw-70mm',
-            name: '70mm Sliding Window (1.3mm Thick)',
-            description: 'Compact 70mm sliding window profiles with 1.3mm thickness for residential use.',
-            finishOptions: [
-              {
-                type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Powder Coat',
-                image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              }
-            ],
-            specs: [
-              'Smooth rolling system on stainless steel tracks',
-              'Dual brush seals for improved weather resistance',
-              'Single glazing up to 22mm thickness',
-              'Multiple locking point options'
-            ],
-            applications: [
-              'Residential windows',
-              'Apartment buildings',
-              'Small office windows',
-              'Interior pass-through windows'
-            ],
-            productSpecs: [
-              { code: '70SW01', size: '70mm × 35mm', thickness: '1.3mm', length: '6.1m' },
-              { code: '70SW02', size: '70mm × 38mm', thickness: '1.3mm', length: '6.1m' },
-              { code: '70SW05', size: '70mm × 40mm', thickness: '1.3mm', length: '6.1m' },
-              { code: '70SW08', size: '70mm × 42mm', thickness: '1.3mm', length: '6.1m' }
-            ]
-          }
-        ]
-      },
-      {
-        id: 'casement-window',
-        title: 'Casement Window',
-        description: 'Versatile casement window profiles in 41mm, 60mm, and 70mm sizes for various applications.',
-        icon: GalleryVerticalEnd,
-        products: [
-          {
-            id: 'ca-41mm',
-            name: 'Casement 41mm (1.2mm Thick)',
-            description: 'Slimline 41mm casement window profiles with 1.2mm thickness for traditional looks.',
-            finishOptions: [
-              {
-                type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Powder Coat',
-                image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              }
-            ],
-            specs: [
-              'Slim sightlines for more glass area',
-              'Single glazing up to 16mm',
-              'Friction hinges for easy operation',
-              'Basic weather sealing'
-            ],
-            applications: [
-              'Residential replacements',
-              'Historic buildings',
-              'Internal windows',
-              'Small openings'
-            ],
-            productSpecs: [
-              { code: '41CA01', size: '41mm × 30mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '41CA03', size: '41mm × 32mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '41CA05', size: '41mm × 34mm', thickness: '1.2mm', length: '6.1m' },
-              { code: '41CA07', size: '41mm × 36mm', thickness: '1.2mm', length: '6.1m' }
-            ]
-          }
-        ]
-      }
+  id: 'sliding-window',
+  title: 'Sliding Window',
+  description: 'Smooth-operating aluminum sliding window systems in 76mm and 100mm sizes, suitable for residential and commercial spaces.',
+  icon: SlidersHorizontal,
+  products: [
+    {
+      id: 'sliding-window-system',
+      name: 'Sliding Window System',
+      description: 'Robust sliding window systems designed for modern architecture with two series: 76mm and 100mm options.',
+      configurations: [
+        {
+          id: '76SW',
+          name: '76SW Series',
+          description: '76mm sliding window profiles with 1.2mm thickness, offering easy operation and stylish design.',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
+            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+          ],
+          productSpecs: [
+            { code: '76SW01', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76SW02', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76SW03', size: '76mm × 50mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76SW04', size: '76mm × 55mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76SW05', size: '76mm × 60mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76SW06', size: '76mm × 65mm', thickness: '1.2mm', length: '6.1m' }
+          ]
+        },
+        {
+          id: '10SW',
+          name: '10SW Series',
+          description: '100mm sliding window profiles with 1.5mm thickness, designed for larger openings and superior durability.',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
+            { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+          ],
+          productSpecs: [
+            { code: '10SW01', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10SW02', size: '100mm × 55mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10SW03', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10SW04', size: '100mm × 65mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10SW05', size: '100mm × 70mm', thickness: '1.5mm', length: '6.1m' }
+          ]
+        }
+      ],
+      specs: [
+        'Smooth roller operation with stainless steel tracks',
+        'Available for single, double, or triple-track systems',
+        'Supports mosquito mesh and fixed glass panels',
+        'Water and air tightness tested'
+      ],
+      applications: [
+        'Balconies and verandas',
+        'Apartment windows',
+        'Modern houses',
+        'Showrooms and commercial buildings'
+      ]
+    }
+  ]
+},
+
+        {
+  id: 'door',
+  title: 'Door',
+  description: 'Heavy-duty aluminum door profiles available in 76mm and 100mm variants for residential and commercial entrances.',
+  icon: DoorOpen,
+  products: [
+    {
+      id: 'door-system',
+      name: 'Aluminium Door System',
+      description: 'Sturdy and elegant door systems offering reliable performance with aesthetic finishes in 76mm and 100mm sizes.',
+      configurations: [
+        {
+          id: '76DO',
+          name: '76DO Series',
+          description: '76mm door profiles with 1.2mm thickness, suitable for standard residential and office doors.',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
+            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+          ],
+          productSpecs: [
+            { code: '76DO01', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76DO02', size: '76mm × 50mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76DO03', size: '76mm × 55mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76DO04', size: '76mm × 60mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76DO05', size: '76mm × 65mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '76DO06', size: '76mm × 70mm', thickness: '1.2mm', length: '6.1m' }
+          ]
+        },
+        {
+          id: '10DO',
+          name: '10DO Series',
+          description: '100mm door profiles with 1.5mm thickness, ideal for main entrances and heavy-duty commercial use.',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
+            { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+          ],
+          productSpecs: [
+            { code: '10DO01', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10DO02', size: '100mm × 65mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10DO03', size: '100mm × 70mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10DO04', size: '100mm × 75mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '10DO05', size: '100mm × 80mm', thickness: '1.5mm', length: '6.1m' }
+          ]
+        }
+      ],
+      specs: [
+        'Accommodates single and double door configurations',
+        'High-strength profiles for frequent use',
+        'Weather-sealed for outdoor installations',
+        'Optional glazing and lock hardware compatibility'
+      ],
+      applications: [
+        'Main entrances',
+        'Interior partition doors',
+        'Commercial access points',
+        'Institutional facilities'
+      ]
+    }
+  ]
+},
+
+{
+  id: 'casement-window',
+  title: 'Casement Window',
+  description: 'High-performance aluminum casement window profiles available in 41mm, 60mm, and 70mm variants with multiple thickness and finish options.',
+  icon: WindowIcon, // replace with your actual icon import
+  products: [
+    {
+      id: 'casement-window-system',
+      name: 'Casement Window System',
+      description: 'Reliable and durable aluminum casement window profiles suited for residential and commercial applications.',
+      configurations: [
+        {
+          id: '41CW',
+          name: '41CW Series',
+          description: '41mm casement window profiles with 1.2mm thickness',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
+            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+          ],
+          productSpecs: [
+            { code: '41CW01', size: '41mm × 35mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CW02', size: '41mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CW03', size: '41mm × 45mm', thickness: '1.2mm', length: '6.1m' }
+          ]
+        },
+        {
+          id: '60CW',
+          name: '60CW Series',
+          description: '60mm casement window profiles with 1.4mm thickness',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
+            { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+          ],
+          productSpecs: [
+            { code: '60CW01', size: '60mm × 40mm', thickness: '1.4mm', length: '6.1m' },
+            { code: '60CW02', size: '60mm × 45mm', thickness: '1.4mm', length: '6.1m' },
+            { code: '60CW03', size: '60mm × 50mm', thickness: '1.4mm', length: '6.1m' }
+          ]
+        },
+        {
+          id: '70CW',
+          name: '70CW Series',
+          description: '70mm casement window profiles with 1.5mm thickness',
+          finishOptions: [
+            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
+            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
+            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
+            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+          ],
+          productSpecs: [
+            { code: '70CW01', size: '70mm × 50mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CW02', size: '70mm × 55mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CW03', size: '70mm × 60mm', thickness: '1.5mm', length: '6.1m' }
+          ]
+        }
+      ],
+      specs: [
+        'Double-glazing support up to 28mm',
+        'Enhanced sealing for noise and weather insulation',
+        'Sturdy profile for long-lasting use in high-moisture environments',
+        'Flexible opening styles for maximum ventilation'
+      ],
+      applications: ['Residential windows', 'Commercial buildings', 'Schools and hospitals', 'Ventilated rooms']
+    }
+  ]
+}   
+      
     ]
   },
   {

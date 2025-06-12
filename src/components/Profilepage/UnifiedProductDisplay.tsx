@@ -19,6 +19,29 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
     }))
   );
 
+  const getProductImage = (product: Product) => {
+    // For products with configurations, use the first configuration's first finish
+    if (product.configurations && product.configurations.length > 0) {
+      return product.configurations[0].finishOptions[0]?.image;
+    }
+    // For regular products, use the first finish option
+    return product.finishOptions?.[0]?.image;
+  };
+
+  const getProductVariantCount = (product: Product) => {
+    if (product.configurations && product.configurations.length > 0) {
+      return product.configurations.reduce((total, config) => total + config.productSpecs.length, 0);
+    }
+    return product.productSpecs?.length || 0;
+  };
+
+  const getProductFinishCount = (product: Product) => {
+    if (product.configurations && product.configurations.length > 0) {
+      return product.configurations.reduce((total, config) => total + config.finishOptions.length, 0);
+    }
+    return product.finishOptions?.length || 0;
+  };
+
   return (
     <div className="py-8 px-4 md:px-4">
       <div className="max-w-7xl mx-auto">
@@ -47,7 +70,7 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
                 >
                   <div className="relative overflow-hidden rounded-xl shadow-md group-hover:shadow-xl transition-shadow duration-300">
                     <img
-                      src={product.finishOptions[0].image}
+                      src={getProductImage(product)}
                       alt={product.name}
                       className={`w-full h-48 object-cover transition-transform duration-500 ${
                         hoveredIndex === index ? 'scale-110' : 'scale-100'
@@ -62,6 +85,15 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
                       </div>
                     </div>
 
+                    {/* Configuration Badge for multi-config products */}
+                    {product.configurations && product.configurations.length > 1 && (
+                      <div className="absolute top-3 right-3">
+                        <div className="bg-orange-500/90 backdrop-blur-sm rounded-full px-2 py-1 text-xs font-medium text-white">
+                          {product.configurations.length} Configs
+                        </div>
+                      </div>
+                    )}
+
                     {/* Gradient Overlay on Hover */}
                     <div
                       className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent text-white p-4 flex flex-col justify-end transition-opacity duration-300 ${
@@ -72,10 +104,10 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
                       <p className="text-sm text-gray-200 leading-relaxed line-clamp-2">{product.description}</p>
                       <div className="mt-3 flex items-center gap-2">
                         <span className="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full">
-                          {product.productSpecs.length} Variants
+                          {getProductVariantCount(product)} Variants
                         </span>
                         <span className="text-xs bg-white/20 backdrop-blur-sm px-2 py-1 rounded-full">
-                          {product.finishOptions.length} Finishes
+                          {getProductFinishCount(product)} Finishes
                         </span>
                       </div>
                     </div>
@@ -98,15 +130,20 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
                       <span className="text-xs font-medium text-[#1a0179] uppercase tracking-wide">
                         {product.categoryTitle}
                       </span>
+                      {product.configurations && product.configurations.length > 1 && (
+                        <span className="text-xs bg-orange-100 text-orange-700 px-2 py-1 rounded-full ml-auto">
+                          {product.configurations.length} Configs
+                        </span>
+                      )}
                     </div>
                     <h3 className="text-lg font-bold text-gray-800 mb-2">{product.name}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed line-clamp-2">{product.description}</p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
-                        {product.productSpecs.length} Variants
+                        {getProductVariantCount(product)} Variants
                       </span>
                       <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
-                        {product.finishOptions.length} Finishes
+                        {getProductFinishCount(product)} Finishes
                       </span>
                     </div>
                   </div>
