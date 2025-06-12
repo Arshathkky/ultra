@@ -276,13 +276,13 @@ export const sections: Section[] = [
 {
   id: 'casement-window',
   title: 'Casement Window',
-  description: 'High-performance aluminum casement window profiles available in 41mm, 60mm, and 70mm variants with multiple thickness and finish options.',
-  icon: WindowIcon, // replace with your actual icon import
+  description: 'High-performance aluminum casement window profiles available in 41mm, 60mm, and 70mm widths with various thickness and finish options.',
+  icon: Window, // replace with your actual icon import
   products: [
     {
       id: 'casement-window-system',
       name: 'Casement Window System',
-      description: 'Reliable and durable aluminum casement window profiles suited for residential and commercial applications.',
+      description: 'Reliable and energy-efficient casement window profiles designed for both residential and commercial use.',
       configurations: [
         {
           id: '41CW',
@@ -295,15 +295,15 @@ export const sections: Section[] = [
             { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
           ],
           productSpecs: [
-            { code: '41CW01', size: '41mm × 35mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '41CW02', size: '41mm × 40mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '41CW03', size: '41mm × 45mm', thickness: '1.2mm', length: '6.1m' }
+            { code: '41CW01', size: '41mm × 30mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CW02', size: '41mm × 35mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CW03', size: '41mm × 40mm', thickness: '1.2mm', length: '6.1m' }
           ]
         },
         {
           id: '60CW',
           name: '60CW Series',
-          description: '60mm casement window profiles with 1.4mm thickness',
+          description: '60mm casement window profiles with 1.4mm thickness for better strength and performance',
           finishOptions: [
             { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
             { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
@@ -319,7 +319,7 @@ export const sections: Section[] = [
         {
           id: '70CW',
           name: '70CW Series',
-          description: '70mm casement window profiles with 1.5mm thickness',
+          description: '70mm casement window profiles with 1.5mm thickness designed for maximum durability',
           finishOptions: [
             { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
             { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
@@ -334,15 +334,16 @@ export const sections: Section[] = [
         }
       ],
       specs: [
-        'Double-glazing support up to 28mm',
-        'Enhanced sealing for noise and weather insulation',
-        'Sturdy profile for long-lasting use in high-moisture environments',
-        'Flexible opening styles for maximum ventilation'
+        'Compatible with both single and double glazing options',
+        'EPDM gaskets for superior weather sealing',
+        'Tested for wind resistance and water tightness',
+        'Available in multiple finishes and anodizing options'
       ],
-      applications: ['Residential windows', 'Commercial buildings', 'Schools and hospitals', 'Ventilated rooms']
+      applications: ['Residential windows', 'Institutional buildings', 'Apartment complexes', 'Hotel windows']
     }
   ]
-}   
+}
+
       
     ]
   },
