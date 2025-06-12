@@ -277,7 +277,7 @@ export const sections: Section[] = [
   id: 'casement-window',
   title: 'Casement Window',
   description: 'High-performance aluminum casement window profiles available in 41mm, 60mm, and 70mm widths with various thickness and finish options.',
-  icon: Window, // replace with your actual icon import
+  icon: WindowIcon, // replace with your actual icon import
   products: [
     {
       id: 'casement-window-system',
@@ -285,8 +285,8 @@ export const sections: Section[] = [
       description: 'Reliable and energy-efficient casement window profiles designed for both residential and commercial use.',
       configurations: [
         {
-          id: '41CW',
-          name: '41CW Series',
+          id: '41CA',
+          name: '41CA Series',
           description: '41mm casement window profiles with 1.2mm thickness',
           finishOptions: [
             { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
@@ -295,14 +295,21 @@ export const sections: Section[] = [
             { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
           ],
           productSpecs: [
-            { code: '41CW01', size: '41mm × 30mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '41CW02', size: '41mm × 35mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '41CW03', size: '41mm × 40mm', thickness: '1.2mm', length: '6.1m' }
+            { code: '41CA01', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA02', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA03', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA04', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA05', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA06', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA07', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA08', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA09', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
+            { code: '41CA13', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' }
           ]
         },
         {
-          id: '60CW',
-          name: '60CW Series',
+          id: '60CA',
+          name: '60CA Series',
           description: '60mm casement window profiles with 1.4mm thickness for better strength and performance',
           finishOptions: [
             { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
@@ -311,14 +318,14 @@ export const sections: Section[] = [
             { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
           ],
           productSpecs: [
-            { code: '60CW01', size: '60mm × 40mm', thickness: '1.4mm', length: '6.1m' },
-            { code: '60CW02', size: '60mm × 45mm', thickness: '1.4mm', length: '6.1m' },
-            { code: '60CW03', size: '60mm × 50mm', thickness: '1.4mm', length: '6.1m' }
+            { code: '60CA01', size: '60mm × XXmm', thickness: '1.4mm', length: '6.1m' },
+            { code: '60CA02', size: '60mm × XXmm', thickness: '1.4mm', length: '6.1m' },
+            { code: '60CA03', size: '60mm × XXmm', thickness: '1.4mm', length: '6.1m' }
           ]
         },
         {
-          id: '70CW',
-          name: '70CW Series',
+          id: '70CA',
+          name: '70CA Series',
           description: '70mm casement window profiles with 1.5mm thickness designed for maximum durability',
           finishOptions: [
             { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
@@ -327,9 +334,14 @@ export const sections: Section[] = [
             { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
           ],
           productSpecs: [
-            { code: '70CW01', size: '70mm × 50mm', thickness: '1.5mm', length: '6.1m' },
-            { code: '70CW02', size: '70mm × 55mm', thickness: '1.5mm', length: '6.1m' },
-            { code: '70CW03', size: '70mm × 60mm', thickness: '1.5mm', length: '6.1m' }
+            { code: '70CA01', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CA02', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CA21', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CA22', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CA23', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CA24', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CA25', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
+            { code: '70CA26', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' }
           ]
         }
       ],
