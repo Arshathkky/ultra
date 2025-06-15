@@ -159,18 +159,26 @@ export const sections: Section[] = [
           name: '76SW Series',
           description: '76mm sliding window profiles with 1.2mm thickness, offering easy operation and stylish design.',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
+            { type: 'Natural', image: 'images/Profiles/70SW.jpg' },
             { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
             { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
             { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
           ],
           productSpecs: [
-            { code: '76SW01', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '76SW02', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '76SW03', size: '76mm × 50mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '76SW04', size: '76mm × 55mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '76SW05', size: '76mm × 60mm', thickness: '1.2mm', length: '6.1m' },
-            { code: '76SW06', size: '76mm × 65mm', thickness: '1.2mm', length: '6.1m' }
+            { code: '70SW01', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW02', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW03', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW04', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW05', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW06', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW07', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW08', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW09', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW10', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW11', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW12', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW13', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
+            { code: '70SW14', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
           ]
         },
         {
