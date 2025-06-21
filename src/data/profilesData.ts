@@ -37,10 +37,10 @@ export const sections: Section[] = [
                 name: '76SF Series',
                 description: '76mm shop front profiles with 1.2mm thickness',
                 finishOptions: [
-                  { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
-                  { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
-                  { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
-                  { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+                  { type: 'Natural', image: 'profiles/76 SF/natural.jpg' },
+                  { type: 'Bronze', image: 'profiles/76 SF/76SF BRONZE.jpg' },
+                  { type: 'Black', image: 'profiles/76 SF/76SF BLACK.jpg' },
+                  { type: 'Powder Coat', image: 'profiles/76 SF/76SF WHITE.jpg' }
                 ],
                 productSpecs: [
                   { code: '76SF01', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
@@ -60,10 +60,10 @@ export const sections: Section[] = [
                 name: '10SF Series', 
                 description: '100mm shop front profiles with 1.5mm thickness for enhanced performance',
                 finishOptions: [
-                  { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
-                  { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
-                  { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
-                  { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+                  { type: 'Natural', image: 'profiles/100 SF/100SF NATURAL.jpg' },
+                  { type: 'Bronze', image: 'profiles/100 SF/100SF BRONZE.jpg' },
+                  { type: 'Black', image: 'profiles/100 SF/100SF BLACK.jpg' },
+                  { type: 'White', image: 'profiles/100 SF/100SF WHITE.jpg' }
                 ],
                 productSpecs: [
                   { code: '10SF01', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
@@ -101,10 +101,10 @@ export const sections: Section[] = [
           name: '76PA Series',
           description: '76mm partition profiles with 1.2mm thickness, suitable for office interiors.',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
-            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+            { type: 'Natural', image: 'profiles/76 PA/76PA  NATURAL.jpg' },
+            { type: 'Bronze', image: 'profiles/76 PA/76PA BRONZE.jpg' },
+            { type: 'Black', image: 'profiles/76 PA/76PA BLACK.jpg' },
+            { type: 'Powder Coat', image: 'profiles/76 PA/76PA  WHITE.jpg' }
           ],
           productSpecs: [
             { code: '76PA01', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
@@ -120,10 +120,10 @@ export const sections: Section[] = [
           name: '10PA Series',
           description: '100mm partition profiles with 1.5mm thickness, providing greater strength and acoustic separation.',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
-            { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+            { type: 'Natural', image: 'profiles/100 PA/100PA NATURAL.jpg' },
+            { type: 'Bronze', image: 'profiles/100 PA/100PA BRONZE.jpg' },
+            { type: 'Black', image: 'profiles/100 PA/100PA BLACK.jpg' },
+            { type: 'Anodized', image: 'profiles/100 PA/100PA WHITE.jpg' }
           ],
           productSpecs: [
             { code: '10PA01', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
@@ -159,10 +159,10 @@ export const sections: Section[] = [
           name: '76SW Series',
           description: '76mm sliding window profiles with 1.2mm thickness, offering easy operation and stylish design.',
           finishOptions: [
-            { type: 'Natural', image: 'images/Profiles/70SW.jpg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
-            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+            { type: 'Natural', image: 'profiles/70 SW/70SW NATURAL.jpg' },
+            { type: 'Bronze', image: 'profiles/70 SW/70SW BRONZE.jpg' },
+            { type: 'Black', image: 'profiles/70 SW/70SW BLACK.jpg' },
+            { type: 'Powder Coat', image: 'profiles/70 SW/70SW WHITE.jpg' }
           ],
           productSpecs: [
             { code: '70SW01', size: '76mm × 40mm', thickness: '1.2mm', length: '6.1m' },
@@ -186,17 +186,27 @@ export const sections: Section[] = [
           name: '10SW Series',
           description: '100mm sliding window profiles with 1.5mm thickness, designed for larger openings and superior durability.',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
-            { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+            { type: 'Natural', image: 'profiles/80 SW/80SW NATURAL.jpg' },
+            { type: 'Bronze', image: 'profiles/80 SW/80SW BRONZE.jpg' },
+            { type: 'Black', image: 'profiles/80 SW/80SW BLACK.jpg' },
+            { type: 'Anodized', image: 'profiles/80 SW/80SW WHITE.jpg' }
           ],
           productSpecs: [
-            { code: '10SW01', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
-            { code: '10SW02', size: '100mm × 55mm', thickness: '1.5mm', length: '6.1m' },
-            { code: '10SW03', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' },
-            { code: '10SW04', size: '100mm × 65mm', thickness: '1.5mm', length: '6.1m' },
-            { code: '10SW05', size: '100mm × 70mm', thickness: '1.5mm', length: '6.1m' }
+            { code: '80SW01', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW02', size: '100mm × 55mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW03', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW04', size: '100mm × 65mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW05', size: '100mm × 70mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW06', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW07', size: '100mm × 55mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW08', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW09', size: '100mm × 65mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW010', size: '100mm × 70mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW011', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW012', size: '100mm × 55mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW013', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' },
+            { code: '80SW014', size: '100mm × 65mm', thickness: '1.5mm', length: '6.1m' },
+  
           ]
         }
       ],
@@ -232,10 +242,10 @@ export const sections: Section[] = [
           name: '76DO Series',
           description: '76mm door profiles with 1.2mm thickness, suitable for standard residential and office doors.',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
-            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+            { type: 'Natural', image: 'profiles/76 DO/76DO NATURAL.jpg' },
+            { type: 'Bronze', image: 'profiles/76 DO/76DO BRONZE.jpg' },
+            { type: 'Black', image: 'profiles/76 DO/76DO BLACK.jpg' },
+            { type: 'Powder Coat', image: 'profiles/76 DO/76DO WHITE.jpg' }
           ],
           productSpecs: [
             { code: '76DO01', size: '76mm × 45mm', thickness: '1.2mm', length: '6.1m' },
@@ -251,10 +261,10 @@ export const sections: Section[] = [
           name: '10DO Series',
           description: '100mm door profiles with 1.5mm thickness, ideal for main entrances and heavy-duty commercial use.',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
-            { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+            { type: 'Natural', image: 'profiles/100 DO/100DO NATURAL.jpg' },
+            { type: 'Bronze', image: 'profiles/100 DO/100DO  BRONZE.jpg' },
+            { type: 'Black', image: 'profiles/100 DO/100DO BLACK.jpg' },
+            { type: 'Anodized', image: 'profiles/100 DO/100DO WHITE.jpg' }
           ],
           productSpecs: [
             { code: '10DO01', size: '100mm × 60mm', thickness: '1.5mm', length: '6.1m' },
@@ -297,10 +307,10 @@ export const sections: Section[] = [
           name: '41CA Series',
           description: '41mm casement window profiles with 1.2mm thickness',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
-            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+            { type: 'Natural', image: 'profiles/41 CA/41CA NATURAL1.jpg' },
+            { type: 'Bronze', image: 'profiles/41 CA/41CA BRONZE1.jpg' },
+            { type: 'Black', image: 'profiles/41 CA/41CA BLACK.jpg' },
+            { type: 'Powder Coat', image: 'profiles/41 CA/41CA WHITE1.jpg' }
           ],
           productSpecs: [
             { code: '41CA01', size: '41mm × XXmm', thickness: '1.2mm', length: '6.1m' },
@@ -320,10 +330,10 @@ export const sections: Section[] = [
           name: '60CA Series',
           description: '60mm casement window profiles with 1.4mm thickness for better strength and performance',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/2529172/pexels-photo-2529172.jpeg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212060/pexels-photo-1212060.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg' },
-            { type: 'Anodized', image: 'https://images.pexels.com/photos/2529165/pexels-photo-2529165.jpeg' }
+            { type: 'Natural', image: 'profiles/60 CA/60CA NATURAL.jpg' },
+            { type: 'Bronze', image: 'profiles/60 CA/60CA BRONZE.jpg' },
+            { type: 'Black', image: 'profiles/60 CA/60CA BLACK.jpg' },
+            { type: 'Anodized', image: 'profiles/60 CA/60CA WHITE.jpg' }
           ],
           productSpecs: [
             { code: '60CA01', size: '60mm × XXmm', thickness: '1.4mm', length: '6.1m' },
@@ -336,10 +346,10 @@ export const sections: Section[] = [
           name: '70CA Series',
           description: '70mm casement window profiles with 1.5mm thickness designed for maximum durability',
           finishOptions: [
-            { type: 'Natural', image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg' },
-            { type: 'Bronze', image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg' },
-            { type: 'Black', image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg' },
-            { type: 'Powder Coat', image: 'https://images.pexels.com/photos/2529159/pexels-photo-2529159.jpeg' }
+            { type: 'Natural', image: 'profiles/70 CA/70CA NATURAL.jpg' },
+            { type: 'Bronze', image: 'profiles/70 CA/70CA NATURAL.jpg' },
+            { type: 'Black', image: 'hprofiles/70 CA/70CA NATURAL.jpg' },
+            { type: 'Powder Coat', image: 'profiles/70 CA/70CA NATURAL.jpg' }
           ],
           productSpecs: [
             { code: '70CA01', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
@@ -385,15 +395,19 @@ export const sections: Section[] = [
             finishOptions: [
               {
                 type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/box bars/BOX NATURAL.jpg'
               },
               {
                 type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/box bars/BOX BRONZE.jpg'
               },
               {
                 type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/box bars/BOX BLACK.jpg'
+              },
+                {
+                type: 'White',
+                image: '/profiles/box bars/BOX WHITE.jpg'
               }
             ],
             specs: [
@@ -427,15 +441,19 @@ export const sections: Section[] = [
             finishOptions: [
               {
                 type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/round pipe/ROUND NATURAL.jpg'
               },
               {
                 type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/round pipe/ROUND BRONZE.jpg'
               },
               {
                 type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/round pipe/ROUND BLACK.jpg'
+              },
+              {
+                type: 'White',
+                image: '/profiles/round pipe/ROUND WHITE.jpg'
               }
             ],
             specs: [
@@ -469,15 +487,19 @@ export const sections: Section[] = [
             finishOptions: [
               {
                 type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/angel bar/ANGEL NATURAL.jpg'
               },
               {
                 type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/angel bar/ANGEL BRONZE.jpg'
               },
               {
                 type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/angel bar/ANGEL BLACK.jpg'
+              },
+              {
+                type: 'White',
+                image: '/profiles/angel bar/ANGEL WHITE.jpg'
               }
             ],
             specs: [
@@ -511,15 +533,19 @@ export const sections: Section[] = [
             finishOptions: [
               {
                 type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/box bar with channel/11_29 - Photo.jpg'
               },
               {
                 type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/box bar with channel/a11_29 - Photo.jpg'
               },
               {
                 type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/box bar with channel/b11_29 - Photo.jpg'
+              },
+              {
+                type: 'White',
+                image: '/profiles/box bar with channel/w11_29 - Photo.jpg'
               }
             ],
             specs: [
@@ -540,48 +566,52 @@ export const sections: Section[] = [
           }
         ]
       },
-      {
-        id: 'channel',
-        title: 'Channel',
-        description: 'Single and double aluminum channels for various applications.',
-        icon: AlignJustify,
-        products: [
-          {
-            id: 'ch-12x12-single',
-            name: '1/2" × 1/2" Single Channel',
-            description: '0.9mm thick single channel available in 3.65m length.',
-            finishOptions: [
-              {
-                type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              }
-            ],
-            specs: [
-              'Single channel design',
-              'Uniform thickness',
-              'Clean edges',
-              'Versatile application'
-            ],
-            applications: [
-              'Sliding systems',
-              'Guide tracks',
-              'Protection strips',
-              'Decorative trim'
-            ],
-            productSpecs: [
-              { code: 'CH-12S', size: '1/2" × 1/2"', thickness: '0.9mm', length: '3.65m' }
-            ]
-          }
-        ]
-      },
+      // {
+      //   id: 'channel',
+      //   title: 'Channel',
+      //   description: 'Single and double aluminum channels for various applications.',
+      //   icon: AlignJustify,
+      //   products: [
+      //     {
+      //       id: 'ch-12x12-single',
+      //       name: '1/2" × 1/2" Single Channel',
+      //       description: '0.9mm thick single channel available in 3.65m length.',
+      //       finishOptions: [
+      //         {
+      //           type: 'Natural',
+      //           image: '/profiles/box bar with channel/11_29 - Photo.jpg'
+      //         },
+      //         {
+      //           type: 'Bronze',
+      //           image: '/profiles/box bar with channel/a11_29 - Photo.jpg'
+      //         },
+      //         {
+      //           type: 'Black',
+      //           image: '/profiles/box bar with channel/b11_29 - Photo.jpg'
+      //         },
+      //         {
+      //           type: 'White',
+      //           image: '/profiles/box bar with channel/w11_29 - Photo.jpg'
+      //         }
+      //       ],
+      //       specs: [
+      //         'Single channel design',
+      //         'Uniform thickness',
+      //         'Clean edges',
+      //         'Versatile application'
+      //       ],
+      //       applications: [
+      //         'Sliding systems',
+      //         'Guide tracks',
+      //         'Protection strips',
+      //         'Decorative trim'
+      //       ],
+      //       productSpecs: [
+      //         { code: 'CH-12S', size: '1/2" × 1/2"', thickness: '0.9mm', length: '3.65m' }
+      //       ]
+      //     }
+      //   ]
+      // },
       {
         id: 'curtain-rail',
         title: 'Curtain Rail Bar',
@@ -595,15 +625,19 @@ export const sections: Section[] = [
             finishOptions: [
               {
                 type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/curtain bar/11_30 - Photo.jpg'
               },
               {
                 type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/curtain bar/a11_30 - Photo.jpg'
               },
               {
                 type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+                image: '/profiles/curtain bar/b11_30 - Photo.jpg'
+              },
+              {
+                type: 'White',
+                image: '/profiles/curtain bar/w11_30 - Photo.jpg'
               }
             ],
             specs: [
@@ -624,48 +658,48 @@ export const sections: Section[] = [
           }
         ]
       },
-      {
-        id: 'show-case',
-        title: 'Show Case',
-        description: 'Professional aluminum show case profiles for display applications.',
-        icon: Layout,
-        products: [
-          {
-            id: 'sc-c',
-            name: 'Show Case "C"',
-            description: '0.9mm thick show case profile available in 3.65m length.',
-            finishOptions: [
-              {
-                type: 'Natural',
-                image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Bronze',
-                image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              },
-              {
-                type: 'Black',
-                image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-              }
-            ],
-            specs: [
-              'C-shaped profile',
-              'Clean design',
-              'Easy assembly',
-              'Professional finish'
-            ],
-            applications: [
-              'Display cases',
-              'Retail showcases',
-              'Exhibition displays',
-              'Cabinet construction'
-            ],
-            productSpecs: [
-              { code: 'SC-C', size: 'Type C', thickness: '0.9mm', length: '3.65m' }
-            ]
-          }
-        ]
-      }
+      // {
+      //   id: 'show-case',
+      //   title: 'Show Case',
+      //   description: 'Professional aluminum show case profiles for display applications.',
+      //   icon: Layout,
+      //   products: [
+      //     {
+      //       id: 'sc-c',
+      //       name: 'Show Case "C"',
+      //       description: '0.9mm thick show case profile available in 3.65m length.',
+      //       finishOptions: [
+      //         {
+      //           type: 'Natural',
+      //           image: 'https://images.pexels.com/photos/1036848/pexels-photo-1036848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      //         },
+      //         {
+      //           type: 'Bronze',
+      //           image: 'https://images.pexels.com/photos/1212052/pexels-photo-1212052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      //         },
+      //         {
+      //           type: 'Black',
+      //           image: 'https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+      //         }
+      //       ],
+      //       specs: [
+      //         'C-shaped profile',
+      //         'Clean design',
+      //         'Easy assembly',
+      //         'Professional finish'
+      //       ],
+      //       applications: [
+      //         'Display cases',
+      //         'Retail showcases',
+      //         'Exhibition displays',
+      //         'Cabinet construction'
+      //       ],
+      //       productSpecs: [
+      //         { code: 'SC-C', size: 'Type C', thickness: '0.9mm', length: '3.65m' }
+      //       ]
+      //     }
+      //   ]
+      // }
     ]
   }
 ];
