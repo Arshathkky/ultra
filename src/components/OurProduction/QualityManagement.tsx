@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ClipboardCheck, BadgeCheck, ShieldCheck, LineChart, AlertCircle } from "lucide-react";
+import { ClipboardCheck, BadgeCheck, ShieldCheck, LineChart, AlertCircle, Leaf } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -180,14 +180,19 @@ const QualityManagement = () => {
     <div ref={containerRef} className="relative w-full bg-white pb-20">
       {/* Intro section */}
       <div className="w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-900 text-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Quality Management System</h1>
-          <p className="text-xl md:text-2xl max-w-3xl opacity-90">
-            Excellence is not a skill, it's an attitude. Our comprehensive Quality Management System 
-            ensures every product we deliver meets the highest standards of performance and reliability.
-          </p>
-        </div>
-      </div>
+  <div className="max-w-7xl mx-auto px-6 md:px-10 flex flex-col items-center justify-center text-center">
+    <h1 className="text-4xl md:text-6xl font-bold mb-6">
+      Quality Management System
+    </h1>
+    <p className="text-xl md:text-2xl max-w-3xl opacity-90 mb-8">
+      We are at ULTRA ALUMINIUM PVT LTD, Manufacturing of Aluminium products and providing aluminium solutions continuously strive to ensure Quality expectation of our valued customers.
+    </p>
+    <div className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
+      <Leaf className="w-6 h-6 text-green-300" />
+      <span className="text-xl">ISO 9001:2015 Certified</span>
+    </div>
+  </div>
+</div>
 
       {/* Quality steps */}
       {qualitySteps.map((step, index) => {

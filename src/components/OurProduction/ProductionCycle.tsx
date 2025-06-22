@@ -16,7 +16,7 @@ const steps = [
       "- Sorting and removal of non-aluminum materials.",
       "- Compression into compact bales for efficiency."
     ],
-    image: "https://images.unsplash.com/photo-1558640476-437a2b9438a2?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/Production/Bale.jpg",
     animation: "fade-in",
   },
   {
@@ -29,7 +29,7 @@ const steps = [
       "- Casting into cylindrical molds to create billets.",
       "- Controlled cooling for optimal strength and quality."
     ],
-    image: "https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/Production/casting 1.jpg",
     animation: "slide-in-left",
   },
   {
@@ -42,7 +42,7 @@ const steps = [
       "- Pushing through a die to form desired profiles.",
       "- Stretching and straightening to remove internal stresses."
     ],
-    image: "https://images.unsplash.com/photo-1563456161948-5847b88c2f48?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/Production/Extrution 3.jpg",
     animation: "slide-in-right",
   },
   {
@@ -56,7 +56,7 @@ const steps = [
       "- Electrostatic application of powder.",
       "- Oven curing for a long-lasting, durable finish."
     ],
-    image: "https://images.unsplash.com/photo-1589792923962-537704632910?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/Production/power coat 2.jpg",
     animation: "parallax",
   },
   {
@@ -69,7 +69,7 @@ const steps = [
       "- Option to add color through dyeing processes.",
       "- Final sealing for long-lasting protection."
     ],
-    image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/Production/anodizing 1.jpg",
     animation: "fade-in-scale",
   },
 ];
