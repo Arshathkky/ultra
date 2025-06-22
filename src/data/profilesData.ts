@@ -155,9 +155,9 @@ export const sections: Section[] = [
       description: 'Robust sliding window systems designed for modern architecture with two series: 76mm and 100mm options.',
       configurations: [
         {
-          id: '76SW',
-          name: '76SW Series',
-          description: '76mm sliding window profiles with 1.2mm thickness, offering easy operation and stylish design.',
+          id: '70SW',
+          name: '70SW Series',
+          description: '70mm sliding window profiles with 1.2mm thickness, offering easy operation and stylish design.',
           finishOptions: [
             { type: 'Natural', image: 'profiles/70 SW/70SW NATURAL.jpg' },
             { type: 'Bronze', image: 'profiles/70 SW/70SW BRONZE.jpg' },
@@ -186,10 +186,10 @@ export const sections: Section[] = [
           name: '10SW Series',
           description: '100mm sliding window profiles with 1.5mm thickness, designed for larger openings and superior durability.',
           finishOptions: [
-            { type: 'Natural', image: 'profiles/80 SW/80SW NATURAL.jpg' },
-            { type: 'Bronze', image: 'profiles/80 SW/80SW BRONZE.jpg' },
+            { type: 'Natural', image: 'profiles/80 SW/80SW Natural.jpg' },
+            { type: 'Bronze', image: 'profiles/80 SW/80SW Bronze.jpg' },
             { type: 'Black', image: 'profiles/80 SW/80SW BLACK.jpg' },
-            { type: 'Anodized', image: 'profiles/80 SW/80SW WHITE.jpg' }
+            { type: 'Anodized', image: 'profiles/80 SW/80SW White.jpg' }
           ],
           productSpecs: [
             { code: '80SW01', size: '100mm × 50mm', thickness: '1.5mm', length: '6.1m' },
@@ -347,9 +347,9 @@ export const sections: Section[] = [
           description: '70mm casement window profiles with 1.5mm thickness designed for maximum durability',
           finishOptions: [
             { type: 'Natural', image: 'profiles/70 CA/70CA NATURAL.jpg' },
-            { type: 'Bronze', image: 'profiles/70 CA/70CA NATURAL.jpg' },
-            { type: 'Black', image: 'hprofiles/70 CA/70CA NATURAL.jpg' },
-            { type: 'Powder Coat', image: 'profiles/70 CA/70CA NATURAL.jpg' }
+            { type: 'Bronze', image: 'profiles/70 CA/70CA BRONZE.jpg' },
+            { type: 'Black', image: 'profiles/70 CA/70CA BLACK.jpg' },
+            { type: 'Powder Coat', image: 'profiles/70 CA/70CA WHITE.jpg' }
           ],
           productSpecs: [
             { code: '70CA01', size: '70mm × XXmm', thickness: '1.5mm', length: '6.1m' },
@@ -423,7 +423,18 @@ export const sections: Section[] = [
               'Light structural applications'
             ],
             productSpecs: [
-              { code: '12TU12', size: '3/4" × 3/4"', thickness: '0.9mm', length: '6.1m / 3.65m' }
+              { code: '12TU12', size: '1/2" × 1/2"', thickness: '0.9mm', length: '6.1m / 3.65m' },
+              { code: '19TU19', size: '3/4" × 3/4"', thickness: '0.9mm', length: '6.1m / 3.65m' },
+              { code: '25TU25', size: '1" × 1"', thickness: '0.9mm', length: '6.1m / 3.65m' },
+              { code: '38TU25', size: '1 1/2" × 1"', thickness: '0.9mm', length: '6.1m / 3.65m' },
+              { code: '38TU38', size: '1 1/2" × 1 1/2"', thickness: '1.2mm', length: '6.1m / 3.65m' },
+              { code: '50TU25', size: '2" × 1"', thickness: '0.9mm', length: '6.1m / 3.65m' },
+              { code: '50TU50', size: '2" × 2"', thickness: '1.2mm', length: '6.1m / 3.65m' },
+              { code: '76TU25', size: '3" × 1"', thickness: '1mm', length: '6.1m / 3.65m' },
+              { code: '76TU38', size: '3" × 1 1/2"', thickness: '1.2mm', length: '6.1m / 3.65m' },
+              { code: '76TU76', size: '3" × 3"', thickness: '1.35mm', length: '6.1m / 3.65m' },
+
+
             ]
           }
         ]
@@ -436,7 +447,7 @@ export const sections: Section[] = [
         products: [
           {
             id: 'rp-34',
-            name: '3/4" Round Pipe',
+            name: 'Round Pipe',
             description: '0.9mm thick round pipe available in 3.65m length.',
             finishOptions: [
               {
@@ -469,7 +480,12 @@ export const sections: Section[] = [
               'Display systems'
             ],
             productSpecs: [
-              { code: 'RP-34', size: '3/4"', thickness: '0.9mm', length: '3.65m' }
+              { code: '09RP07', size: '3/8"', thickness: '0.9mm', length: '3.65m' },
+              { code: '12RP10', size: '1/2"', thickness: '0.9mm', length: '3.65m' },
+              { code: '16RP14', size: '5/8"', thickness: '0.9mm', length: '3.65m' },
+              { code: '19RP17', size: '3/4"', thickness: '0.9mm', length: '3.65m' },
+              { code: '25RP23', size: '1"', thickness: '0.9mm', length: '3.65m' }
+
             ]
           }
         ]

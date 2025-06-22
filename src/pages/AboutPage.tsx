@@ -29,18 +29,29 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-semibold text-gray-800 mb-4">Our Story</h2>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Since our inception, we’ve been revolutionizing the aluminum manufacturing industry.
-                Our dedication to quality craftsmanship, sustainable practices, and innovation has
-                positioned us as a leader in the field.
+                Ultra Aluminum (Pvt) Ltd has been established with the view of Manufacturing Aluminums profiles 
+                with the identification of its Local Market as well as Global Market. 
+
               </p>
             </div>
 
             {/* Mission */}
             <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-3">Our Vision</h3>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                To become the most innovative and fastest complete solutions provider for All
+                Types of Construction Materials locally and globally. 
+
+              </p>
+            </div>
+            {/* Vission */}
+            <div>
               <h3 className="text-2xl font-semibold text-gray-800 mb-3">Our Mission</h3>
               <p className="text-gray-600 text-lg leading-relaxed">
-                To create aluminum solutions that exceed expectations in quality, sustainability,
-                and technological advancements while focusing on customer satisfaction.
+                To deliver the high quality and innovative product ranges that always exceed the expectation of 
+                the consumers by presenting the goods and services timely with high standards 
+ 
+
               </p>
             </div>
 

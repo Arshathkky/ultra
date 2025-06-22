@@ -222,7 +222,7 @@ const EnvironmentManagement = () => {
           </p>
           <div className="inline-flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full">
             <Leaf className="w-6 h-6 text-green-300" />
-            <span className="text-xl">ISO 14001:2015 Certified</span>
+            <span className="text-xl">ISO 14001:2015 Applied</span>
           </div>
         </div>
       </div>

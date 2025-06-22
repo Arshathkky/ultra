@@ -28,7 +28,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      if (!zoomImage && modalRef.current && !modalRef.current.contains(event.target as Node)) {
         onClose();
       }
     };
@@ -115,7 +115,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
                         alt={finish.type}
                         className="w-full h-16 object-cover cursor-zoom-in"
                         onClick={(e) => {
-                          e.stopPropagation(); // prevent parent click
+                          e.stopPropagation();
                           setZoomImage(finish.image);
                         }}
                       />
