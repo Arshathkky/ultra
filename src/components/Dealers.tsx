@@ -1626,25 +1626,35 @@ const dealers: Dealer[] = [
 export default function BranchCard() {
   const [selectedDealer, setSelectedDealer] = useState<Dealer | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredDealers, setFilteredDealers] = useState(dealers);
+  const [selectedDistrict, setSelectedDistrict] = useState("All");
+  const [filteredDealers, setFilteredDealers] = useState<Dealer[]>([]);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
-  // Filter dealers by search term
-  useEffect(() => {
-    const filtered = dealers.filter(dealer =>
-      dealer.district.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      dealer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      dealer.location.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredDealers(filtered);
-  }, [searchTerm]);
+  const allDistricts = Array.from(
+    new Set(dealers.map((dealer) => dealer.district).filter(Boolean))
+  );
 
-  // Animate dealer cards on scroll
+  useEffect(() => {
+    const filtered = dealers.filter((dealer) => {
+      const matchesSearch =
+        dealer.district.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        dealer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        dealer.location.toLowerCase().includes(searchTerm.toLowerCase());
+
+      const matchesDistrict =
+        selectedDistrict === "All" || dealer.district === selectedDistrict;
+
+      return matchesSearch && matchesDistrict;
+    });
+    setFilteredDealers(filtered);
+  }, [searchTerm, selectedDistrict]);
+
   useEffect(() => {
     cardsRef.current.forEach((card, index) => {
       if (card) {
-        gsap.fromTo(card,
+        gsap.fromTo(
+          card,
           {
             opacity: 0,
             y: 50,
@@ -1658,19 +1668,18 @@ export default function BranchCard() {
             scrollTrigger: {
               trigger: card,
               start: "top bottom-=100",
-              toggleActions: "play none none reverse"
-            }
+              toggleActions: "play none none reverse",
+            },
           }
         );
       }
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, [filteredDealers]);
 
-  // Close modal on outside click
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
@@ -1705,7 +1714,7 @@ export default function BranchCard() {
     <div className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16">
       <div className="px-4 sm:px-6 lg:px-8">
         {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto mb-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
             <input
@@ -1718,20 +1727,53 @@ export default function BranchCard() {
           </div>
         </div>
 
+        {/* District Tabs */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <button
+            onClick={() => setSelectedDistrict("All")}
+            className={`px-4 py-2 rounded-full border ${
+              selectedDistrict === "All"
+                ? "bg-blue-500 text-white"
+                : "bg-white text-gray-800 border-gray-300"
+            }`}
+          >
+            All
+          </button>
+          {allDistricts.map((district) => (
+            <button
+              key={district}
+              onClick={() => setSelectedDistrict(district)}
+              className={`px-4 py-2 rounded-full border ${
+                selectedDistrict === district
+                  ? "bg-blue-500 text-white"
+                  : "bg-white text-gray-800 border-gray-300"
+              }`}
+            >
+              {district}
+            </button>
+          ))}
+        </div>
+
         {/* Dealers Grid Grouped by District */}
         {Object.entries(groupedDealers).map(([district, dealers]) => (
           <div key={district} className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-500 pb-2">{district}</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-500 pb-2">
+              {district}
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {dealers.map((dealer, index) => (
                 <div
                   key={dealer.id}
-                  ref={el => cardsRef.current[index] = el}
+                  ref={(el) => (cardsRef.current[index] = el)}
                   className="group cursor-pointer bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
                   onClick={() => setSelectedDealer(dealer)}
                 >
                   <div className="relative">
-                    <img src={dealer.image} alt={dealer.name} className="w-full h-48 object-contain p-4" />
+                    <img
+                      src={dealer.image}
+                      alt={dealer.name}
+                      className="w-full h-48 object-contain p-4"
+                    />
                   </div>
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{dealer.name}</h3>
@@ -1750,7 +1792,10 @@ export default function BranchCard() {
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
           onClick={closeModal}
         >
-          <div className="bg-white rounded-lg p-8 w-96 max-w-full">
+          <div
+            className="bg-white rounded-lg p-8 w-96 max-w-full relative"
+            ref={modalRef}
+          >
             <button
               onClick={() => setSelectedDealer(null)}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
