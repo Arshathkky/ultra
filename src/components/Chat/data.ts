@@ -3,7 +3,7 @@ import { User } from './chat';
 export const users: User[] = [
   {
     id: 1,
-    name: 'Azeem',
+    name: 'HR',
     avatar: 'https://i.pravatar.cc/150?img=2',
     status: 'Let’s connect!',
     lastSeen: 'online',
@@ -12,7 +12,7 @@ export const users: User[] = [
   
   {
     id: 3,
-    name: 'Charlie',
+    name: 'Office',
     avatar: 'https://i.pravatar.cc/150?img=3',
     status: 'Available',
     lastSeen: 'online',

@@ -25,14 +25,14 @@ const WhatsAppChat: React.FC = () => {
 
   return (
     <div
-      className="w-full bg-white rounded-lg shadow-md flex flex-col sm:flex-row overflow-hidden"
+      className="w-full bg-white rounded-lg shadow-md flex flex-col sm:flex-col overflow-hidden"
       style={{
-        height: viewportHeight < 700 ? viewportHeight : 600,
+        height: viewportHeight < 550 ? viewportHeight : 450,
         maxWidth: '100%',
       }}
     >
       {/* Sidebar */}
-      <div className="w-full sm:w-[300px] flex-shrink-0 border-b sm:border-b-0 sm:border-r">
+      <div className="w-full sm:w-[200px] flex-shrink-0 border-b sm:border-b-0 sm:border-r">
         <ChatSidebar
           users={users}
           selectedUserId={selectedUserId}
