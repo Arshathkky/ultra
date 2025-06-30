@@ -3,7 +3,7 @@ import { useState } from "react";
 interface NewsItem {
   id: number;
   title: string;
-  excerpt: string[]; // Change from string to string[]
+  excerpt: string[];
   image: string;
   date: string;
 }
@@ -26,30 +26,29 @@ export default function NewsSection() {
       title: "Award-Winning Project Completion",
       excerpt: [
         "The inaugural event for connecting 2 megawatts of electricity to the national power grid was held on Tuesday (7th) at the Ultra Aluminium Private Limited premises in Arayampathi.",
-        "The event was led by the Chairman of Ultra Aluminium Private Limited, Alhaj A.M. Unais. The Chief Guest, Mr. W.L.S.A. Wijethunga, the Deputy General Manager of the Ceylon Electricity Board (Eastern Province), hoisted the national flag.",
-        "The company's flag was hoisted by the Founder and Chairman of Ultra Aluminium Private Limited, Alhaj I.L.A. Akbar. Following the flag-raising ceremony, the project was officially launched by the Chief Guest and Mr. M.M. Abdullah, the liaison secretary to the Governor of the Eastern Province.",
+        "The event was led by the Chairman of Ultra Aluminium Private Limited, Alhaj A.M. Unais...",
         "Ultra Aluminium Private Limited is the first company in the Batticaloa District to receive ISO 9001 certification and the second company in the Eastern Province to do so."
       ],
       image: "/images/opening.jpg",
       date: "2024-12-17"
-    }
+    },
+    // Add more dummy news items for testing
   ];
 
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
+  const [visibleCount, setVisibleCount] = useState(2); // Show initial 2 news items
 
-  const openModal = (newsItem: NewsItem) => {
-    setSelectedNews(newsItem);
-  };
-
-  const closeModal = () => {
-    setSelectedNews(null);
-  };
+  const openModal = (newsItem: NewsItem) => setSelectedNews(newsItem);
+  const closeModal = () => setSelectedNews(null);
 
   const handleBackdropClick = (e: React.MouseEvent) => {
-    // Close the modal only if the backdrop (the semi-transparent overlay) is clicked
     if ((e.target as HTMLElement).classList.contains("modal-backdrop")) {
       closeModal();
     }
+  };
+
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 2); // Show 2 more items per click
   };
 
   return (
@@ -59,20 +58,17 @@ export default function NewsSection() {
           Latest News
         </h2>
 
-        <div className="space-y-8">
-          {news.map((item) => (
-            <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md w-full">
-              {/* Image Container with Fixed Size */}
+        {/* Two-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {news.slice(0, visibleCount).map((item) => (
+            <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md">
               <div className="w-full h-64 overflow-hidden flex justify-center items-center bg-gray-200">
-                <img src={item.image} alt={item.title} className="w-full h-96object-cover" />
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
               </div>
-
               <div className="p-6">
                 <span className="text-sm text-gray-500">{item.date}</span>
                 <h3 className="text-xl font-semibold mt-2">{item.title}</h3>
                 <p className="mt-2 text-gray-600 line-clamp-3">{item.excerpt.join(" ")}</p>
-
-                {/* Read More button */}
                 <div className="mt-4">
                   <button
                     onClick={() => openModal(item)}
@@ -85,6 +81,18 @@ export default function NewsSection() {
             </div>
           ))}
         </div>
+
+        {/* Load More button */}
+        {visibleCount < news.length && (
+          <div className="mt-10 flex justify-center">
+            <button
+              onClick={loadMore}
+              className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-600 transition-colors"
+            >
+              Load More
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Popup Modal */}
@@ -94,21 +102,16 @@ export default function NewsSection() {
           onClick={handleBackdropClick}
         >
           <div className="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 relative max-h-[80vh] overflow-y-auto">
-            {/* Close Button */}
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2"
             >
               ✕
             </button>
-
-            {/* Scrollable Content */}
             <div className="flex flex-col items-center">
               <img src={selectedNews.image} alt={selectedNews.title} className="w-full h-64 object-cover rounded-md" />
               <h2 className="text-2xl font-bold mt-4">{selectedNews.title}</h2>
               <span className="text-sm text-gray-500">{selectedNews.date}</span>
-              
-              {/* Scrollable Text */}
               <div className="mt-4 text-gray-700 max-h-[50vh] overflow-y-auto px-4">
                 {selectedNews.excerpt.map((paragraph, index) => (
                   <p key={index} className="mb-4">{paragraph}</p>
