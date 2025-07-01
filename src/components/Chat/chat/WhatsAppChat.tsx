@@ -25,7 +25,7 @@ const WhatsAppChat: React.FC = () => {
 
   return (
     <div
-      className="w-full bg-white rounded-lg shadow-md flex flex-col sm:flex-col overflow-hidden"
+      className="w-full bg-white rounded-lg shadow-md flex flex-col sm:flex-row overflow-hidden"
       style={{
         height: viewportHeight < 550 ? viewportHeight : 450,
         maxWidth: '100%',

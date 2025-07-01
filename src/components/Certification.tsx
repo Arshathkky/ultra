@@ -37,7 +37,7 @@ export default function Certification() {
                 <img
                   src={profile.image}
                   alt={profile.title}
-                  className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-300"
+                  className="w-full h-90 object-cover transform group-hover:scale-210 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
                   <div className="absolute bottom-0 p-6">

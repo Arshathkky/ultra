@@ -110,7 +110,7 @@ export default function AboutPage() {
                 1
               </div>
               <p className="text-gray-600 text-lg">
-                <span className="font-semibold">2010:</span> Founded with a vision to innovate aluminum manufacturing.
+                <span className="font-semibold">2018:</span> Founded with a vision to innovate aluminum manufacturing.
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 2
               </div>
               <p className="text-gray-600 text-lg">
-                <span className="font-semibold">2015:</span> Expanded operations globally, serving multiple industries.
+                <span className="font-semibold">2022:</span> Expanded operations globally, serving multiple industries.
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -126,17 +126,10 @@ export default function AboutPage() {
                 3
               </div>
               <p className="text-gray-600 text-lg">
-                <span className="font-semibold">2020:</span> Achieved sustainability milestones and introduced eco-friendly materials.
+                <span className="font-semibold">2024:</span> Achieved ISO 9001-2015 Certification By SLSI.
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
-                4
-              </div>
-              <p className="text-gray-600 text-lg">
-                <span className="font-semibold">2023:</span> Launched new innovative products redefining quality standards.
-              </p>
-            </div>
+            
           </div>
         </div>
       </div>
