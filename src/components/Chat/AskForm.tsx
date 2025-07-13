@@ -1,28 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 
 const AskForms: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Your request has been submitted!");
-    console.log({ name, email, message });
 
-    setName("");
-    setEmail("");
-    setMessage("");
+    if (!formRef.current) return;
+
+    emailjs
+      .sendForm(
+        "service_pm72toq",       // ✅ Your Service ID
+        "template_qn7os8v",      // ✅ Your Template ID
+        formRef.current,
+        "l7kpanH9fDSJ3ohco"      // ✅ Your User ID (Public Key)
+      )
+      .then(
+        () => {
+          alert("Your request has been submitted successfully!");
+          setName("");
+          setEmail("");
+          setMessage("");
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          alert("There was an error sending your message. Please try again.");
+        }
+      );
   };
 
   return (
     <div className="w-full h-full flex items-center justify-center px-4">
-      <div className="w-full max-w-ls bg-white rounded-lg shadow-md p-6">
+      <div className="w-full max-w-lg bg-white rounded-lg shadow-md p-6">
         <h2 className="text-xl font-semibold text-[#1a0179] text-center mb-4">
           Ask a Question
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Your Name
@@ -30,6 +48,7 @@ const AskForms: React.FC = () => {
             <input
               type="text"
               id="name"
+              name="name" // Required by EmailJS
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -45,6 +64,7 @@ const AskForms: React.FC = () => {
             <input
               type="email"
               id="email"
+              name="email" // Required by EmailJS
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -59,6 +79,7 @@ const AskForms: React.FC = () => {
             </label>
             <textarea
               id="message"
+              name="message" // Required by EmailJS
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
