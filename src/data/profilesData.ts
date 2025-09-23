@@ -17,8 +17,8 @@ import {
 
 export const sections: Section[] = [
   {
-    id: 'hardware-profiles',
-    title: 'Hardware Profiles',
+    id: 'Section-profiles',
+    title: 'Section Profiles',
     description: 'Professional aluminum window and door profiles for architectural applications',
     categories: [
       {
@@ -379,7 +379,7 @@ export const sections: Section[] = [
   },
   {
     id: 'hardware-items',
-    title: 'Hardware Items',
+    title: 'Hardware Profiles',
     description: 'Structural aluminum components and accessories for construction and fabrication',
     categories: [
       {

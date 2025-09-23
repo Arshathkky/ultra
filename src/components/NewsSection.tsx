@@ -11,7 +11,18 @@ interface NewsItem {
 export default function NewsSection() {
   const news: NewsItem[] = [
     {
-      id: 1,
+       id: 1,
+      title: "Ultra Aluminium (Pvt) Ltd Achieves ISO 14001:2015 Certification!",
+      excerpt: [
+        "Ultra Aluminium (Pvt) Ltd, based in Batticaloa, has been awarded the ISO 14001:2015 Environmental Management System Certification by the Sri Lanka Standards Institution (SLSI).",
+        "The certificate was officially presented by Director General of SLSI, Dr. Siddhika G. Senaratne, to the Chairman of Ultra Aluminium (Pvt) Ltd, Mr. A.M. Unais.",
+        "This recognition reflects our strong commitment to environmental sustainability, responsible business practices, and setting new standards in the aluminium industry."
+      ],
+      image: "/images/Banner2.jpeg",
+      date: "2025-08-01"
+    },
+    {
+      id: 2,
       title: "Ultra Aluminium (Pvt) Ltd Achieves ISO 9001:2015 Certification!",
       excerpt: [
         "Ultra Aluminium (Pvt) Ltd Achieves ISO 9001:2015 Certification!",
@@ -22,7 +33,7 @@ export default function NewsSection() {
       date: "2025-01-15"
     },
     {
-      id: 2,
+      id: 3,
       title: "Award-Winning Project Completion",
       excerpt: [
         "The inaugural event for connecting 2 megawatts of electricity to the national power grid was held on Tuesday (7th) at the Ultra Aluminium Private Limited premises in Arayampathi.",

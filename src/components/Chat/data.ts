@@ -10,12 +10,12 @@ export const users: User[] = [
     phone: '+94 777904783' // 👈 WhatsApp phone number
   },
   
-  {
-    id: 3,
-    name: 'Office',
-    avatar: 'https://i.pravatar.cc/150?img=3',
-    status: 'Available',
-    lastSeen: 'online',
-    phone: '447911123456'
-  }
+  // {
+  //   id: 3,
+  //   name: 'Office',
+  //   avatar: 'https://i.pravatar.cc/150?img=3',
+  //   status: 'Available',
+  //   lastSeen: 'online',
+  //   phone: '447911123456'
+  // }
 ];
