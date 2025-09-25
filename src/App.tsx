@@ -8,7 +8,7 @@ import NetPage from "./pages/NetPage";
 import SolarPage from "./pages/SolarPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
-import ProfileTypePage from "./pages/ProfileTypePage";
+//import ProfileTypePage from "./pages/ProfileTypePage";
 import BranchCard from "./components/Dealers";
 import ManagementSystems from "./components/OurProduction/ManagementSystems";
 
@@ -24,10 +24,10 @@ export default function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/profiles" element={<ProfilesPage />} />
+            <Route path="/profiles123" element={<ProfilesPage />} />
             <Route path="/system" element={<ManagementSystems />} />
             <Route path="/systems/:system" element={<ManagementSystems />} />
-            <Route path="/profiles/:id" element={<ProfileTypePage />} />
+            {/* <Route path="/profiles/:id" element={<ProfileTypePage />} /> */}
             <Route path="/net" element={<NetPage />} />
             <Route path="/solar" element={<SolarPage />} />
             <Route path="/about" element={<AboutPage />} />
