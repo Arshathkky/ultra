@@ -24,7 +24,7 @@ export default function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/profiles123" element={<ProfilesPage />} />
+            <Route path="/profile" element={<ProfilesPage />} />
             <Route path="/system" element={<ManagementSystems />} />
             <Route path="/systems/:system" element={<ManagementSystems />} />
             {/* <Route path="/profiles/:id" element={<ProfileTypePage />} /> */}
