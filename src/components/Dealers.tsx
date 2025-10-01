@@ -1622,12 +1622,13 @@ const dealers: Dealer[] = [
 
 ]
 
-
 export default function BranchCard() {
   const [selectedDealer, setSelectedDealer] = useState<Dealer | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("All");
   const [filteredDealers, setFilteredDealers] = useState<Dealer[]>([]);
+  const [visibleCounts, setVisibleCounts] = useState<Record<string, number>>({});
+
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -1635,6 +1636,7 @@ export default function BranchCard() {
     new Set(dealers.map((dealer) => dealer.district).filter(Boolean))
   );
 
+  // 🔎 Filtering logic
   useEffect(() => {
     const filtered = dealers.filter((dealer) => {
       const matchesSearch =
@@ -1647,18 +1649,26 @@ export default function BranchCard() {
 
       return matchesSearch && matchesDistrict;
     });
+
     setFilteredDealers(filtered);
+
+    // Reset visible counts when filters change
+    const initialCounts: Record<string, number> = {};
+    filtered.forEach((dealer) => {
+      if (!initialCounts[dealer.district]) {
+        initialCounts[dealer.district] = 6; // Show 6 initially
+      }
+    });
+    setVisibleCounts(initialCounts);
   }, [searchTerm, selectedDistrict]);
 
+  // 🟢 GSAP animations
   useEffect(() => {
     cardsRef.current.forEach((card, index) => {
       if (card) {
         gsap.fromTo(
           card,
-          {
-            opacity: 0,
-            y: 50,
-          },
+          { opacity: 0, y: 50 },
           {
             opacity: 1,
             y: 0,
@@ -1680,6 +1690,7 @@ export default function BranchCard() {
     };
   }, [filteredDealers]);
 
+  // 🟢 Close modal when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
@@ -1696,6 +1707,7 @@ export default function BranchCard() {
     };
   }, [selectedDealer]);
 
+  // 🟢 Group by district
   const groupedDealers = filteredDealers.reduce((acc, dealer) => {
     if (!acc[dealer.district]) {
       acc[dealer.district] = [];
@@ -1703,6 +1715,13 @@ export default function BranchCard() {
     acc[dealer.district].push(dealer);
     return acc;
   }, {} as Record<string, Dealer[]>);
+
+  const loadMore = (district: string) => {
+    setVisibleCounts((prev) => ({
+      ...prev,
+      [district]: prev[district] + 6,
+    }));
+  };
 
   const closeModal = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
@@ -1713,7 +1732,7 @@ export default function BranchCard() {
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-16">
       <div className="px-4 sm:px-6 lg:px-8">
-        {/* Search Bar */}
+        {/* 🔎 Search Bar */}
         <div className="max-w-2xl mx-auto mb-8">
           <div className="relative">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -1727,7 +1746,7 @@ export default function BranchCard() {
           </div>
         </div>
 
-        {/* District Tabs */}
+        {/* 🏷 District Tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           <button
             onClick={() => setSelectedDistrict("All")}
@@ -1754,39 +1773,60 @@ export default function BranchCard() {
           ))}
         </div>
 
-        {/* Dealers Grid Grouped by District */}
-        {Object.entries(groupedDealers).map(([district, dealers]) => (
-          <div key={district} className="mb-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-500 pb-2">
-              {district}
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {dealers.map((dealer, index) => (
-                <div
-                  key={dealer.id}
-                  ref={(el) => (cardsRef.current[index] = el)}
-                  className="group cursor-pointer bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-                  onClick={() => setSelectedDealer(dealer)}
-                >
-                  <div className="relative">
-                    <img
-                      src={dealer.image}
-                      alt={dealer.name}
-                      className="w-full h-48 object-contain p-4"
-                    />
+        {/* 🟢 Dealers Grid Grouped by District */}
+        {Object.entries(groupedDealers).map(([district, dealers]) => {
+          const visibleCount = visibleCounts[district] || 6;
+          const visibleDealers = dealers.slice(0, visibleCount);
+
+          return (
+            <div key={district} className="mb-12">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-500 pb-2">
+                {district}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {visibleDealers.map((dealer, index) => (
+                  <div
+                    key={dealer.id}
+                    ref={(el) => (cardsRef.current[index] = el)}
+                    className="group cursor-pointer bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                    onClick={() => setSelectedDealer(dealer)}
+                  >
+                    <div className="relative">
+                      <img
+                        src={dealer.image}
+                        alt={dealer.name}
+                        className="w-full h-48 object-contain p-4"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        {dealer.name}
+                      </h3>
+                      <p className="text-gray-600 mb-4">
+                        {dealer.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{dealer.name}</h3>
-                    <p className="text-gray-600 mb-4">{dealer.description}</p>
-                  </div>
+                ))}
+              </div>
+
+              {/* 🔵 Load More Button */}
+              {dealers.length > visibleCount && (
+                <div className="flex justify-center mt-6">
+                  <button
+                    onClick={() => loadMore(district)}
+                    className="px-6 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+                  >
+                    Load More
+                  </button>
                 </div>
-              ))}
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* Dealer Details Modal */}
+      {/* 🔵 Dealer Details Modal */}
       {selectedDealer && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center"
@@ -1807,7 +1847,9 @@ export default function BranchCard() {
               alt={selectedDealer.name}
               className="w-full h-48 object-contain mb-6"
             />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">{selectedDealer.name}</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              {selectedDealer.name}
+            </h3>
             <p className="text-gray-600 mb-4">{selectedDealer.description}</p>
             <p className="text-gray-600 mb-2">
               <strong>Location:</strong> {selectedDealer.location}
