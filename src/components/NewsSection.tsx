@@ -11,7 +11,21 @@ interface NewsItem {
 export default function NewsSection() {
   const news: NewsItem[] = [
     {
-       id: 1,
+      id: 1,
+      title: "Ultra Aluminium (Pvt) Ltd Proudly Celebrates Key Milestones!",
+      excerpt: [
+        "On 04th October 2025, Ultra Aluminium (Pvt) Ltd proudly celebrated significant milestones at its factory premises, marking a new chapter of growth and excellence.",
+        "The event highlighted the company’s achievement of the SLS 1410 Product Certification, reaffirming our commitment to the highest quality standards and industry excellence.",
+        "The ceremony also featured key leadership appointments, with Mr. Priyantha Kumara officially appointed as Chief Executive Officer (CEO) and five new members joining the Board of Directors: Mr. Priyantha Kumara, Mr. K.L.M. Asmal, Mr. M.U.M. Yahya, Mr. S.M. Muslih, and Mr. A.A. Alfar, effective from 1st October 2025.",
+        "These appointments were made in the presence of existing board members, Mr. M.I.M. Jawfer and Mr. M.J.M. Jeslan, under the leadership of Hon. A.M. Unais, Chairman of Ultra Aluminium, with the esteemed presence of our Founder, Hon. I.L. Akbar Hajiyar.",
+        "The celebration also recognized major company achievements, including ISO 9001, ISO 14001, and SLS 1410 Certifications, as well as selection for the Presidential Environmental Award 2025 — reflecting our dedication, teamwork, and vision for sustainable growth.",
+        "Together We Achieved, Together We Celebrate – and Together We Will Grow!"
+      ],
+          image: "/images/appointment.jpg" ,
+          date: "2025-10-04"
+    },
+    {
+       id: 2,
       title: "Ultra Aluminium (Pvt) Ltd Achieves ISO 14001:2015 Certification!",
       excerpt: [
         "Ultra Aluminium (Pvt) Ltd, based in Batticaloa, has been awarded the ISO 14001:2015 Environmental Management System Certification by the Sri Lanka Standards Institution (SLSI).",
@@ -22,7 +36,7 @@ export default function NewsSection() {
       date: "2025-08-01"
     },
     {
-      id: 2,
+      id: 3,
       title: "Ultra Aluminium (Pvt) Ltd Achieves ISO 9001:2015 Certification!",
       excerpt: [
         "Ultra Aluminium (Pvt) Ltd Achieves ISO 9001:2015 Certification!",
@@ -33,7 +47,7 @@ export default function NewsSection() {
       date: "2025-01-15"
     },
     {
-      id: 3,
+      id: 4,
       title: "Award-Winning Project Completion",
       excerpt: [
         "The inaugural event for connecting 2 megawatts of electricity to the national power grid was held on Tuesday (7th) at the Ultra Aluminium Private Limited premises in Arayampathi.",
@@ -43,11 +57,11 @@ export default function NewsSection() {
       image: "/images/opening.jpg",
       date: "2024-12-17"
     },
-    // Add more dummy news items for testing
   ];
 
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
-  const [visibleCount, setVisibleCount] = useState(2); // Show initial 2 news items
+  const [visibleCount, setVisibleCount] = useState(2);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   const openModal = (newsItem: NewsItem) => setSelectedNews(newsItem);
   const closeModal = () => setSelectedNews(null);
@@ -59,7 +73,7 @@ export default function NewsSection() {
   };
 
   const loadMore = () => {
-    setVisibleCount((prev) => prev + 2); // Show 2 more items per click
+    setVisibleCount((prev) => prev + 2);
   };
 
   return (
@@ -72,14 +86,28 @@ export default function NewsSection() {
         {/* Two-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {news.slice(0, visibleCount).map((item) => (
-            <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md">
-              <div className="w-full h-64 overflow-hidden flex justify-center items-center bg-gray-200">
-                <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+            <div
+              key={item.id}
+              className="bg-white rounded-lg overflow-hidden shadow-md"
+            >
+              {/* Image with zoom click */}
+              <div
+                className="w-full h-64 overflow-hidden flex justify-center items-center bg-gray-200 cursor-pointer"
+                onClick={() => setZoomedImage(item.image)}
+              >
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                />
               </div>
+
               <div className="p-6">
                 <span className="text-sm text-gray-500">{item.date}</span>
                 <h3 className="text-xl font-semibold mt-2">{item.title}</h3>
-                <p className="mt-2 text-gray-600 line-clamp-3">{item.excerpt.join(" ")}</p>
+                <p className="mt-2 text-gray-600 line-clamp-3">
+                  {item.excerpt.join(" ")}
+                </p>
                 <div className="mt-4">
                   <button
                     onClick={() => openModal(item)}
@@ -106,7 +134,7 @@ export default function NewsSection() {
         )}
       </div>
 
-      {/* Popup Modal */}
+      {/* Popup Modal for News */}
       {selectedNews && (
         <div
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 modal-backdrop"
@@ -120,18 +148,49 @@ export default function NewsSection() {
               ✕
             </button>
             <div className="flex flex-col items-center">
-              <img src={selectedNews.image} alt={selectedNews.title} className="w-full h-64 object-cover rounded-md" />
-              <h2 className="text-2xl font-bold mt-4">{selectedNews.title}</h2>
-              <span className="text-sm text-gray-500">{selectedNews.date}</span>
+              <img
+                src={selectedNews.image}
+                alt={selectedNews.title}
+                className="w-full h-64 object-contain rounded-md"
+              />
+              <h2 className="text-2xl font-bold mt-4">
+                {selectedNews.title}
+              </h2>
+              <span className="text-sm text-gray-500">
+                {selectedNews.date}
+              </span>
               <div className="mt-4 text-gray-700 max-h-[50vh] overflow-y-auto px-4">
                 {selectedNews.excerpt.map((paragraph, index) => (
-                  <p key={index} className="mb-4">{paragraph}</p>
+                  <p key={index} className="mb-4">
+                    {paragraph}
+                  </p>
                 ))}
               </div>
             </div>
           </div>
         </div>
       )}
+
+      {/* Zoomed Image Modal */}
+      {zoomedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[60]"
+          onClick={() => setZoomedImage(null)}
+        >
+          <img
+            src={zoomedImage}
+            alt="Zoomed"
+            className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg object-contain"
+          />
+          <button
+            onClick={() => setZoomedImage(null)}
+            className="absolute top-4 right-4 bg-red-600 text-white p-2 rounded-full"
+          >
+            ✕
+          </button>
+        </div>
+      )}
     </div>
   );
 }
+

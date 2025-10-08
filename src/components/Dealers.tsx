@@ -1863,6 +1863,8 @@ export default function BranchCard() {
             <p className="text-gray-600">
               <strong>Phone:</strong> {selectedDealer.phone}
             </p>
+ 
+ 
           </div>
         </div>
       )}
