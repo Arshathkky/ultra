@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import Certification from '../components/Certification';
+import Certification from '../components/About/Certification';
 import { sampleImages } from '../data/sampleImages';
 
 
@@ -127,6 +127,22 @@ export default function AboutPage() {
               </div>
               <p className="text-gray-600 text-lg">
                 <span className="font-semibold">2024:</span> Achieved ISO 9001-2015 Certification By SLSI.
+              </p>
+            </div>
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                4
+              </div>
+              <p className="text-gray-600 text-lg">
+                <span className="font-semibold">2025 July:</span> Achieved ISO 14001 Certification By SLSI.
+              </p>
+            </div>
+             <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
+                5
+              </div>
+              <p className="text-gray-600 text-lg">
+                <span className="font-semibold">2025 OCT:</span> Achieved SLS 1410 Certification Mark By SLSI.
               </p>
             </div>
             

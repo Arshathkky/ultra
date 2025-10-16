@@ -9,7 +9,7 @@ import SolarPage from "./pages/SolarPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 //import ProfileTypePage from "./pages/ProfileTypePage";
-import BranchCard from "./components/Dealers";
+//import BranchCard from "./components/Dealers";
 import ManagementSystems from "./components/OurProduction/ManagementSystems";
 
 export default function App() {

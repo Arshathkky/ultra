@@ -1,7 +1,7 @@
 import HomeSlider from '../components/HomePage/HomeSlider';
 import ProductGrid from '../components/HomePage/ProductGrid';
-import NewsSection from '../components/NewsSection';
-import Quality from '../components/Quality';
+import NewsSection from '../components/HomePage/NewsSection';
+import Quality from '../components/HomePage/Quality';
 import AskOrOrderForm from '../components/AskOrderForm';
 import ProductionHome from '../components/OurProduction/ProductionHome';
 
