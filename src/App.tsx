@@ -11,6 +11,7 @@ import ContactPage from "./pages/ContactPage";
 //import ProfileTypePage from "./pages/ProfileTypePage";
 //import BranchCard from "./components/Dealers";
 import ManagementSystems from "./components/OurProduction/ManagementSystems";
+import NewsPage from "./pages/News";
 
 export default function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/profile" element={<ProfilesPage />} />
             <Route path="/system" element={<ManagementSystems />} />
+            <Route path="/news" element={<NewsPage />} />
             <Route path="/systems/:system" element={<ManagementSystems />} />
             {/* <Route path="/profiles/:id" element={<ProfileTypePage />} /> */}
             <Route path="/net" element={<NetPage />} />

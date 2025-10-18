@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface NewsItem {
   id: number;
@@ -8,7 +9,13 @@ interface NewsItem {
   date: string;
 }
 
-export default function NewsSection() {
+interface NewsSectionProps {
+  showAllInitially?: boolean;
+}
+
+export default function NewsSection({ showAllInitially = false }: NewsSectionProps) {
+  const navigate = useNavigate();
+
   const news: NewsItem[] = [
     {
       id: 1,
@@ -21,11 +28,11 @@ export default function NewsSection() {
         "The celebration also recognized major company achievements, including ISO 9001, ISO 14001, and SLS 1410 Certifications, as well as selection for the Presidential Environmental Award 2025 — reflecting our dedication, teamwork, and vision for sustainable growth.",
         "Together We Achieved, Together We Celebrate – and Together We Will Grow!"
       ],
-          image: "/images/appointment.jpg" ,
-          date: "2025-10-04"
+      image: "/images/appointment.jpg",
+      date: "2025-10-04"
     },
     {
-       id: 2,
+      id: 2,
       title: "Ultra Aluminium (Pvt) Ltd Achieves ISO 14001:2015 Certification!",
       excerpt: [
         "Ultra Aluminium (Pvt) Ltd, based in Batticaloa, has been awarded the ISO 14001:2015 Environmental Management System Certification by the Sri Lanka Standards Institution (SLSI).",
@@ -57,10 +64,11 @@ export default function NewsSection() {
       image: "/images/opening.jpg",
       date: "2024-12-17"
     },
+    
   ];
 
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
-  const [visibleCount, setVisibleCount] = useState(2);
+  const [visibleCount, setVisibleCount] = useState(showAllInitially ? 4 : 2);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   const openModal = (newsItem: NewsItem) => setSelectedNews(newsItem);
@@ -73,7 +81,11 @@ export default function NewsSection() {
   };
 
   const loadMore = () => {
-    setVisibleCount((prev) => prev + 2);
+    if (!showAllInitially) {
+      navigate("/news");
+    } else {
+      setVisibleCount((prev) => prev + 2);
+    }
   };
 
   return (
@@ -83,14 +95,9 @@ export default function NewsSection() {
           Latest News
         </h2>
 
-        {/* Two-column grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {news.slice(0, visibleCount).map((item) => (
-            <div
-              key={item.id}
-              className="bg-white rounded-lg overflow-hidden shadow-md"
-            >
-              {/* Image with zoom click */}
+            <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md">
               <div
                 className="w-full h-64 overflow-hidden flex justify-center items-center bg-gray-200 cursor-pointer"
                 onClick={() => setZoomedImage(item.image)}
@@ -121,7 +128,6 @@ export default function NewsSection() {
           ))}
         </div>
 
-        {/* Load More button */}
         {visibleCount < news.length && (
           <div className="mt-10 flex justify-center">
             <button
@@ -134,7 +140,6 @@ export default function NewsSection() {
         )}
       </div>
 
-      {/* Popup Modal for News */}
       {selectedNews && (
         <div
           className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 modal-backdrop"
@@ -153,12 +158,8 @@ export default function NewsSection() {
                 alt={selectedNews.title}
                 className="w-full h-64 object-contain rounded-md"
               />
-              <h2 className="text-2xl font-bold mt-4">
-                {selectedNews.title}
-              </h2>
-              <span className="text-sm text-gray-500">
-                {selectedNews.date}
-              </span>
+              <h2 className="text-2xl font-bold mt-4">{selectedNews.title}</h2>
+              <span className="text-sm text-gray-500">{selectedNews.date}</span>
               <div className="mt-4 text-gray-700 max-h-[50vh] overflow-y-auto px-4">
                 {selectedNews.excerpt.map((paragraph, index) => (
                   <p key={index} className="mb-4">
@@ -171,7 +172,6 @@ export default function NewsSection() {
         </div>
       )}
 
-      {/* Zoomed Image Modal */}
       {zoomedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[60]"
@@ -193,4 +193,3 @@ export default function NewsSection() {
     </div>
   );
 }
-

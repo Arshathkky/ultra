@@ -78,7 +78,7 @@ export default function Header() {
                 </div>
               )}
             </div>
-
+              { <Link to="/news" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Blogs</Link> }
             {/* <Link to="/dealers" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Dealers</Link> */}
             <Link to="/about" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">About Us</Link>
             <Link to="/contact" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Contact</Link>
@@ -125,7 +125,7 @@ export default function Header() {
                 </div>
               )}
             </div>
-
+              {<Link to="/news" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Blogs</Link> }
             {/* <Link to="/dealers" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Dealers</Link> */}
             <Link to="/about" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>About Us</Link>
             <Link to="/contact" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Contact</Link>
