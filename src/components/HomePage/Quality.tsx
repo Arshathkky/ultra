@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { MoveRight, Factory, Award, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
-import iso from "/images/ISO.png"
+import iso1 from "/images/ISO14001.jpg"
+import iso2 from "/images/ISO9001.jpg"
+
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef(null);
@@ -60,7 +62,11 @@ const HeroSection: React.FC = () => {
     {/* Feature Cards */}
     <div className="grid md:grid-cols-3 gap-8 mb-16 w-full px-4 md:px-8">
       <div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-        <img src={iso} className="w-15 h-14 text-blue-600 mb-4" />
+        <img src={iso1} className="w-15 h-14 text-blue-600 mb-4" />
+        <h3 className="text-xl font-semibold mb-2">ISO 14001:2015 Certified</h3>
+        <p className="text-gray-600">Our comprehensive EMS has achieved this certification, establishing a new standard for our environmental performance and sustainability</p>
+      </div><div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+        <img src={iso2} className="w-15 h-14 text-blue-600 mb-4" />
         <h3 className="text-xl font-semibold mb-2">ISO 9001:2015 Certified</h3>
         <p className="text-gray-600">Our best QMS achieved this certification, setting a new benchmark for our operational excellence</p>
       </div>

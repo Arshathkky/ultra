@@ -33,7 +33,7 @@ export default function ProductGrid() {
       title: "Aluminum Extrusion Profiles",
       image: sampleImages.extrusionProfiles,
       description: "Premium quality aluminum profiles engineered for architectural and industrial applications, delivering unmatched durability and precision.",
-      link: "/profiles",
+      link: "/profile",
       features: ["Custom Designs", "High Strength", "Precision Engineering"],
       icon: "package"
     },

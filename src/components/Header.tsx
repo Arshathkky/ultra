@@ -125,7 +125,8 @@ export default function Header() {
                 </div>
               )}
             </div>
-              {<Link to="/news" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Blogs</Link> }
+              {<Link to="/newsj
+              " className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Blogs</Link> }
             {/* <Link to="/dealers" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Dealers</Link> */}
             <Link to="/about" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>About Us</Link>
             <Link to="/contact" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Contact</Link>

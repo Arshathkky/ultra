@@ -17,8 +17,22 @@ export default function NewsSection({ showAllInitially = false }: NewsSectionPro
   const navigate = useNavigate();
 
   const news: NewsItem[] = [
+      {
+  "id": 1,
+  "title": "A Proud Moment for ULTRA ALUMINIUM PVT LTD 🌿",
+  "excerpt": [
+    "We are truly honored to be recognized at the Presidential Environment Awards Ceremony 2025, held today, 23rd October 2025, at the Bandaranaike Memorial International Conference Hall (BMICH), under the distinguished patronage of Hon. Anura Kumara Dissanayake, President of the Democratic Socialist Republic of Sri Lanka.",
+    "Our company’s Chairman, Mr. A. M. Unais, received this award from Hon. Anura Kumara Dissanayake, marking a proud achievement for the entire Ultra Aluminium team.",
+    "This prestigious recognition reflects Ultra Aluminium’s unwavering commitment to environmental sustainability, innovation, and responsible manufacturing practices that contribute to a cleaner and greener Sri Lanka.",
+    "We extend our sincere acknowledgment to the Ministry of Environment, Hon. (Dr.) Dhammika Patabendi, Minister of Environment, and Hon. Anton Jayakody, Deputy Minister of Environment, for their valuable participation in this national event.",
+    "🌱 At Ultra Aluminium, we remain dedicated to advancing sustainable solutions and creating a lasting positive impact on our environment."
+  ],
+  "image": "/images/environment_award.jpg",
+ 
+  "date": "2025-10-23"
+},
     {
-      id: 1,
+      id: 2,
       title: "Ultra Aluminium (Pvt) Ltd Proudly Celebrates Key Milestones!",
       excerpt: [
         "On 04th October 2025, Ultra Aluminium (Pvt) Ltd proudly celebrated significant milestones at its factory premises, marking a new chapter of growth and excellence.",
@@ -32,7 +46,7 @@ export default function NewsSection({ showAllInitially = false }: NewsSectionPro
       date: "2025-10-04"
     },
     {
-      id: 2,
+      id: 5,
       title: "Ultra Aluminium (Pvt) Ltd Achieves ISO 14001:2015 Certification!",
       excerpt: [
         "Ultra Aluminium (Pvt) Ltd, based in Batticaloa, has been awarded the ISO 14001:2015 Environmental Management System Certification by the Sri Lanka Standards Institution (SLSI).",
