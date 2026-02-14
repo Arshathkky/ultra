@@ -1,0 +1,87 @@
+.book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+}
+
+.book {
+  display: flex;              
+  gap: 20px;                  
+  perspective: 2000px;        
+  justify-content: center;
+  align-items: center;
+  width: 1050px;              /* 2 pages * 500 + gap */
+  height: 700px;              /* taller page height */
+}
+
+/* Left page static */
+.page.left {
+  width: 500px;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* Right page flipping */
+.page.right {
+  width: 500px;
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform-origin: left center;
+  transition: transform 0.6s ease-in-out;
+  overflow: hidden;
+}
+
+/* Flip animation */
+.page.right.flip {
+  transform: rotateY(-180deg);
+  box-shadow: -8px 0 20px rgba(0,0,0,0.2);
+}
+
+/* Controls */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.button-pdf {
+  background-color: #39b54a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-pdf:disabled {
+  background-color: #90f9b3;
+  cursor: not-allowed;
+}
+
+.button-pdf:hover:not(:disabled) {
+  background-color: #39b54a;
+  transform: translateY(-2px);
+}
+
+input[type="number"] {
+  width: 80px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+input[type="number"]:focus {
+  border-color: #39b54a;
+}

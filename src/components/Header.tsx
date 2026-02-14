@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="w-full">
       {/* Top Contact Bar */}
-      <div className="bg-[#1e048b] text-white py-2 hidden md:block">
+      <div className="bg-[#39b54a] text-white py-2 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Phone size={18} />
@@ -38,9 +38,9 @@ export default function Header() {
         <div className="container mx-auto px-2 py-2 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <div className="h-10 w-10 rounded-md flex items-center justify-center">
-              <img src="/images/logo1.png" className="h-14 w-16" />
+              <img src="/images/logo1.jpeg" className="h-12 w-16" />
             </div>
-            <span className="font-bold text-xl text-[#1e048b]">Ultra Aluminium</span>
+            <span className="font-bold text-xl text-[#39b54a]">Ultra Aluminium</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -81,6 +81,7 @@ export default function Header() {
               { <Link to="/news" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Blogs</Link> }
             {/* <Link to="/dealers" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Dealers</Link> */}
             <Link to="/about" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">About Us</Link>
+            <Link to="/E-Catalog" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Catalog</Link>
             <Link to="/contact" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Contact</Link>
           </div>
 
@@ -129,6 +130,7 @@ export default function Header() {
               " className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Blogs</Link> }
             {/* <Link to="/dealers" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Dealers</Link> */}
             <Link to="/about" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>About Us</Link>
+            <Link to="/E-Catalog" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Catalog</Link>
             <Link to="/contact" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Contact</Link>
           </div>
         </div>
