@@ -16,9 +16,9 @@ import NewsPage from "./pages/News";
 import { GrCatalog } from "react-icons/gr";
 
 export default function App() {
-  useEffect(() => {
-    alert("⚡ Our website is live and currently being updated. Stay tuned for new features!");
-  }, []);
+  // useEffect(() => {
+  //   alert("⚡ Our website is live and currently being updated. Stay tuned for new features!");
+  // }, []);
 
   return (
     <Router>
