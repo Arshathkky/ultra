@@ -10,10 +10,10 @@ const slides = [
     image: sampleImages.casting,
     title: "Aluminum Casting"
   },
-  {
-    image: sampleImages.airPollution,
-    title: "Air Pollution Control"
-  }
+  // {
+  //   image: sampleImages.airPollution,
+  //   title: "Air Pollution Control"
+  // }
 ];
 
 export default function CustomFramedSlider() {

@@ -1,7 +1,7 @@
 export const sampleImages = {
   // Factory and industrial images
-  casting: "images/Home/Home12.jpg",
-  extrusion: "images/Home/Home22.jpg",
+  casting: "images/Home/Home12.gif",
+  extrusion: "images/Home/Home22.gif",
   airPollution: "images/Home/Home32.jpg",
  
   
