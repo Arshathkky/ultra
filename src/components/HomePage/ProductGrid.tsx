@@ -107,9 +107,9 @@ export default function ProductGrid() {
 
   return (
     <section ref={sectionRef} className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
-      <div className=" px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="product-heading text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-customBlue to-indigo-600 mb-6">
+          <h2 className="product-heading text-4xl md:text-5xl font-extrabold text-[#05af28] mb-6">
             Our Solutions, Your Success
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -166,9 +166,9 @@ export default function ProductGrid() {
 
                   <Link 
                     to={product.link}
-                    className="group/button inline-flex items-center justify-center w-full gap-2 px-6 py-3 bg-gradient-to-r from-blue-900 to-indigo-600 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:from-blue-800 hover:to-indigo-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    className="group/button inline-flex items-center justify-center w-full gap-2 px-6 py-3 bg-[#39b54a] text-white font-bold rounded-xl transition-all duration-300 hover:shadow-lg hover:bg-[#2e943c] focus:ring-2 focus:ring-[#39b54a] focus:ring-offset-2"
                   >
-                    Learn More
+                    Explore Products
                     <MoveRight className="w-5 h-5 transform transition-transform duration-300 group-hover/button:translate-x-1" />
                   </Link>
                 </div>

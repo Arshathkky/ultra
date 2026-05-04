@@ -1,129 +1,101 @@
-import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { motion } from 'framer-motion';
 import { sampleImages } from '../../data/sampleImages';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 const slides = [
   {
     image: sampleImages.extrusion,
-    title: "Aluminum Extrusion"
+    title: "Precision Aluminum Extrusion",
+    subtitle: "State-of-the-art technology for complex profiles and architectural excellence."
   },
   {
     image: sampleImages.casting,
-    title: "Aluminum Casting"
+    title: "High-Quality Aluminum Casting",
+    subtitle: "Superior casting processes ensuring durability and strength for industrial needs."
   },
-  // {
-  //   image: sampleImages.airPollution,
-  //   title: "Air Pollution Control"
-  // }
+  {
+    image: "/images/Banner2.jpeg",
+    title: "Eco-Friendly Innovation",
+    subtitle: "Committed to sustainable manufacturing and environmental stewardship."
+  }
 ];
 
-export default function CustomFramedSlider() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [autoplayPaused, setAutoplayPaused] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640); // Tailwind sm breakpoint
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile || autoplayPaused) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, [isMobile, autoplayPaused]);
-
-  // Resume autoplay after 5 seconds of inactivity
-  useEffect(() => {
-    if (!autoplayPaused) return;
-
-    const timeout = setTimeout(() => {
-      setAutoplayPaused(false);
-    }, 5000);
-
-    return () => clearTimeout(timeout);
-  }, [autoplayPaused]);
-
-  const getImage = (offset: number) => {
-    const index = (currentIndex + offset + slides.length) % slides.length;
-    return slides[index];
-  };
-
-  const handleImageClick = (offset: number) => {
-    if (isMobile) return;
-
-    setCurrentIndex((prev) => (prev + offset + slides.length) % slides.length);
-    setAutoplayPaused(true);
-  };
-
-  // Pick a static image for mobile view (e.g., always show the first one)
-  const mobileImage = slides[0];
-
+export default function HomeSlider() {
   return (
-    <div className="w-full flex justify-center items-center gap-4 py-10 px-4 transition-all duration-500">
-      {isMobile ? (
-        // Mobile View: Show single static image
-        <div className="w-full h-[200px] overflow-hidden rounded-2xl shadow-lg border-4 border-blue-500 flex flex-col items-center">
-          <img
-            src={mobileImage.image}
-            alt={mobileImage.title}
-            className="w-full h-full object-cover"
-          />
-          <div className="mt-2 text-center font-medium text-gray-700 text-sm">
-            {mobileImage.title}
-          </div>
-        </div>
-      ) : (
-        // Desktop View: Show full slider
-        <>
-          {/* Left Frame */}
-          <div
-            className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:shadow-lg"
-            onClick={() => handleImageClick(-1)}
-            title={`View ${getImage(-1).title}`}
-          >
-            <img
-              src={getImage(-1).image}
-              alt={getImage(-1).title}
-              className="w-full h-full object-cover transition-all duration-500"
-            />
-          </div>
-
-          {/* Center Frame */}
-          <div className="flex flex-col items-center w-[75%] h-[400px] overflow-hidden rounded-2xl shadow-lg border-4 border-blue-500 transition-all duration-500">
-            <img
-              src={getImage(0).image}
-              alt={getImage(0).title}
-              className="w-full h-full object-cover transition-all duration-500"
-            />
-            <div className="mt-2 text-center font-medium text-gray-700 text-base">
-              {getImage(0).title}
+    <div className="w-full relative group">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay, EffectFade]}
+        effect="fade"
+        spaceBetween={0}
+        slidesPerView={1}
+        navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }}
+        pagination={{ clickable: true, dynamicBullets: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        loop={true}
+        className="h-[500px] md:h-[650px] w-full"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative w-full h-full">
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+                <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                  <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="max-w-2xl text-white"
+                  >
+                    <h2 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+                      {slide.title}
+                    </h2>
+                    <p className="text-lg md:text-xl text-gray-200 mb-8 font-light leading-relaxed">
+                      {slide.subtitle}
+                    </p>
+                    <div className="flex gap-4">
+                      <button className="px-8 py-3 bg-[#39b54a] hover:bg-[#2e943c] text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg">
+                        Explore Products
+                      </button>
+                      <button className="px-8 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold rounded-lg transition-all transform hover:scale-105">
+                        Learn More
+                      </button>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Right Frame */}
-          <div
-            className="w-[14.5%] h-[250px] sm:h-[300px] overflow-hidden rounded-xl shadow-md cursor-pointer hover:opacity-90 hover:shadow-lg"
-            onClick={() => handleImageClick(1)}
-            title={`View ${getImage(1).title}`}
-          >
-            <img
-              src={getImage(1).image}
-              alt={getImage(1).title}
-              className="w-full h-full object-cover transition-all duration-500"
-            />
-          </div>
-        </>
-      )}
+          </SwiperSlide>
+        ))}
+        
+        {/* Custom Navigation Arrows */}
+        <div className="swiper-button-prev !text-white !w-12 !h-12 after:!text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="swiper-button-next !text-white !w-12 !h-12 after:!text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      </Swiper>
+      
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block">
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1"
+        >
+          <div className="w-1.5 h-1.5 bg-white rounded-full" />
+        </motion.div>
+      </div>
     </div>
   );
 }

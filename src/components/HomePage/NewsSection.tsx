@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface NewsItem {
   id: number;
@@ -31,20 +32,20 @@ export default function NewsSection({ showAllInitially = false }: NewsSectionPro
  
   "date": "2025-10-23"
 },
-    {
-      id: 2,
-      title: "Ultra Aluminium (Pvt) Ltd Proudly Celebrates Key Milestones!",
-      excerpt: [
-        "On 04th October 2025, Ultra Aluminium (Pvt) Ltd proudly celebrated significant milestones at its factory premises, marking a new chapter of growth and excellence.",
-        "The event highlighted the company’s achievement of the SLS 1410 Product Certification, reaffirming our commitment to the highest quality standards and industry excellence.",
-        "The ceremony also featured key leadership appointments, with Mr. Priyantha Kumara officially appointed as Chief Executive Officer (CEO) and five new members joining the Board of Directors: Mr. Priyantha Kumara, Mr. K.L.M. Asmal, Mr. M.U.M. Yahya, Mr. S.M. Muslih, and Mr. A.A. Alfar, effective from 1st October 2025.",
-        "These appointments were made in the presence of existing board members, Mr. M.I.M. Jawfer and Mr. M.J.M. Jeslan, under the leadership of Hon. A.M. Unais, Chairman of Ultra Aluminium, with the esteemed presence of our Founder, Hon. I.L. Akbar Hajiyar.",
-        "The celebration also recognized major company achievements, including ISO 9001, ISO 14001, and SLS 1410 Certifications, as well as selection for the Presidential Environmental Award 2025 — reflecting our dedication, teamwork, and vision for sustainable growth.",
-        "Together We Achieved, Together We Celebrate – and Together We Will Grow!"
-      ],
-      image: "/images/appointment.jpg",
-      date: "2025-10-04"
-    },
+    // {
+    //   id: 2,
+    //   title: "Ultra Aluminium (Pvt) Ltd Proudly Celebrates Key Milestones!",
+    //   excerpt: [
+    //     "On 04th October 2025, Ultra Aluminium (Pvt) Ltd proudly celebrated significant milestones at its factory premises, marking a new chapter of growth and excellence.",
+    //     "The event highlighted the company’s achievement of the SLS 1410 Product Certification, reaffirming our commitment to the highest quality standards and industry excellence.",
+    //     "The ceremony also featured key leadership appointments, with Mr. Priyantha Kumara officially appointed as Chief Executive Officer (CEO) and five new members joining the Board of Directors: Mr. Priyantha Kumara, Mr. K.L.M. Asmal, Mr. M.U.M. Yahya, Mr. S.M. Muslih, and Mr. A.A. Alfar, effective from 1st October 2025.",
+    //     "These appointments were made in the presence of existing board members, Mr. M.I.M. Jawfer and Mr. M.J.M. Jeslan, under the leadership of Hon. A.M. Unais, Chairman of Ultra Aluminium, with the esteemed presence of our Founder, Hon. I.L. Akbar Hajiyar.",
+    //     "The celebration also recognized major company achievements, including ISO 9001, ISO 14001, and SLS 1410 Certifications, as well as selection for the Presidential Environmental Award 2025 — reflecting our dedication, teamwork, and vision for sustainable growth.",
+    //     "Together We Achieved, Together We Celebrate – and Together We Will Grow!"
+    //   ],
+    //   image: "/images/appointment.jpg",
+    //   date: "2025-10-04"
+    // },
     {
       id: 5,
       title: "Ultra Aluminium (Pvt) Ltd Achieves ISO 14001:2015 Certification!",
@@ -103,42 +104,63 @@ export default function NewsSection({ showAllInitially = false }: NewsSectionPro
   };
 
   return (
-    <div className="py-16">
-      <div className="w-full px-4">
-        <h2 className="text-5xl font-extrabold text-center text-[#1a0179] dark:text-white mb-12 tracking-wide uppercase">
-          Latest News
-        </h2>
+    <div className="py-20 bg-gray-50/50">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-extrabold text-center text-[#05af28] mb-16 tracking-tight"
+        >
+          Latest News & Updates
+        </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {news.slice(0, visibleCount).map((item) => (
-            <div key={item.id} className="bg-white rounded-lg overflow-hidden shadow-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+          {news.slice(0, visibleCount).map((item, index) => (
+            <motion.div 
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col"
+            >
               <div
-                className="w-full h-64 overflow-hidden flex justify-center items-center bg-gray-200 cursor-pointer"
+                className="relative w-full h-72 overflow-hidden bg-gray-100 cursor-pointer"
                 onClick={() => setZoomedImage(item.image)}
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-contain transition-transform duration-300 hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
 
-              <div className="p-6">
-                <span className="text-sm text-gray-500">{item.date}</span>
-                <h3 className="text-xl font-semibold mt-2">{item.title}</h3>
-                <p className="mt-2 text-gray-600 line-clamp-3">
+              <div className="p-8 flex-grow flex flex-col">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-8 h-px bg-[#39b54a]" />
+                  <span className="text-xs font-bold text-[#39b54a] uppercase tracking-widest">{item.date}</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#05af28] transition-colors duration-300 leading-tight">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-gray-600 line-clamp-3 leading-relaxed">
                   {item.excerpt.join(" ")}
                 </p>
-                <div className="mt-4">
+                <div className="mt-8 pt-6 border-t border-gray-50">
                   <button
                     onClick={() => openModal(item)}
-                    className="inline-block px-6 py-2 bg-[#1a0179] text-white rounded-lg hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center text-[#05af28] font-bold group/btn"
                   >
-                    Read More
+                    Read Full Story
+                    <svg className="ml-2 w-5 h-5 transition-transform group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

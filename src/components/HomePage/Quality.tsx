@@ -1,100 +1,112 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { MoveRight, Factory, Award, Shield } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
+import { MoveRight, Award, Shield, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import iso1 from "/images/ISO14001.jpg"
 import iso2 from "/images/ISO9001.jpg"
 
+interface Certification {
+  title: string;
+  desc: string;
+  type: "image" | "icon";
+  img?: string;
+  icon?: any;
+}
 
-const HeroSection: React.FC = () => {
-  const sectionRef = useRef(null);
-  const timelineRef = useRef<gsap.core.Timeline | null>(null);
-
-  useEffect(() => {
-    timelineRef.current = gsap.timeline({
-      defaults: { ease: "power3.out" }
-    });
-
-    timelineRef.current
-      .fromTo(".hero-title", 
-        { y: 50, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1 }
-      )
-      .fromTo(".hero-subtitle",
-        { y: 30, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8 },
-        "-=0.5"
-      )
-      .fromTo(".feature-card",
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.2, duration: 0.6 },
-        "-=0.3"
-      )
-      .fromTo(".cta-button",
-        { scale: 0.9, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 0.5 },
-        "-=0.2"
-      );
-
-    return () => {
-      timelineRef.current?.kill();
-    };
-  }, []);
+const Quality: React.FC = () => {
+  const certifications: Certification[] = [
+    {
+      img: iso1,
+      title: "ISO 14001:2015",
+      desc: "International standard for Environmental Management Systems, reflecting our commitment to sustainability.",
+      type: "image"
+    },
+    {
+      img: iso2,
+      title: "ISO 9001:2015",
+      desc: "Global benchmark for Quality Management Systems, ensuring excellence in every production phase.",
+      type: "image"
+    },
+    {
+      icon: Award,
+      title: "SLS 1410 Certified",
+      desc: "Proudly achieving local quality standards, setting benchmarks for the aluminium industry.",
+      type: "icon"
+    },
+    {
+      icon: Shield,
+      title: "Quality Assured",
+      desc: "Rigorous laboratory testing and quality control processes meeting international specifications.",
+      type: "icon"
+    }
+  ];
 
   return (
-    <section ref={sectionRef} className="relative w-full min-h-full pb  bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden">
-  {/* Background Pattern */}
-  <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-
-  <div className="relative z-10 w-full">
-    {/* Main Content */}
-    <div className="text-center mb-16 w-full">
-      <h1 className="hero-title text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-customBlue to-indigo-600">
-        Manufacturing Excellence in
-        <span className="block mt-2">Aluminium Extrusion</span>
-      </h1>
-      <p className="hero-subtitle text-lg md:text-xl text-gray-700 max-w-3xl mx-auto">
-        ULTRA ALUMINIUM delivers premium quality aluminium solutions, setting new standards
-        in Sri Lanka's manufacturing industry through innovation and precision.
-      </p>
-    </div>
-
-    {/* Feature Cards */}
-    <div className="grid md:grid-cols-3 gap-8 mb-16 w-full px-4 md:px-8">
-      <div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-        <img src={iso1} className="w-15 h-14 text-blue-600 mb-4" />
-        <h3 className="text-xl font-semibold mb-2">ISO 14001:2015 Certified</h3>
-        <p className="text-gray-600">Our comprehensive EMS has achieved this certification, establishing a new standard for our environmental performance and sustainability</p>
-      </div><div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-        <img src={iso2} className="w-15 h-14 text-blue-600 mb-4" />
-        <h3 className="text-xl font-semibold mb-2">ISO 9001:2015 Certified</h3>
-        <p className="text-gray-600">Our best QMS achieved this certification, setting a new benchmark for our operational excellence</p>
+    <section className="py-24 bg-gray-50 overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-16 mb-20">
+          <div className="lg:w-1/2">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Our Commitment to <br/>
+                <span className="text-[#05af28]">Manufacturing Excellence</span>
+              </h2>
+              <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                ULTRA ALUMINIUM delivers premium quality solutions, setting new standards
+                in Sri Lanka's manufacturing industry through innovation and precision.
+              </p>
+              <ul className="space-y-4 mb-10">
+                {["Advanced Extrusion Technology", "Sustainable Production Processes", "International Quality Benchmarks"].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
+                    <CheckCircle2 className="w-6 h-6 text-[#39b54a]" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link 
+                to="/about" 
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#05af28] text-white text-lg font-bold rounded-xl shadow-lg hover:shadow-2xl hover:bg-[#049422] transition-all duration-300"
+              >
+                Learn More About Our Quality <MoveRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
+          </div>
+          
+          <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {certifications.map((cert, index) => {
+              const Icon = cert.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+                >
+                  <div className="mb-6">
+                    {cert.type === "image" ? (
+                      <img src={cert.img} alt={cert.title} className="h-16 w-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
+                    ) : (
+                      Icon && <Icon className="w-12 h-12 text-[#39b54a]" />
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{cert.title}</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {cert.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </div>
-      <div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-        <Award className="w-12 h-12 text-customBlue mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Quality Assured</h3>
-        <p className="text-gray-600">Rigorous quality control processes meeting international standards.</p>
-      </div>
-      <div className="feature-card bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
-        <Shield className="w-12 h-12 text-customBlue mb-4" />
-        <h3 className="text-xl font-semibold mb-2">Customer Trust</h3>
-        <p className="text-gray-600">Building lasting relationships through reliability and excellence.</p>
-      </div>
-    </div>
-
-    {/* CTA Button */}
-    <div className="text-center w-full">
-      <Link to="/about" className="cta-button inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-900 to-indigo-600 text-white text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
-        Discover More <MoveRight className="w-5 h-5 animate-pulse" />
-      </Link>
-    </div>
-  </div>
-
-  {/* Decorative Elements */}
-  
-</section>
-
+    </section>
   );
 };
 
-export default HeroSection;
+export default Quality;

@@ -43,7 +43,7 @@ export default function Certification() {
   return (
     <div className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-extrabold text-center text-[#1a0179] mb-12 tracking-wide uppercase">
+        <h2 className="text-4xl font-extrabold text-center text-[#05af28] mb-12 tracking-wide uppercase">
           Our Certificates
         </h2>
 
@@ -115,7 +115,7 @@ export default function Certification() {
 
               <div className="text-center mt-6">
                 <button
-                  className="px-6 py-2 bg-[#1a0179] text-white rounded-lg hover:bg-[#2b099f] transition"
+                  className="px-6 py-2 bg-[#05af28] text-white rounded-lg hover:bg-[#2b099f] transition"
                   onClick={() => setSelectedCertificate(null)}
                 >
                   Close

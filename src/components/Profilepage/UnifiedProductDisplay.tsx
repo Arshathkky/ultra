@@ -47,13 +47,13 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a0179] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#05af28] mb-4">
             {section.title}
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {section.description}
           </p>
-          <div className="mt-6 w-24 h-1 bg-gradient-to-r from-[#1a0179] to-blue-500 mx-auto rounded-full"></div>
+          <div className="mt-6 w-24 h-1 bg-gradient-to-r from-[#05af28] to-blue-500 mx-auto rounded-full"></div>
         </div>
 
         {/* Single Unified Box with All Products */}
@@ -79,7 +79,7 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
 
                     {/* Category Badge */}
                     <div className="absolute top-3 left-3">
-                      <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-[#1a0179]">
+                      <div className="flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-medium text-[#05af28]">
                         <product.categoryIcon className="w-3 h-3" />
                         {product.categoryTitle}
                       </div>
@@ -114,7 +114,7 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
 
                     {/* Click indicator */}
                     <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 text-[#1a0179]">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 text-[#05af28]">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -126,8 +126,8 @@ function UnifiedProductDisplay({ section }: UnifiedProductDisplayProps) {
                   {/* Mobile Details */}
                   <div className="mt-4 block md:hidden">
                     <div className="flex items-center gap-2 mb-2">
-                      <product.categoryIcon className="w-4 h-4 text-[#1a0179]" />
-                      <span className="text-xs font-medium text-[#1a0179] uppercase tracking-wide">
+                      <product.categoryIcon className="w-4 h-4 text-[#05af28]" />
+                      <span className="text-xs font-medium text-[#05af28] uppercase tracking-wide">
                         {product.categoryTitle}
                       </span>
                       {product.configurations && product.configurations.length > 1 && (

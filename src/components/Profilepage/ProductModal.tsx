@@ -86,7 +86,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
                     </span>
                   </div>
                   {currentConfig && (
-                    <div className="absolute top-4 left-4 bg-[#1a0179]/90 backdrop-blur-sm rounded-lg px-3 py-1">
+                    <div className="absolute top-4 left-4 bg-[#05af28]/90 backdrop-blur-sm rounded-lg px-3 py-1">
                       <span className="text-sm font-medium text-white">
                         {currentConfig.name}
                       </span>
@@ -105,7 +105,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
                       key={index}
                       className={`cursor-pointer border-2 rounded-lg overflow-hidden transition-all duration-300 ${
                         selectedFinish === index
-                          ? 'border-[#1a0179] ring-2 ring-[#1a0179]/20 scale-105'
+                          ? 'border-[#05af28] ring-2 ring-[#05af28]/20 scale-105'
                           : 'border-gray-200 hover:border-gray-300'
                       }`}
                       onClick={() => setSelectedFinish(index)}
@@ -128,7 +128,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
               </div>
 
               <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6">
-                <h3 className="text-3xl font-bold text-[#1a0179] mb-3">{product.name}</h3>
+                <h3 className="text-3xl font-bold text-[#05af28] mb-3">{product.name}</h3>
                 <p className="text-gray-700 leading-relaxed">
                   {currentConfig?.description || product.description}
                 </p>
@@ -146,7 +146,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
                   <select
                     value={selectedConfigId}
                     onChange={(e) => setSelectedConfigId(e.target.value)}
-                    className="block w-full border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:ring-2 focus:ring-[#1a0179] focus:border-[#1a0179] transition-colors bg-white shadow-sm"
+                    className="block w-full border-2 border-gray-200 rounded-lg px-4 py-3 text-gray-700 focus:ring-2 focus:ring-[#05af28] focus:border-[#05af28] transition-colors bg-white shadow-sm"
                   >
                     {product.configurations.map((config) => (
                       <option key={config.id} value={config.id}>
@@ -160,12 +160,12 @@ function ProductModal({ product, onClose }: ProductModalProps) {
               {currentProductSpecs.length > 0 && (
                 <div>
                   <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                    <Info className="w-5 h-5 mr-2 text-[#1a0179]" />
+                    <Info className="w-5 h-5 mr-2 text-[#05af28]" />
                     Technical Specifications
                   </h4>
                   <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
                     <table className="min-w-full bg-white">
-                      <thead className="bg-gradient-to-r from-[#1a0179] to-blue-600 text-white">
+                      <thead className="bg-gradient-to-r from-[#05af28] to-blue-600 text-white">
                         <tr>
                           <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider">Product Code</th>
                           <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider">Dimensions</th>
@@ -176,7 +176,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
                       <tbody>
                         {currentProductSpecs.map((spec, index) => (
                           <tr key={index} className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} border-b border-gray-100`}>
-                            <td className="px-4 py-4 text-sm font-mono font-semibold text-[#1a0179]">{spec.code}</td>
+                            <td className="px-4 py-4 text-sm font-mono font-semibold text-[#05af28]">{spec.code}</td>
                             <td className="px-4 py-4 text-sm text-gray-900 font-medium">{spec.size}</td>
                             <td className="px-4 py-4 text-sm text-gray-900">{spec.thickness}</td>
                             <td className="px-4 py-4 text-sm text-gray-900">{spec.length}</td>
@@ -190,14 +190,14 @@ function ProductModal({ product, onClose }: ProductModalProps) {
 
               <div>
                 <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                  <Wrench className="w-5 h-5 mr-2 text-[#1a0179]" />
+                  <Wrench className="w-5 h-5 mr-2 text-[#05af28]" />
                   Key Features
                 </h4>
                 <div className="bg-gray-50 rounded-lg p-6">
                   <ul className="space-y-3">
                     {product.specs.map((spec, index) => (
                       <li key={index} className="flex items-start gap-3 group">
-                        <ChevronRight className="w-5 h-5 mt-0.5 text-[#1a0179] flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                        <ChevronRight className="w-5 h-5 mt-0.5 text-[#05af28] flex-shrink-0 group-hover:translate-x-1 transition-transform" />
                         <span className="text-gray-700 leading-relaxed">{spec}</span>
                       </li>
                     ))}

@@ -36,7 +36,7 @@ const AskForms: React.FC = () => {
   return (
     <div className="w-full h-full flex items-center justify-center px-4">
       <div className="w-full max-w-lg bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold text-[#1a0179] text-center mb-4">
+        <h2 className="text-xl font-semibold text-[#05af28] text-center mb-4">
           Ask a Question
         </h2>
 
@@ -52,7 +52,7 @@ const AskForms: React.FC = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full p-2 border border-gray-300 rounded focus:ring-[#1a0179] focus:ring-2 outline-none"
+              className="w-full p-2 border border-gray-300 rounded focus:ring-[#05af28] focus:ring-2 outline-none"
               placeholder="Enter your name"
             />
           </div>
@@ -68,7 +68,7 @@ const AskForms: React.FC = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full p-2 border border-gray-300 rounded focus:ring-[#1a0179] focus:ring-2 outline-none"
+              className="w-full p-2 border border-gray-300 rounded focus:ring-[#05af28] focus:ring-2 outline-none"
               placeholder="Enter your email"
             />
           </div>
@@ -84,7 +84,7 @@ const AskForms: React.FC = () => {
               onChange={(e) => setMessage(e.target.value)}
               required
               rows={3}
-              className="w-full p-2 border border-gray-300 rounded focus:ring-[#1a0179] focus:ring-2 outline-none"
+              className="w-full p-2 border border-gray-300 rounded focus:ring-[#05af28] focus:ring-2 outline-none"
               placeholder="Type your message here..."
             />
           </div>
@@ -92,7 +92,7 @@ const AskForms: React.FC = () => {
           <div className="text-center">
             <button
               type="submit"
-              className="px-4 py-2 text-sm font-semibold text-white bg-[#1a0179] rounded-full hover:bg-opacity-90 transition"
+              className="px-4 py-2 text-sm font-semibold text-white bg-[#05af28] rounded-full hover:bg-opacity-90 transition"
             >
               Submit Request
             </button>

@@ -34,7 +34,7 @@ export default function Header() {
       </div>
 
       {/* Main Nav */}
-      <nav className="w-full bg-white shadow-md">
+      <nav className="w-full bg-white/80 backdrop-blur-md shadow-md sticky top-0 z-[100]">
         <div className="container mx-auto px-2 py-2 flex justify-between items-center">
           <Link to="/" className="flex items-center space-x-2">
             <div className="h-10 w-10 rounded-md flex items-center justify-center">
@@ -45,12 +45,12 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6 items-center">
-            <Link to="/" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Home</Link>
+            <Link to="/" className="text-gray-800 font-medium hover:text-[#05af28] border-b-2 border-transparent hover:border-[#05af28] transition">Home</Link>
 
             <div className="relative dropdown">
               <button
                 onClick={() => handleDropdownToggle("aluminium")}
-                className="text-gray-800 font-medium flex items-center space-x-1 hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition"
+                className="text-gray-800 font-medium flex items-center space-x-1 hover:text-[#05af28] border-b-2 border-transparent hover:border-[#05af28] transition"
               >
                 <span>Aluminium</span>
                 <ChevronDown size={16} className={`${openDropdown === "aluminium" ? "rotate-180" : ""} transition-transform`} />
@@ -65,7 +65,7 @@ export default function Header() {
             <div className="relative dropdown">
               <button
                 onClick={() => handleDropdownToggle("products")}
-                className="text-gray-800 font-medium flex items-center space-x-1 hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition"
+                className="text-gray-800 font-medium flex items-center space-x-1 hover:text-[#05af28] border-b-2 border-transparent hover:border-[#05af28] transition"
               >
                 <span>Products</span>
                 <ChevronDown size={16} className={`${openDropdown === "products" ? "rotate-180" : ""} transition-transform`} />
@@ -78,11 +78,12 @@ export default function Header() {
                 </div>
               )}
             </div>
-              { <Link to="/news" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Blogs</Link> }
-            {/* <Link to="/dealers" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Dealers</Link> */}
-            <Link to="/about" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">About Us</Link>
+            {<Link to="/news" className="text-gray-800 font-medium hover:text-[#05af28] border-b-2 border-transparent hover:border-[#05af28] transition">Blogs</Link>}
+            {/* <Link to="/dealers" className="text-gray-800 font-medium hover:text-[#05af28] border-b-2 border-transparent hover:border-[#05af28] transition">Dealers</Link> */}
+
             <Link to="/E-Catalog" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Catalog</Link>
-            <Link to="/contact" className="text-gray-800 font-medium hover:text-[#1e048b] border-b-2 border-transparent hover:border-[#1e048b] transition">Contact</Link>
+            <Link to="/about" className="text-gray-800 font-medium hover:text-[#05af28] border-b-2 border-transparent hover:border-[#05af28] transition">About Us</Link>
+            <Link to="/contact" className="text-gray-800 font-medium hover:text-[#05af28] border-b-2 border-transparent hover:border-[#05af28] transition">Contact</Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -126,11 +127,10 @@ export default function Header() {
                 </div>
               )}
             </div>
-              {<Link to="/newsj
-              " className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Blogs</Link> }
+            {<Link to="/news" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Blogs</Link>}
             {/* <Link to="/dealers" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Dealers</Link> */}
-            <Link to="/about" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>About Us</Link>
             <Link to="/E-Catalog" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Catalog</Link>
+            <Link to="/about" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>About Us</Link>
             <Link to="/contact" className="block text-gray-800 font-medium hover:text-blue-600 py-2" onClick={handleLinkClick}>Contact</Link>
           </div>
         </div>

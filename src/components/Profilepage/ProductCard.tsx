@@ -43,17 +43,17 @@ function ProductCard({ category }: ProductCardProps) {
         {/* Category Header */}
         <div className="flex flex-wrap items-center gap-4 mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-3 bg-gradient-to-br from-[#1a0179] to-blue-600 rounded-xl text-white">
+            <div className="p-3 bg-gradient-to-br from-[#05af28] to-blue-600 rounded-xl text-white">
               <category.icon className="w-6 h-6" />
             </div>
-            <h2 className="text-2xl font-bold text-[#1a0179]">{category.title}</h2>
+            <h2 className="text-2xl font-bold text-[#05af28]">{category.title}</h2>
           </div>
 
           {hasVariants && (
             <select
               value={selectedIndex}
               onChange={(e) => setSelectedIndex(Number(e.target.value))}
-              className="ml-auto border-2 border-gray-200 rounded-lg px-4 py-2 text-sm text-gray-700 focus:ring-2 focus:ring-[#1a0179] focus:border-[#1a0179] transition-colors bg-white shadow-sm"
+              className="ml-auto border-2 border-gray-200 rounded-lg px-4 py-2 text-sm text-gray-700 focus:ring-2 focus:ring-[#05af28] focus:border-[#05af28] transition-colors bg-white shadow-sm"
             >
               {category.products.map((product, index) => (
                 <option key={index} value={index}>
@@ -113,7 +113,7 @@ function ProductCard({ category }: ProductCardProps) {
 
               {/* Click indicator */}
               <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 text-[#1a0179]">
+                <div className="bg-white/90 backdrop-blur-sm rounded-full p-2 text-[#05af28]">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
